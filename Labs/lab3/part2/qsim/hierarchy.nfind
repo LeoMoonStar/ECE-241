@@ -1,0 +1,9 @@
+part2
+fullAdder:FA1|
+fullAdder:FA2|
+fullAdder:FA3|
+fullAdder:FA4|
+fullAdder:FA1|mux2to1:call|
+fullAdder:FA3|mux2to1:call|
+fullAdder:FA4|mux2to1:call|
+fullAdder:FA2|mux2to1:call|

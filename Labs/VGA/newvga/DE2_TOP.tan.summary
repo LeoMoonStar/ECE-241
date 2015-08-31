@@ -1,0 +1,86 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.453 ns
+From           : KEY[0]
+To             : DisplayExample:comb_720|s.S1
+From Clock     : 
+To Clock       : CLOCK_50
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.335 ns
+From           : VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|ram_block1a1~porta_address_reg9
+To             : VGA_B[7]
+From Clock     : CLOCK_50
+To Clock       : 
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -5.635 ns
+From           : DRAM_DQ[1]
+To             : VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|ram_block1a1~porta_datain_reg0
+From Clock     : 
+To Clock       : CLOCK_50
+Failed Paths   : 0
+
+Type           : Clock Setup: 'VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk0'
+Slack          : 5.036 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : 201.45 MHz ( period = 4.964 ns )
+From           : DisplayExample:comb_720|x[8]
+To             : DisplayExample:comb_720|slowCount[8]
+From Clock     : VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk0
+To Clock       : VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk1'
+Slack          : 34.928 ns
+Required Time  : 25.00 MHz ( period = 40.000 ns )
+Actual Time    : 197.16 MHz ( period = 5.072 ns )
+From           : VgaAdapter:comb_718|Crtc:comb_5|xcounter[6]
+To             : VgaAdapter:comb_718|Crtc:comb_5|ycounter[9]~reg0
+From Clock     : VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk1
+To Clock       : VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk1
+Failed Paths   : 0
+
+Type           : Clock Hold: 'VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk0'
+Slack          : 0.500 ns
+Required Time  : 100.00 MHz ( period = 10.000 ns )
+Actual Time    : N/A
+From           : DisplayExample:comb_720|s.S0
+To             : DisplayExample:comb_720|s.S0
+From Clock     : VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk0
+To Clock       : VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Hold: 'VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk1'
+Slack          : 0.909 ns
+Required Time  : 25.00 MHz ( period = 40.000 ns )
+Actual Time    : N/A
+From           : VgaAdapter:comb_718|Crtc:comb_5|xcounter[2]
+To             : VgaAdapter:comb_718|Crtc:comb_5|xcounter[2]
+From Clock     : VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk1
+To Clock       : VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk1
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

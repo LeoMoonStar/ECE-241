@@ -1,0 +1,10 @@
+module part5(input [2:0]KEY, input [17:0]SW, output [17:0]LEDR, output [2:0]LEDG, output [6:0]HEX0);
+
+	wire [2:0]c;
+	
+	part3 inst1(KEY, SW, LEDR, c);
+	part4 call(c, HEX0);
+	
+	assign LEDG = c;
+	
+endmodule

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Dec 02 01:36:49 2013
+Quartus II 32-bit Version : 11.1 Build 173 11/01/2011 SJ Web Edition
+Revision Name : GPS
+Top-level Entity Name : GPS
+Family : Cyclone II
+Total logic elements : 1,882
+    Total combinational functions : 1,869
+    Dedicated logic registers : 728
+Total registers : 728
+Total pins : 128
+Total virtual pins : 0
+Total memory bits : 57,600
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

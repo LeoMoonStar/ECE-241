@@ -1,0 +1,13 @@
+module part2(X, Y, s, M);
+	input X, Y, s, M;
+	
+	assign X = [7:0]SW;
+	assign Y = [15:8]SW;
+	assign s = [17]SW;
+	assign LEDR = SW;
+	assign M = X & Y;
+	assign LEDG = M;
+	
+endmodule
+	
+	

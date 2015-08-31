@@ -1,0 +1,77 @@
+|Part1
+SW[0] => toggleSwtich.IN8
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+SW[1] => Y.IN1
+KEY[0] => clock.IN8
+
+
+|Part1|D_flip_flop:U0
+w => z.DATAB
+clk => z~reg0.CLK
+clr => z.OUTPUTSELECT
+A => z.DATAA
+
+
+|Part1|D_flip_flop:U1
+w => z.DATAB
+clk => z~reg0.CLK
+clr => z.OUTPUTSELECT
+A => z.DATAA
+
+
+|Part1|D_flip_flop:U2
+w => z.DATAB
+clk => z~reg0.CLK
+clr => z.OUTPUTSELECT
+A => z.DATAA
+
+
+|Part1|D_flip_flop:U3
+w => z.DATAB
+clk => z~reg0.CLK
+clr => z.OUTPUTSELECT
+A => z.DATAA
+
+
+|Part1|D_flip_flop:U4
+w => z.DATAB
+clk => z~reg0.CLK
+clr => z.OUTPUTSELECT
+A => z.DATAA
+
+
+|Part1|D_flip_flop:U5
+w => z.DATAB
+clk => z~reg0.CLK
+clr => z.OUTPUTSELECT
+A => z.DATAA
+
+
+|Part1|D_flip_flop:U6
+w => z.DATAB
+clk => z~reg0.CLK
+clr => z.OUTPUTSELECT
+A => z.DATAA
+
+
+|Part1|D_flip_flop:U7
+w => z.DATAB
+clk => z~reg0.CLK
+clr => z.OUTPUTSELECT
+A => z.DATAA
+
+

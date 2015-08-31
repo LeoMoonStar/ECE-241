@@ -1,0 +1,86 @@
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>ERR</sub_system>
+	<callstack>Stack Trace:
+079051ad: edt_wed_dll_get_template_classes() + 0x1f56 (edt_wed)
+61786548:
+End-trace
+</callstack>
+	<error>Fatal error detected: Access Violation</error>
+	<date>Tue May 09 15:56:34 2006</date>
+	<version>Quartus II Version 5.0 Build 168 06/22/2005 Service Pack 1 SJ Full Version</version>
+	<full_error>Fatal error detected: Access Violation
+Stack Trace:
+079051ad: edt_wed_dll_get_template_classes() + 0x1f56 (edt_wed)
+61786548:
+End-trace
+
+Quartus II Version 5.0 Build 168 06/22/2005 Service Pack 1 SJ Full Version </full_error>
+</internal_error>
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>ERR</sub_system>
+	<callstack>Stack Trace:
+5f45c452: Ordinal6270() + 0x29 (MFC42)
+04115dfe: edt_ted_dll_get_template_classes() + 0xfa56 (edt_ted)
+5f40206f: Ordinal5163() + 0x363 (MFC42)
+1000bf9f: AFC_VIEW::OnWndMsg() + 0x27 (GCL_AFC)
+5f401cea: Ordinal6374() + 0x22 (MFC42)
+5f401c73: Ordinal1109() + 0x74 (MFC42)
+5f401bfb: Ordinal1578() + 0x2a (MFC42)
+5f401bba: Ordinal1579() + 0x39 (MFC42)
+77d48654: IsCharAlphaNumericA() + 0x6498 (USER32)
+77d48723: IsCharAlphaNumericA() + 0x6567 (USER32)
+77d4bd1f: EnableWindow() + 0x11d (USER32)
+77d4a96e: DefWindowProcA() + 0xb1 (USER32)
+77d48654: IsCharAlphaNumericA() + 0x6498 (USER32)
+77d48723: IsCharAlphaNumericA() + 0x6567 (USER32)
+77d4a7eb: IsWindowVisible() + 0x90 (USER32)
+77d4aa95: CallWindowProcA() + 0x19 (USER32)
+5f4020f2: Ordinal2385() + 0x24 (MFC42)
+5f401d01: Ordinal6374() + 0x39 (MFC42)
+5f401c73: Ordinal1109() + 0x74 (MFC42)
+5f401bfb: Ordinal1578() + 0x2a (MFC42)
+5f401bba: Ordinal1579() + 0x39 (MFC42)
+77d48654: IsCharAlphaNumericA() + 0x6498 (USER32)
+77d48723: IsCharAlphaNumericA() + 0x6567 (USER32)
+77d48999: GetMessageW() + 0x125 (USER32)
+77d48fd2: DispatchMessageA() + 0xb (USER32)
+
+End-trace
+</callstack>
+	<error>Fatal error detected: Access Violation</error>
+	<date>Wed May 10 16:09:41 2006</date>
+	<version>Quartus II Version 5.0 Build 168 06/22/2005 Service Pack 1 SJ Full Version</version>
+	<full_error>Fatal error detected: Access Violation
+Stack Trace:
+5f45c452: Ordinal6270() + 0x29 (MFC42)
+04115dfe: edt_ted_dll_get_template_classes() + 0xfa56 (edt_ted)
+5f40206f: Ordinal5163() + 0x363 (MFC42)
+1000bf9f: AFC_VIEW::OnWndMsg() + 0x27 (GCL_AFC)
+5f401cea: Ordinal6374() + 0x22 (MFC42)
+5f401c73: Ordinal1109() + 0x74 (MFC42)
+5f401bfb: Ordinal1578() + 0x2a (MFC42)
+5f401bba: Ordinal1579() + 0x39 (MFC42)
+77d48654: IsCharAlphaNumericA() + 0x6498 (USER32)
+77d48723: IsCharAlphaNumericA() + 0x6567 (USER32)
+77d4bd1f: EnableWindow() + 0x11d (USER32)
+77d4a96e: DefWindowProcA() + 0xb1 (USER32)
+77d48654: IsCharAlphaNumericA() + 0x6498 (USER32)
+77d48723: IsCharAlphaNumericA() + 0x6567 (USER32)
+77d4a7eb: IsWindowVisible() + 0x90 (USER32)
+77d4aa95: CallWindowProcA() + 0x19 (USER32)
+5f4020f2: Ordinal2385() + 0x24 (MFC42)
+5f401d01: Ordinal6374() + 0x39 (MFC42)
+5f401c73: Ordinal1109() + 0x74 (MFC42)
+5f401bfb: Ordinal1578() + 0x2a (MFC42)
+5f401bba: Ordinal1579() + 0x39 (MFC42)
+77d48654: IsCharAlphaNumericA() + 0x6498 (USER32)
+77d48723: IsCharAlphaNumericA() + 0x6567 (USER32)
+77d48999: GetMessageW() + 0x125 (USER32)
+77d48fd2: DispatchMessageA() + 0xb (USER32)
+
+End-trace
+
+Quartus II Version 5.0 Build 168 06/22/2005 Service Pack 1 SJ Full Version </full_error>
+</internal_error>

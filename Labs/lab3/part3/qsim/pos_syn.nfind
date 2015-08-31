@@ -1,0 +1,10 @@
+part3
+LEDR,bus,user_entered
+LEDR[0],output,user_entered
+LEDR~0,comb,compiler_generated
+SW,bus,user_entered
+SW[1],input,user_entered
+SW[2],input,user_entered
+SW[3],input,user_entered
+SW[4],input,user_entered
+,hierarchy,user_entered

@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Dec 02 01:36:58 2013
+Quartus II 32-bit Version : 11.1 Build 173 11/01/2011 SJ Web Edition
+Revision Name : GPS
+Top-level Entity Name : GPS
+Family : Cyclone II
+Device : EP2C35F672C8
+Timing Models : Final
+Total logic elements : 1,886 / 33,216 ( 6 % )
+    Total combinational functions : 1,869 / 33,216 ( 6 % )
+    Dedicated logic registers : 728 / 33,216 ( 2 % )
+Total registers : 728
+Total pins : 128 / 475 ( 27 % )
+Total virtual pins : 0
+Total memory bits : 57,600 / 483,840 ( 12 % )
+Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )

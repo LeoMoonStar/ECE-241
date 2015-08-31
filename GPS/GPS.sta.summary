@@ -1,0 +1,53 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -0.683
+TNS   : -1.366
+
+Type  : Slow Model Setup 'image|VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 30.334
+TNS   : 0.000
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : 0.499
+TNS   : 0.000
+
+Type  : Slow Model Hold 'image|VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 0.736
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : 6.933
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'image|VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 16.933
+TNS   : 0.000
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : 13.369
+TNS   : 0.000
+
+Type  : Fast Model Setup 'image|VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 36.940
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'image|VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 0.238
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : 7.620
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'image|VGA|mypll|altpll_component|pll|clk[0]'
+Slack : 17.873
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,14 @@
+module part4(input [2:0]SW, output [6:0]HEX0);
+
+	wire [2:0]c;
+	
+	assign c = SW;
+	assign HEX0[0] = ~c[2];
+	assign HEX0[1] = 
+	assign HEX0[2] =
+	assign HEX0[3] =
+	assign HEX0[4] =
+	assign HEX0[5] =
+	assign HEX0[6] =
+	
+	

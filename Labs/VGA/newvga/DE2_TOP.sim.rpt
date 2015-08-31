@@ -1,0 +1,206 @@
+Simulator report for DE2_TOP
+Wed May 10 11:09:53 2006
+Version 5.0 Build 168 06/22/2005 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Simulator INI Usage
+  6. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 400.0 us     ;
+; Simulation Netlist Size     ; 689 nodes    ;
+; Simulation Coverage         ;      37.98 % ;
+; Total Number of Transitions ; 1135935      ;
++-----------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                       ;
++-------------------------------------------------------+------------------------------------------------------------------+
+; Option                                                ; Setting                                                          ;
++-------------------------------------------------------+------------------------------------------------------------------+
+; Simulation mode                                       ; Functional                                                       ;
+; Start time                                            ; 0ns                                                              ;
+; Vector input source                                   ; C:/Documents and Settings/summer1/Desktop/vga/newvga/DE2_TOP.vwf ;
+; Add pins automatically to simulation output waveforms ; On                                                               ;
+; Check outputs                                         ; Off                                                              ;
+; Report simulation coverage                            ; On                                                               ;
+; Detect setup and hold time violations                 ; Off                                                              ;
+; Detect glitches                                       ; Off                                                              ;
+; Automatically save/load simulation netlist            ; Off                                                              ;
+; Disable timing delays in Timing Simulation            ; Off                                                              ;
+; Generate Signal Activity File                         ; Off                                                              ;
++-------------------------------------------------------+------------------------------------------------------------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 5.0 Build 168 06/22/2005 Service Pack 1 SJ Full Version
+    Info: Processing started: Wed May 10 11:09:47 2006
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off DE2_TOP -c DE2_TOP
+Warning: Can't find signal in vector source file for input pin "|SdRam|resetn"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[0]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[1]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[2]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[3]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[4]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[5]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[6]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[7]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[8]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[9]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[10]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[11]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[12]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[13]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[14]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|color[15]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|x[0]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|x[1]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|x[2]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|x[3]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|x[4]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|x[5]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|x[6]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|x[7]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|x[8]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|x[9]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|y[0]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|y[1]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|y[2]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|y[3]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|y[4]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|y[5]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|y[6]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|y[7]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|y[8]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|displayY[0]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|displayY[1]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|displayY[2]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|displayY[3]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|displayY[4]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|displayY[5]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|displayY[6]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|displayY[7]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|displayY[8]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[0]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[1]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[2]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[3]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[4]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[5]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[6]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[7]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[8]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[9]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[10]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[11]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[12]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[13]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[14]"
+Warning: Can't find signal in vector source file for input pin "|SdRam|DRAM_DQ[15]"
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[15]"
+    Info: Node "always4~0" has logic level of U
+    Info: Node "DRAM_DQ[15]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[14]"
+    Info: Node "always4~1" has logic level of U
+    Info: Node "DRAM_DQ[14]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[13]"
+    Info: Node "always4~2" has logic level of U
+    Info: Node "DRAM_DQ[13]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[12]"
+    Info: Node "always4~3" has logic level of U
+    Info: Node "DRAM_DQ[12]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[11]"
+    Info: Node "always4~4" has logic level of U
+    Info: Node "DRAM_DQ[11]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[10]"
+    Info: Node "always4~5" has logic level of U
+    Info: Node "DRAM_DQ[10]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[9]"
+    Info: Node "always4~6" has logic level of U
+    Info: Node "DRAM_DQ[9]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[8]"
+    Info: Node "always4~7" has logic level of U
+    Info: Node "DRAM_DQ[8]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[7]"
+    Info: Node "always4~8" has logic level of U
+    Info: Node "DRAM_DQ[7]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[6]"
+    Info: Node "always4~9" has logic level of U
+    Info: Node "DRAM_DQ[6]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[5]"
+    Info: Node "always4~10" has logic level of U
+    Info: Node "DRAM_DQ[5]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[4]"
+    Info: Node "always4~11" has logic level of U
+    Info: Node "DRAM_DQ[4]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[3]"
+    Info: Node "always4~12" has logic level of U
+    Info: Node "DRAM_DQ[3]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[2]"
+    Info: Node "always4~13" has logic level of U
+    Info: Node "DRAM_DQ[2]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[1]"
+    Info: Node "always4~14" has logic level of U
+    Info: Node "DRAM_DQ[1]" has logic level of X
+Warning: Found logic contention at time 219.41 us on bus node "|SdRam|DRAM_DQ[0]"
+    Info: Node "always4~15" has logic level of U
+    Info: Node "DRAM_DQ[0]" has logic level of X
+Info: Simulation coverage is      37.98 %
+Info: Number of transitions in simulation is 1135935
+Info: Quartus II Simulator was successful. 0 errors, 77 warnings
+    Info: Processing ended: Wed May 10 11:09:53 2006
+    Info: Elapsed time: 00:00:06
+
+

@@ -1,0 +1,7 @@
+module D_flip_flop(input w, clk, output q);
+
+	reg q;
+	always@(posedge clk)
+		q <= w;
+
+endmodule 

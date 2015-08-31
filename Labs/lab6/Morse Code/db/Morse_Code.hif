@@ -1,0 +1,271 @@
+Quartus II 64-Bit
+Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Full Version
+14
+1347
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+Morse_Code
+# storage
+db|Morse_Code.(0).cnf
+db|Morse_Code.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+morse_code.v
+b9daaeff2f37c48127534ace31dbd7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+FSM
+# storage
+db|Morse_Code.(1).cnf
+db|Morse_Code.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+morse_code.v
+b9daaeff2f37c48127534ace31dbd7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+IDLE
+001
+PARAMETER_UNSIGNED_BIN
+DEF
+LOAD
+010
+PARAMETER_UNSIGNED_BIN
+DEF
+COMPUTE
+011
+PARAMETER_UNSIGNED_BIN
+DEF
+DOT
+100
+PARAMETER_UNSIGNED_BIN
+DEF
+DASH
+101
+PARAMETER_UNSIGNED_BIN
+DEF
+PAUSE
+110
+PARAMETER_UNSIGNED_BIN
+DEF
+RELOAD
+111
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+FSM:comb_3
+}
+# macro_sequence
+
+# end
+# entity
+one_half_sec_timer
+# storage
+db|Morse_Code.(2).cnf
+db|Morse_Code.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+morse_code.v
+b9daaeff2f37c48127534ace31dbd7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+one_half_sec_timer:comb_4
+}
+# macro_sequence
+
+# end
+# entity
+symbol_decoder
+# storage
+db|Morse_Code.(3).cnf
+db|Morse_Code.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+morse_code.v
+b9daaeff2f37c48127534ace31dbd7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+symbol_decoder:comb_5
+}
+# macro_sequence
+
+# end
+# entity
+symbol_shift_reg
+# storage
+db|Morse_Code.(4).cnf
+db|Morse_Code.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+morse_code.v
+b9daaeff2f37c48127534ace31dbd7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+symbol_shift_reg:comb_6
+}
+# macro_sequence
+
+# end
+# entity
+symbol_down_counter
+# storage
+db|Morse_Code.(5).cnf
+db|Morse_Code.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+morse_code.v
+b9daaeff2f37c48127534ace31dbd7
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+symbol_down_counter:comb_7
+}
+# macro_sequence
+
+# end
+# complete
+

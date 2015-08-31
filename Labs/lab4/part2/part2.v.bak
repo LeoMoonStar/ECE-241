@@ -1,0 +1,11 @@
+module part2(input [9:0]SW, input KEY[0], output [7:0]LEDR);
+	
+	wire [7:0]DATA_IN, Q;
+	wire Rotate_R, Parallel_L, clock;
+	
+	assign DATA_IN = SW[7:0];
+	assign Rotate_R = SW[8];
+	assign Parallel_L = SW[9];
+	assign clock = KEY;
+	assign Q = LEDR;
+	

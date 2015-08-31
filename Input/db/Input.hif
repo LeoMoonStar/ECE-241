@@ -1,0 +1,431 @@
+Quartus II 64-Bit
+Version 11.1 Build 259 01/25/2012 Service Pack 2.11 SJ Full Version
+14
+1347
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+testforletters
+# storage
+db|Input.(1).cnf
+db|Input.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+testforletters.v
+7f9b4388a9f1be736212fb52fdb6b4
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+checkforletter:firstletter|testforletters:callforlettersfirst
+}
+# macro_sequence
+
+# end
+# entity
+checkforletter
+# storage
+db|Input.(2).cnf
+db|Input.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+checkforletter.v
+c6e79da82a56cc4547e76d93bcbbd
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+checkforletter:firstletter
+}
+# macro_sequence
+
+# end
+# entity
+PS2_Controller
+# storage
+db|Input.(3).cnf
+db|Input.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ps2controller.v
+8736258426a5627fd44758ccd934f2
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+INITIALIZE_MOUSE
+0
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+checkforletter:firstletter|PS2_Controller:PS2
+checkfornumber:firstnumber|PS2_Controller:PS21
+}
+# macro_sequence
+
+# end
+# entity
+Altera_UP_PS2_Data_In
+# storage
+db|Input.(4).cnf
+db|Input.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+data in.v
+242349bd7745d345b11e265c37c2b13
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+checkforletter:firstletter|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In
+checkfornumber:firstnumber|PS2_Controller:PS21|Altera_UP_PS2_Data_In:PS2_Data_In
+}
+# macro_sequence
+
+# end
+# entity
+Altera_UP_PS2_Command_Out
+# storage
+db|Input.(5).cnf
+db|Input.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+command out.v
+7af2a4a67e412b6532e9ce8d7cbdc71
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+CLOCK_CYCLES_FOR_101US
+5050
+PARAMETER_SIGNED_DEC
+DEF
+NUMBER_OF_BITS_FOR_101US
+13
+PARAMETER_SIGNED_DEC
+DEF
+COUNTER_INCREMENT_FOR_101US
+0000000000001
+PARAMETER_UNSIGNED_BIN
+DEF
+CLOCK_CYCLES_FOR_15MS
+750000
+PARAMETER_SIGNED_DEC
+DEF
+NUMBER_OF_BITS_FOR_15MS
+20
+PARAMETER_SIGNED_DEC
+DEF
+COUNTER_INCREMENT_FOR_15MS
+00000000000000000001
+PARAMETER_UNSIGNED_BIN
+DEF
+CLOCK_CYCLES_FOR_2MS
+100000
+PARAMETER_SIGNED_DEC
+DEF
+NUMBER_OF_BITS_FOR_2MS
+17
+PARAMETER_SIGNED_DEC
+DEF
+COUNTER_INCREMENT_FOR_2MS
+00000000000000001
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_0_IDLE
+000
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_1_INITIATE_COMMUNICATION
+001
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_2_WAIT_FOR_CLOCK
+010
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_3_TRANSMIT_DATA
+011
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_4_TRANSMIT_STOP_BIT
+100
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_5_RECEIVE_ACK_BIT
+101
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_6_COMMAND_WAS_SENT
+110
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_7_TRANSMISSION_ERROR
+111
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+checkforletter:firstletter|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out
+checkfornumber:firstnumber|PS2_Controller:PS21|Altera_UP_PS2_Command_Out:PS2_Command_Out
+}
+# macro_sequence
+
+# end
+# entity
+Hexadecimal_To_Seven_Segment
+# storage
+db|Input.(6).cnf
+db|Input.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+hex_to_sevenseg.v
+a2f9bcba26799a745fe2de471919a3
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+checkforletter:firstletter|Hexadecimal_To_Seven_Segment:Segment0
+checkforletter:firstletter|Hexadecimal_To_Seven_Segment:Segment8
+checkfornumber:firstnumber|Hexadecimal_To_Seven_Segment:Segment1
+checkfornumber:firstnumber|Hexadecimal_To_Seven_Segment:Segment5
+}
+# macro_sequence
+
+# end
+# entity
+testfornumbersfirst
+# storage
+db|Input.(8).cnf
+db|Input.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+testfornumbers.v
+694627dcaec256d0a66ed5a29199970
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+checkfornumber:firstnumber|testfornumbersfirst:callfornumbers_first
+}
+# macro_sequence
+
+# end
+# entity
+Input
+# storage
+db|Input.(0).cnf
+db|Input.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+input.v
+f7d46711b3a44b21ee44e1e428895e5
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+checkfornumber
+# storage
+db|Input.(7).cnf
+db|Input.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+checkfornumber.v
+9f84999b2e8dfabb7dc52af45a511847
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+checkfornumber:firstnumber
+}
+# macro_sequence
+
+# end
+# complete
+

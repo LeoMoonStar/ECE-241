@@ -1,0 +1,198 @@
+Quartus II 32-bit
+Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
+14
+1347
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+shift_reg_parallel
+# storage
+db|part2.(1).cnf
+db|part2.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+shift_reg_parallel.v
+4a1e41932362cd8630a7e0612725ab58
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+shift_reg_parallel:call1
+shift_reg_parallel:call2
+shift_reg_parallel:call3
+shift_reg_parallel:call4
+shift_reg_parallel:call5
+shift_reg_parallel:call6
+shift_reg_parallel:call7
+shift_reg_parallel:call8
+}
+# macro_sequence
+
+# end
+# entity
+mux2to1
+# storage
+db|part2.(2).cnf
+db|part2.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+|users|pranav|dropbox|documtents|university|year 2|ece241|labs|lab3|part2|mux2to1.v
+737ae637f935f7d2bec2779651b7b321
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+shift_reg_parallel:call1|mux2to1:call1
+shift_reg_parallel:call1|mux2to1:call2
+shift_reg_parallel:call2|mux2to1:call1
+shift_reg_parallel:call2|mux2to1:call2
+shift_reg_parallel:call3|mux2to1:call1
+shift_reg_parallel:call3|mux2to1:call2
+shift_reg_parallel:call4|mux2to1:call1
+shift_reg_parallel:call4|mux2to1:call2
+shift_reg_parallel:call5|mux2to1:call1
+shift_reg_parallel:call5|mux2to1:call2
+shift_reg_parallel:call6|mux2to1:call1
+shift_reg_parallel:call6|mux2to1:call2
+shift_reg_parallel:call7|mux2to1:call1
+shift_reg_parallel:call7|mux2to1:call2
+shift_reg_parallel:call8|mux2to1:call1
+shift_reg_parallel:call8|mux2to1:call2
+}
+# macro_sequence
+
+# end
+# entity
+D_flip_flop
+# storage
+db|part2.(3).cnf
+db|part2.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+d_flip_flop.v
+cbc8e3d2fcb63cf9496a23c0c18627e
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+shift_reg_parallel:call1|D_flip_flop:call
+shift_reg_parallel:call2|D_flip_flop:call
+shift_reg_parallel:call3|D_flip_flop:call
+shift_reg_parallel:call4|D_flip_flop:call
+shift_reg_parallel:call5|D_flip_flop:call
+shift_reg_parallel:call6|D_flip_flop:call
+shift_reg_parallel:call7|D_flip_flop:call
+shift_reg_parallel:call8|D_flip_flop:call
+}
+# macro_sequence
+
+# end
+# entity
+part2
+# storage
+db|part2.(0).cnf
+db|part2.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+part2.v
+c78ef69939ac5397474ba74681249ab
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

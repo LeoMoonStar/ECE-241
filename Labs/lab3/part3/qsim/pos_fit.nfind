@@ -1,0 +1,13 @@
+part3
+LEDR,bus,user_entered
+LEDR[0],output,user_entered
+LEDR~0,comb,compiler_generated
+SW,bus,user_entered
+SW[1],input,user_entered
+SW[2],input,user_entered
+SW[3],input,user_entered
+SW[4],input,user_entered
+~ASDO~,input,compiler_generated
+~LVDS150p/nCEO~,output,compiler_generated
+~nCSO~,input,compiler_generated
+,hierarchy,user_entered

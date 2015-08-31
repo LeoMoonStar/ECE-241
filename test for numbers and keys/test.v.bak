@@ -1,0 +1,13 @@
+module test (LEDR, CLOCK_50);
+
+output [7:0] LEDR;
+reg [7:0] q;
+
+assign LEDR = q;
+
+always @ (posedge CLOCK_50)
+begin
+q <= 8'hAA;
+end
+
+endmodule 

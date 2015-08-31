@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="DE2_TOP">
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_6251.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_6251.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

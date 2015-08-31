@@ -1,0 +1,37 @@
+module Part1(input [1:0]SW, input [0:0]KEY, output [0:0]LEDG, output [7:0]LEDR);
+wire toggleSwtich, w, clock, z;
+wire [7:0]flipFlops;
+assign toggleSwtich = SW[0];
+assign w = SW[1];
+assign LEDG[0] = z;
+assign clock = KEY[0];
+assign LEDR = flipFlops;
+wire[7:0]y,Y;
+parameter A = 8'b00000001;
+parameter B = 8'b00000010;
+parameter C = 8'b00000100;
+parameter D = 8'b00001000;
+parameter E = 8'b00010000;
+parameter F = 8'b00100000;
+parameter G = 8'b01000000;
+parameter H = 8'b10000000;
+Y[0] = y[0]&w | y[6]&w;
+Y[1] = y[0]&~w | y[5]&~w; 
+Y[2] = y[1]&~w | y[7]&~w;
+Y[3] = y[2]&~w;
+Y[4] = y[3]&~w | y[4]&~w;
+Y[5] = y[1]&w | y[2]&w | y[3]&w | y[4]&w | y[5]&w;
+Y[6] = y[5]&w;
+Y[7] = y[6]&~w;
+D_flip_flop(Y[0], clock, toggleSwtich, y[0]);
+D_flip_flop(Y[1], clock, toggleSwtich, y[1]);
+D_flip_flop(Y[2], clock, toggleSwtich, y[2]);
+D_flip_flop(Y[3], clock, toggleSwtich, y[3]);
+D_flip_flop(Y[4], clock, toggleSwtich, y[4]);
+D_flip_flop(Y[5], clock, toggleSwtich, y[5]);
+D_flip_flop(Y[6], clock, toggleSwtich, y[6]);
+D_flip_flop(Y[7], clock, toggleSwtich, y[7]);
+
+assign LEDR = flipFlops;
+assign z = y[4] | y[7];
+endmodule

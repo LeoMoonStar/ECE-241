@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Part5">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Part5|ALU:call|lpm_mult:Mult0" CBX_FILE_NAME="mult_o5t.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,47 @@
+module Part4(input CLOCK_50, output [6:0]HEX0, HEX1, HEX2, HEX3);
+wire [2:0]A , B , C, D;
+assign A = 3'b0;
+assign B = 3'b001;
+assign C = 3'b010;
+assign D = 3'b010;
+wire [6:0]H0, H1, H2, H3;
+assign HEX0 = H0;
+assign HEX1 = H1;
+assign HEX2 = H2;
+
+reg count  = 0 ;
+part4 U1(A, H3);
+part4 U2(B, H2);
+part4 U3(C, H1);
+part4 U4(D, H0);
+
+always@(posedge CLOCK_50)
+count = count + 1;
+if(count == 5000000)
+begin
+B<=A;
+C<=B;
+D<=C;
+A<=D;
+count = 0;
+end
+endmodule
+
+
+
+part4(input [2:0]SW, output [6:0]HEX0);
+
+	wire [2:0]c = SW;
+	wire [6:0]temp;  
+
+	assign temp[0] = ~c[2];
+	assign temp[1] = ~c[1] | (c[0] & ~c[2]);
+	assign temp[2] = (~c[1] & (c[0] | c[2])) | (~c[2] & c[1] & ~c[0]);
+	assign temp[3] = ~c[2] & c[1];
+	assign temp[4] = ~c[2] & (~c[1] | c[0]);
+	assign temp[5] = ~((c[1] | c[2]) & (c[1] | c[0]) & (c[2] | c[0]));
+	assign temp[6] = ~c[2] | ~(c[0] | c[1]);
+	
+	assign HEX0 = ~temp;
+	
+endmodule 

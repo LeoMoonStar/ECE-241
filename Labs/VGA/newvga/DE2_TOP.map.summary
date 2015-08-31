@@ -1,0 +1,15 @@
+Flow Status : Successful - Wed Aug 09 11:40:54 2006
+Quartus II Version : 5.0 Build 148 04/26/2005 SJ Web Edition
+Revision Name : DE2_TOP
+Top-level Entity Name : DE2_TOP
+Family : Cyclone II
+Device : EP2C35F672C6
+Timing Models : Preliminary
+Met timing requirements : N/A
+Total combinational functions : 276
+Total registers : 91
+Total pins : 423
+Total virtual pins : 0
+Total memory bits : 30,720
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

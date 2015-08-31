@@ -1,0 +1,4882 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--C1_x[8] is DisplayExample:comb_720|x[8]
+C1_x[8] = DFFEAS(C1L12, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L421Q is VgaAdapter:comb_718|SdRam:comb_47|currentState[2]~reg0
+G1L421Q = DFFEAS(G1L651, H1__clk0,  ,  ,  ,  ,  ,  ,  );
+
+
+--C1_x[0] is DisplayExample:comb_720|x[0]
+C1_x[0] = DFFEAS(C1L5, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1_counter[8] is VgaAdapter:comb_718|SdRam:comb_47|counter[8]
+G1_counter[8] = DFFEAS(G1L201, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1L621Q is VgaAdapter:comb_718|SdRam:comb_47|currentState[4]~reg0
+G1L621Q = DFFEAS(G1L261, H1__clk0,  ,  , G1L421Q,  ,  ,  ,  );
+
+
+--G1L1 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[0]~2505
+G1L1 = G1L421Q # G1L621Q & C1_x[0] # !G1L621Q & (G1_counter[8]);
+
+
+--G1L321Q is VgaAdapter:comb_718|SdRam:comb_47|currentState[1]~reg0
+G1L321Q = DFFEAS(G1L251, H1__clk0,  ,  ,  ,  ,  ,  ,  );
+
+
+--G1L221Q is VgaAdapter:comb_718|SdRam:comb_47|currentState[0]~reg0
+G1L221Q = DFFEAS(G1L051, H1__clk0,  ,  ,  ,  ,  ,  ,  );
+
+
+--G1L33 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_RAS_N~38
+G1L33 = G1L321Q & G1L221Q;
+
+
+--G1L521Q is VgaAdapter:comb_718|SdRam:comb_47|currentState[3]~reg0
+G1L521Q = DFFEAS(G1L061, H1__clk0,  ,  ,  ,  ,  ,  ,  );
+
+
+--G1L7 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[3]~2506
+G1L7 = G1L521Q & !G1L321Q & !G1L421Q & !G1L221Q;
+
+
+--G1L2 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[0]~2507
+G1L2 = C1_x[8] & (G1L7 # G1L1 & G1L33) # !C1_x[8] & G1L1 & G1L33;
+
+
+--C1_x[1] is DisplayExample:comb_720|x[1]
+C1_x[1] = DFFEAS(C1L7, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1_counter[9] is VgaAdapter:comb_718|SdRam:comb_47|counter[9]
+G1_counter[9] = DFFEAS(G1L501, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1L3 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[1]~2508
+G1L3 = G1L421Q # G1L621Q & C1_x[1] # !G1L621Q & (G1_counter[9]);
+
+
+--C1_x[9] is DisplayExample:comb_720|x[9]
+C1_x[9] = DFFEAS(C1L411, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L4 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[1]~2509
+G1L4 = G1L7 & (C1_x[9] # G1L33 & G1L3) # !G1L7 & G1L33 & G1L3;
+
+
+--C1_x[2] is DisplayExample:comb_720|x[2]
+C1_x[2] = DFFEAS(C1L9, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--E1_ycounter[0] is VgaAdapter:comb_718|Crtc:comb_5|ycounter[0]
+E1_ycounter[0] = DFFEAS(E1L98, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--G1L5 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[2]~2510
+G1L5 = G1L421Q # G1L621Q & C1_x[2] # !G1L621Q & (E1_ycounter[0]);
+
+
+--C1_y[0] is DisplayExample:comb_720|y[0]
+C1_y[0] = DFFEAS(C1L52, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L6 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[2]~2511
+G1L6 = G1L7 & (C1_y[0] # G1L33 & G1L5) # !G1L7 & G1L33 & G1L5;
+
+
+--G1L8 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[3]~2512
+G1L8 = !G1L421Q & (G1L321Q & G1L221Q # !G1L321Q & !G1L221Q & G1L521Q);
+
+
+--E1_ycounter[1] is VgaAdapter:comb_718|Crtc:comb_5|ycounter[1]
+E1_ycounter[1] = DFFEAS(E1L5, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--G1L04 is VgaAdapter:comb_718|SdRam:comb_47|add~573
+G1L04 = E1_ycounter[1] $ VCC;
+
+--G1L14 is VgaAdapter:comb_718|SdRam:comb_47|add~574
+G1L14 = CARRY(E1_ycounter[1]);
+
+
+--E1_ycounter[5] is VgaAdapter:comb_718|Crtc:comb_5|ycounter[5]
+E1_ycounter[5] = DFFEAS(E1L31, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1_ycounter[4] is VgaAdapter:comb_718|Crtc:comb_5|ycounter[4]
+E1_ycounter[4] = DFFEAS(E1L11, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--G1L91 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[7]~2513
+G1L91 = E1_ycounter[5] # !E1_ycounter[4] # !E1_ycounter[1];
+
+
+--E1_ycounter[8] is VgaAdapter:comb_718|Crtc:comb_5|ycounter[8]
+E1_ycounter[8] = DFFEAS(E1L91, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1_ycounter[7] is VgaAdapter:comb_718|Crtc:comb_5|ycounter[7]
+E1_ycounter[7] = DFFEAS(E1L71, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1_ycounter[6] is VgaAdapter:comb_718|Crtc:comb_5|ycounter[6]
+E1_ycounter[6] = DFFEAS(E1L51, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1L1 is VgaAdapter:comb_718|Crtc:comb_5|LessThan~530
+E1L1 = E1_ycounter[8] & E1_ycounter[7] & E1_ycounter[6];
+
+
+--E1_ycounter[3] is VgaAdapter:comb_718|Crtc:comb_5|ycounter[3]
+E1_ycounter[3] = DFFEAS(E1L09, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1_ycounter[2] is VgaAdapter:comb_718|Crtc:comb_5|ycounter[2]
+E1_ycounter[2] = DFFEAS(E1L19, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1L44 is VgaAdapter:comb_718|Crtc:comb_5|always1~70
+E1L44 = E1_ycounter[3] & E1_ycounter[2];
+
+
+--G1L42 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[9]~2514
+G1L42 = !G1L621Q & (G1L91 # !E1L44 # !E1L1);
+
+
+--C1_x[3] is DisplayExample:comb_720|x[3]
+C1_x[3] = DFFEAS(C1L11, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L9 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[3]~2515
+G1L9 = G1L621Q & (C1_x[3] # G1L04 & G1L42) # !G1L621Q & G1L04 & G1L42;
+
+
+--C1_y[1] is DisplayExample:comb_720|y[1]
+C1_y[1] = DFFEAS(C1L72, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L01 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[3]~2516
+G1L01 = G1L8 & (G1L321Q & G1L9 # !G1L321Q & (C1_y[1]));
+
+
+--C1_x[4] is DisplayExample:comb_720|x[4]
+C1_x[4] = DFFEAS(C1L31, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L11 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[4]~2517
+G1L11 = G1L321Q & G1L221Q & G1L621Q & C1_x[4];
+
+
+--G1L52 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[9]~2518
+G1L52 = G1L321Q & G1L421Q & G1L221Q;
+
+
+--C1_y[2] is DisplayExample:comb_720|y[2]
+C1_y[2] = DFFEAS(C1L92, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L21 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[4]~2519
+G1L21 = G1L11 # G1L52 # G1L7 & C1_y[2];
+
+
+--G1L24 is VgaAdapter:comb_718|SdRam:comb_47|add~575
+G1L24 = E1_ycounter[2] & !G1L14 # !E1_ycounter[2] & (G1L14 # GND);
+
+--G1L34 is VgaAdapter:comb_718|SdRam:comb_47|add~576
+G1L34 = CARRY(!G1L14 # !E1_ycounter[2]);
+
+
+--G1L31 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[4]~2520
+G1L31 = G1L21 # G1L33 & G1L42 & G1L24;
+
+
+--C1_x[5] is DisplayExample:comb_720|x[5]
+C1_x[5] = DFFEAS(C1L51, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L41 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[5]~2521
+G1L41 = G1L321Q & G1L221Q & G1L621Q & C1_x[5];
+
+
+--C1_y[3] is DisplayExample:comb_720|y[3]
+C1_y[3] = DFFEAS(C1L13, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L51 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[5]~2522
+G1L51 = G1L52 # G1L41 # G1L7 & C1_y[3];
+
+
+--G1L44 is VgaAdapter:comb_718|SdRam:comb_47|add~577
+G1L44 = E1_ycounter[3] & (G1L34 $ GND) # !E1_ycounter[3] & !G1L34 & VCC;
+
+--G1L54 is VgaAdapter:comb_718|SdRam:comb_47|add~578
+G1L54 = CARRY(E1_ycounter[3] & !G1L34);
+
+
+--G1L61 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[5]~2523
+G1L61 = G1L51 # G1L33 & G1L42 & G1L44;
+
+
+--G1L64 is VgaAdapter:comb_718|SdRam:comb_47|add~579
+G1L64 = E1_ycounter[4] & !G1L54 # !E1_ycounter[4] & (G1L54 # GND);
+
+--G1L74 is VgaAdapter:comb_718|SdRam:comb_47|add~580
+G1L74 = CARRY(!G1L54 # !E1_ycounter[4]);
+
+
+--C1_x[6] is DisplayExample:comb_720|x[6]
+C1_x[6] = DFFEAS(C1L71, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L71 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[6]~2524
+G1L71 = G1L621Q & (C1_x[6] # G1L42 & G1L64) # !G1L621Q & G1L42 & G1L64;
+
+
+--C1_y[4] is DisplayExample:comb_720|y[4]
+C1_y[4] = DFFEAS(C1L33, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L81 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[6]~2525
+G1L81 = G1L8 & (G1L321Q & G1L71 # !G1L321Q & (C1_y[4]));
+
+
+--G1L84 is VgaAdapter:comb_718|SdRam:comb_47|add~581
+G1L84 = E1_ycounter[5] & (G1L74 $ GND) # !E1_ycounter[5] & !G1L74 & VCC;
+
+--G1L94 is VgaAdapter:comb_718|SdRam:comb_47|add~582
+G1L94 = CARRY(E1_ycounter[5] & !G1L74);
+
+
+--C1_x[7] is DisplayExample:comb_720|x[7]
+C1_x[7] = DFFEAS(C1L511, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L02 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[7]~2526
+G1L02 = G1L621Q & (C1_x[7] # G1L42 & G1L84) # !G1L621Q & G1L42 & G1L84;
+
+
+--C1_y[5] is DisplayExample:comb_720|y[5]
+C1_y[5] = DFFEAS(C1L621, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L12 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[7]~2527
+G1L12 = G1L8 & (G1L321Q & G1L02 # !G1L321Q & (C1_y[5]));
+
+
+--C1_y[6] is DisplayExample:comb_720|y[6]
+C1_y[6] = DFFEAS(C1L721, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L22 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[8]~2528
+G1L22 = G1L521Q & C1_y[6] & !G1L321Q & !G1L221Q;
+
+
+--G1L05 is VgaAdapter:comb_718|SdRam:comb_47|add~583
+G1L05 = E1_ycounter[6] & !G1L94 # !E1_ycounter[6] & (G1L94 # GND);
+
+--G1L15 is VgaAdapter:comb_718|SdRam:comb_47|add~584
+G1L15 = CARRY(!G1L94 # !E1_ycounter[6]);
+
+
+--G1L32 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[8]~2529
+G1L32 = !G1L421Q & (G1L22 # G1L82 & G1L05);
+
+
+--C1_y[7] is DisplayExample:comb_720|y[7]
+C1_y[7] = DFFEAS(C1L821, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L62 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[9]~2530
+G1L62 = G1L7 & (C1_y[7] # G1L52 & !G1L621Q) # !G1L7 & (G1L52 & !G1L621Q);
+
+
+--G1L25 is VgaAdapter:comb_718|SdRam:comb_47|add~585
+G1L25 = E1_ycounter[7] & (G1L15 $ GND) # !E1_ycounter[7] & !G1L15 & VCC;
+
+--G1L35 is VgaAdapter:comb_718|SdRam:comb_47|add~586
+G1L35 = CARRY(E1_ycounter[7] & !G1L15);
+
+
+--G1L72 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[9]~2531
+G1L72 = G1L62 # G1L33 & G1L42 & G1L25;
+
+
+--C1_y[8] is DisplayExample:comb_720|y[8]
+C1_y[8] = DFFEAS(C1L921, H1__clk0,  ,  , !C1_s.S0,  ,  ,  ,  );
+
+
+--G1L721 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2347
+G1L721 = !G1L221Q & !G1L621Q;
+
+
+--G1L45 is VgaAdapter:comb_718|SdRam:comb_47|add~587
+G1L45 = E1_ycounter[8] $ G1L35;
+
+
+--G1L92 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[10]~2532
+G1L92 = !G1L421Q & (G1L721 # G1L45 & G1L42);
+
+
+--G1L03 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[10]~2533
+G1L03 = G1L321Q & (G1L92 # G1L7 & C1_y[8]) # !G1L321Q & G1L7 & C1_y[8];
+
+
+--G1L661 is VgaAdapter:comb_718|SdRam:comb_47|reduce_or~171
+G1L661 = G1L221Q & (!G1L621Q & !G1L521Q) # !G1L221Q & G1L321Q & (G1L621Q $ G1L521Q);
+
+
+--G1L43 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_RAS_N~39
+G1L43 = G1L321Q & G1L221Q & G1L621Q;
+
+
+--G1L761 is VgaAdapter:comb_718|SdRam:comb_47|reduce_or~172
+G1L761 = G1L421Q & G1L661 # !G1L421Q & (G1L521Q & G1L43);
+
+
+--G1L53 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_RAS_N~40
+G1L53 = G1L221Q & (!G1L521Q) # !G1L221Q & (G1L621Q & (!G1L521Q) # !G1L621Q & G1L321Q);
+
+
+--G1L63 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_RAS_N~41
+G1L63 = G1L421Q & (G1L521Q & G1L53) # !G1L421Q & (G1L521Q & G1L43 # !G1L521Q & (!G1L53));
+
+
+--G1L861 is VgaAdapter:comb_718|SdRam:comb_47|reduce_or~173
+G1L861 = G1L221Q & (G1L421Q & (G1L621Q # G1L521Q) # !G1L421Q & (!G1L521Q)) # !G1L221Q & (G1L521Q $ (!G1L621Q & G1L421Q));
+
+
+--G1L961 is VgaAdapter:comb_718|SdRam:comb_47|reduce_or~174
+G1L961 = G1L621Q & (G1L221Q # !G1L521Q) # !G1L621Q & (G1L521Q # G1L221Q $ G1L421Q);
+
+
+--G1L071 is VgaAdapter:comb_718|SdRam:comb_47|reduce_or~175
+G1L071 = G1L321Q & G1L861 # !G1L321Q & (G1L961);
+
+
+--H1__clk0 is VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk0
+H1__clk0 = PLL.CLK0(.ENA(), .CLKSWITCH(), .ARESET(), .PFDENA(), .INCLK(CLOCK_50), .INCLK());
+
+--H1__clk1 is VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk1
+H1__clk1 = PLL.CLK1(.ENA(), .CLKSWITCH(), .ARESET(), .PFDENA(), .INCLK(CLOCK_50), .INCLK());
+
+
+--E1_hsync is VgaAdapter:comb_718|Crtc:comb_5|hsync
+E1_hsync = DFFEAS(E1L75, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1_vsync is VgaAdapter:comb_718|Crtc:comb_5|vsync
+E1_vsync = DFFEAS(E1L06, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1L88Q is VgaAdapter:comb_718|Crtc:comb_5|ycounter[9]~reg0
+E1L88Q = DFFEAS(E1L29, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1L2 is VgaAdapter:comb_718|Crtc:comb_5|LessThan~531
+E1L2 = !E1L88Q & (!E1_ycounter[5] # !E1L1);
+
+
+--E1_xcounter[8] is VgaAdapter:comb_718|Crtc:comb_5|xcounter[8]
+E1_xcounter[8] = DFFEAS(E1L57, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1_xcounter[7] is VgaAdapter:comb_718|Crtc:comb_5|xcounter[7]
+E1_xcounter[7] = DFFEAS(E1L73, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1_xcounter[9] is VgaAdapter:comb_718|Crtc:comb_5|xcounter[9]
+E1_xcounter[9] = DFFEAS(E1L67, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1L45 is VgaAdapter:comb_718|Crtc:comb_5|displayen~43
+E1L45 = E1L2 & (!E1_xcounter[8] & !E1_xcounter[7] # !E1_xcounter[9]);
+
+
+--L2_q_a[10] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[10]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[10]_PORT_A_data_in = G1_bufferData[10];
+L2_q_a[10]_PORT_A_data_in_reg = DFFE(L2_q_a[10]_PORT_A_data_in, L2_q_a[10]_clock_0, , , );
+L2_q_a[10]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[10]_PORT_A_address_reg = DFFE(L2_q_a[10]_PORT_A_address, L2_q_a[10]_clock_0, , , );
+L2_q_a[10]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[10]_PORT_B_address_reg = DFFE(L2_q_a[10]_PORT_B_address, L2_q_a[10]_clock_0, , , );
+L2_q_a[10]_PORT_A_write_enable = F1L04;
+L2_q_a[10]_PORT_A_write_enable_reg = DFFE(L2_q_a[10]_PORT_A_write_enable, L2_q_a[10]_clock_0, , , );
+L2_q_a[10]_clock_0 = H1__clk0;
+L2_q_a[10]_PORT_A_data_out = MEMORY(L2_q_a[10]_PORT_A_data_in_reg, , L2_q_a[10]_PORT_A_address_reg, L2_q_a[10]_PORT_B_address_reg, L2_q_a[10]_PORT_A_write_enable_reg, , , , L2_q_a[10]_clock_0, , , , , );
+L2_q_a[10] = L2_q_a[10]_PORT_A_data_out[0];
+
+
+--L1_q_a[10] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[10]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[10]_PORT_A_data_in = G1_bufferData[10];
+L1_q_a[10]_PORT_A_data_in_reg = DFFE(L1_q_a[10]_PORT_A_data_in, L1_q_a[10]_clock_0, , , );
+L1_q_a[10]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[10]_PORT_A_address_reg = DFFE(L1_q_a[10]_PORT_A_address, L1_q_a[10]_clock_0, , , );
+L1_q_a[10]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[10]_PORT_B_address_reg = DFFE(L1_q_a[10]_PORT_B_address, L1_q_a[10]_clock_0, , , );
+L1_q_a[10]_PORT_A_write_enable = F1L93;
+L1_q_a[10]_PORT_A_write_enable_reg = DFFE(L1_q_a[10]_PORT_A_write_enable, L1_q_a[10]_clock_0, , , );
+L1_q_a[10]_clock_0 = H1__clk0;
+L1_q_a[10]_PORT_A_data_out = MEMORY(L1_q_a[10]_PORT_A_data_in_reg, , L1_q_a[10]_PORT_A_address_reg, L1_q_a[10]_PORT_B_address_reg, L1_q_a[10]_PORT_A_write_enable_reg, , , , L1_q_a[10]_clock_0, , , , , );
+L1_q_a[10] = L1_q_a[10]_PORT_A_data_out[0];
+
+
+--F1_bufferSel is VgaAdapter:comb_718|LineBuffer:comb_16|bufferSel
+F1_bufferSel = DFFEAS(F1L3, H1__clk0,  ,  , F1L1,  ,  ,  ,  );
+
+
+--F1L43 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[10]~136
+F1L43 = F1_bufferSel & L2_q_a[10] # !F1_bufferSel & (L1_q_a[10]);
+
+
+--L2_q_a[11] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[11]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[11]_PORT_A_data_in = G1_bufferData[11];
+L2_q_a[11]_PORT_A_data_in_reg = DFFE(L2_q_a[11]_PORT_A_data_in, L2_q_a[11]_clock_0, , , );
+L2_q_a[11]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[11]_PORT_A_address_reg = DFFE(L2_q_a[11]_PORT_A_address, L2_q_a[11]_clock_0, , , );
+L2_q_a[11]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[11]_PORT_B_address_reg = DFFE(L2_q_a[11]_PORT_B_address, L2_q_a[11]_clock_0, , , );
+L2_q_a[11]_PORT_A_write_enable = F1L04;
+L2_q_a[11]_PORT_A_write_enable_reg = DFFE(L2_q_a[11]_PORT_A_write_enable, L2_q_a[11]_clock_0, , , );
+L2_q_a[11]_clock_0 = H1__clk0;
+L2_q_a[11]_PORT_A_data_out = MEMORY(L2_q_a[11]_PORT_A_data_in_reg, , L2_q_a[11]_PORT_A_address_reg, L2_q_a[11]_PORT_B_address_reg, L2_q_a[11]_PORT_A_write_enable_reg, , , , L2_q_a[11]_clock_0, , , , , );
+L2_q_a[11] = L2_q_a[11]_PORT_A_data_out[0];
+
+
+--L1_q_a[11] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[11]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[11]_PORT_A_data_in = G1_bufferData[11];
+L1_q_a[11]_PORT_A_data_in_reg = DFFE(L1_q_a[11]_PORT_A_data_in, L1_q_a[11]_clock_0, , , );
+L1_q_a[11]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[11]_PORT_A_address_reg = DFFE(L1_q_a[11]_PORT_A_address, L1_q_a[11]_clock_0, , , );
+L1_q_a[11]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[11]_PORT_B_address_reg = DFFE(L1_q_a[11]_PORT_B_address, L1_q_a[11]_clock_0, , , );
+L1_q_a[11]_PORT_A_write_enable = F1L93;
+L1_q_a[11]_PORT_A_write_enable_reg = DFFE(L1_q_a[11]_PORT_A_write_enable, L1_q_a[11]_clock_0, , , );
+L1_q_a[11]_clock_0 = H1__clk0;
+L1_q_a[11]_PORT_A_data_out = MEMORY(L1_q_a[11]_PORT_A_data_in_reg, , L1_q_a[11]_PORT_A_address_reg, L1_q_a[11]_PORT_B_address_reg, L1_q_a[11]_PORT_A_write_enable_reg, , , , L1_q_a[11]_clock_0, , , , , );
+L1_q_a[11] = L1_q_a[11]_PORT_A_data_out[0];
+
+
+--F1L53 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[11]~137
+F1L53 = F1_bufferSel & L2_q_a[11] # !F1_bufferSel & (L1_q_a[11]);
+
+
+--L2_q_a[12] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[12]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[12]_PORT_A_data_in = G1_bufferData[12];
+L2_q_a[12]_PORT_A_data_in_reg = DFFE(L2_q_a[12]_PORT_A_data_in, L2_q_a[12]_clock_0, , , );
+L2_q_a[12]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[12]_PORT_A_address_reg = DFFE(L2_q_a[12]_PORT_A_address, L2_q_a[12]_clock_0, , , );
+L2_q_a[12]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[12]_PORT_B_address_reg = DFFE(L2_q_a[12]_PORT_B_address, L2_q_a[12]_clock_0, , , );
+L2_q_a[12]_PORT_A_write_enable = F1L04;
+L2_q_a[12]_PORT_A_write_enable_reg = DFFE(L2_q_a[12]_PORT_A_write_enable, L2_q_a[12]_clock_0, , , );
+L2_q_a[12]_clock_0 = H1__clk0;
+L2_q_a[12]_PORT_A_data_out = MEMORY(L2_q_a[12]_PORT_A_data_in_reg, , L2_q_a[12]_PORT_A_address_reg, L2_q_a[12]_PORT_B_address_reg, L2_q_a[12]_PORT_A_write_enable_reg, , , , L2_q_a[12]_clock_0, , , , , );
+L2_q_a[12] = L2_q_a[12]_PORT_A_data_out[0];
+
+
+--L1_q_a[12] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[12]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[12]_PORT_A_data_in = G1_bufferData[12];
+L1_q_a[12]_PORT_A_data_in_reg = DFFE(L1_q_a[12]_PORT_A_data_in, L1_q_a[12]_clock_0, , , );
+L1_q_a[12]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[12]_PORT_A_address_reg = DFFE(L1_q_a[12]_PORT_A_address, L1_q_a[12]_clock_0, , , );
+L1_q_a[12]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[12]_PORT_B_address_reg = DFFE(L1_q_a[12]_PORT_B_address, L1_q_a[12]_clock_0, , , );
+L1_q_a[12]_PORT_A_write_enable = F1L93;
+L1_q_a[12]_PORT_A_write_enable_reg = DFFE(L1_q_a[12]_PORT_A_write_enable, L1_q_a[12]_clock_0, , , );
+L1_q_a[12]_clock_0 = H1__clk0;
+L1_q_a[12]_PORT_A_data_out = MEMORY(L1_q_a[12]_PORT_A_data_in_reg, , L1_q_a[12]_PORT_A_address_reg, L1_q_a[12]_PORT_B_address_reg, L1_q_a[12]_PORT_A_write_enable_reg, , , , L1_q_a[12]_clock_0, , , , , );
+L1_q_a[12] = L1_q_a[12]_PORT_A_data_out[0];
+
+
+--F1L63 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[12]~138
+F1L63 = F1_bufferSel & L2_q_a[12] # !F1_bufferSel & (L1_q_a[12]);
+
+
+--L2_q_a[13] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[13]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[13]_PORT_A_data_in = G1_bufferData[13];
+L2_q_a[13]_PORT_A_data_in_reg = DFFE(L2_q_a[13]_PORT_A_data_in, L2_q_a[13]_clock_0, , , );
+L2_q_a[13]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[13]_PORT_A_address_reg = DFFE(L2_q_a[13]_PORT_A_address, L2_q_a[13]_clock_0, , , );
+L2_q_a[13]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[13]_PORT_B_address_reg = DFFE(L2_q_a[13]_PORT_B_address, L2_q_a[13]_clock_0, , , );
+L2_q_a[13]_PORT_A_write_enable = F1L04;
+L2_q_a[13]_PORT_A_write_enable_reg = DFFE(L2_q_a[13]_PORT_A_write_enable, L2_q_a[13]_clock_0, , , );
+L2_q_a[13]_clock_0 = H1__clk0;
+L2_q_a[13]_PORT_A_data_out = MEMORY(L2_q_a[13]_PORT_A_data_in_reg, , L2_q_a[13]_PORT_A_address_reg, L2_q_a[13]_PORT_B_address_reg, L2_q_a[13]_PORT_A_write_enable_reg, , , , L2_q_a[13]_clock_0, , , , , );
+L2_q_a[13] = L2_q_a[13]_PORT_A_data_out[0];
+
+
+--L1_q_a[13] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[13]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[13]_PORT_A_data_in = G1_bufferData[13];
+L1_q_a[13]_PORT_A_data_in_reg = DFFE(L1_q_a[13]_PORT_A_data_in, L1_q_a[13]_clock_0, , , );
+L1_q_a[13]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[13]_PORT_A_address_reg = DFFE(L1_q_a[13]_PORT_A_address, L1_q_a[13]_clock_0, , , );
+L1_q_a[13]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[13]_PORT_B_address_reg = DFFE(L1_q_a[13]_PORT_B_address, L1_q_a[13]_clock_0, , , );
+L1_q_a[13]_PORT_A_write_enable = F1L93;
+L1_q_a[13]_PORT_A_write_enable_reg = DFFE(L1_q_a[13]_PORT_A_write_enable, L1_q_a[13]_clock_0, , , );
+L1_q_a[13]_clock_0 = H1__clk0;
+L1_q_a[13]_PORT_A_data_out = MEMORY(L1_q_a[13]_PORT_A_data_in_reg, , L1_q_a[13]_PORT_A_address_reg, L1_q_a[13]_PORT_B_address_reg, L1_q_a[13]_PORT_A_write_enable_reg, , , , L1_q_a[13]_clock_0, , , , , );
+L1_q_a[13] = L1_q_a[13]_PORT_A_data_out[0];
+
+
+--F1L73 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[13]~139
+F1L73 = F1_bufferSel & L2_q_a[13] # !F1_bufferSel & (L1_q_a[13]);
+
+
+--L2_q_a[14] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[14]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[14]_PORT_A_data_in = G1_bufferData[14];
+L2_q_a[14]_PORT_A_data_in_reg = DFFE(L2_q_a[14]_PORT_A_data_in, L2_q_a[14]_clock_0, , , );
+L2_q_a[14]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[14]_PORT_A_address_reg = DFFE(L2_q_a[14]_PORT_A_address, L2_q_a[14]_clock_0, , , );
+L2_q_a[14]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[14]_PORT_B_address_reg = DFFE(L2_q_a[14]_PORT_B_address, L2_q_a[14]_clock_0, , , );
+L2_q_a[14]_PORT_A_write_enable = F1L04;
+L2_q_a[14]_PORT_A_write_enable_reg = DFFE(L2_q_a[14]_PORT_A_write_enable, L2_q_a[14]_clock_0, , , );
+L2_q_a[14]_clock_0 = H1__clk0;
+L2_q_a[14]_PORT_A_data_out = MEMORY(L2_q_a[14]_PORT_A_data_in_reg, , L2_q_a[14]_PORT_A_address_reg, L2_q_a[14]_PORT_B_address_reg, L2_q_a[14]_PORT_A_write_enable_reg, , , , L2_q_a[14]_clock_0, , , , , );
+L2_q_a[14] = L2_q_a[14]_PORT_A_data_out[0];
+
+
+--L1_q_a[14] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[14]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[14]_PORT_A_data_in = G1_bufferData[14];
+L1_q_a[14]_PORT_A_data_in_reg = DFFE(L1_q_a[14]_PORT_A_data_in, L1_q_a[14]_clock_0, , , );
+L1_q_a[14]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[14]_PORT_A_address_reg = DFFE(L1_q_a[14]_PORT_A_address, L1_q_a[14]_clock_0, , , );
+L1_q_a[14]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[14]_PORT_B_address_reg = DFFE(L1_q_a[14]_PORT_B_address, L1_q_a[14]_clock_0, , , );
+L1_q_a[14]_PORT_A_write_enable = F1L93;
+L1_q_a[14]_PORT_A_write_enable_reg = DFFE(L1_q_a[14]_PORT_A_write_enable, L1_q_a[14]_clock_0, , , );
+L1_q_a[14]_clock_0 = H1__clk0;
+L1_q_a[14]_PORT_A_data_out = MEMORY(L1_q_a[14]_PORT_A_data_in_reg, , L1_q_a[14]_PORT_A_address_reg, L1_q_a[14]_PORT_B_address_reg, L1_q_a[14]_PORT_A_write_enable_reg, , , , L1_q_a[14]_clock_0, , , , , );
+L1_q_a[14] = L1_q_a[14]_PORT_A_data_out[0];
+
+
+--F1L83 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[14]~140
+F1L83 = F1_bufferSel & L2_q_a[14] # !F1_bufferSel & (L1_q_a[14]);
+
+
+--L2_q_a[5] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[5]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[5]_PORT_A_data_in = G1_bufferData[5];
+L2_q_a[5]_PORT_A_data_in_reg = DFFE(L2_q_a[5]_PORT_A_data_in, L2_q_a[5]_clock_0, , , );
+L2_q_a[5]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[5]_PORT_A_address_reg = DFFE(L2_q_a[5]_PORT_A_address, L2_q_a[5]_clock_0, , , );
+L2_q_a[5]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[5]_PORT_B_address_reg = DFFE(L2_q_a[5]_PORT_B_address, L2_q_a[5]_clock_0, , , );
+L2_q_a[5]_PORT_A_write_enable = F1L04;
+L2_q_a[5]_PORT_A_write_enable_reg = DFFE(L2_q_a[5]_PORT_A_write_enable, L2_q_a[5]_clock_0, , , );
+L2_q_a[5]_clock_0 = H1__clk0;
+L2_q_a[5]_PORT_A_data_out = MEMORY(L2_q_a[5]_PORT_A_data_in_reg, , L2_q_a[5]_PORT_A_address_reg, L2_q_a[5]_PORT_B_address_reg, L2_q_a[5]_PORT_A_write_enable_reg, , , , L2_q_a[5]_clock_0, , , , , );
+L2_q_a[5] = L2_q_a[5]_PORT_A_data_out[0];
+
+
+--L1_q_a[5] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[5]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[5]_PORT_A_data_in = G1_bufferData[5];
+L1_q_a[5]_PORT_A_data_in_reg = DFFE(L1_q_a[5]_PORT_A_data_in, L1_q_a[5]_clock_0, , , );
+L1_q_a[5]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[5]_PORT_A_address_reg = DFFE(L1_q_a[5]_PORT_A_address, L1_q_a[5]_clock_0, , , );
+L1_q_a[5]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[5]_PORT_B_address_reg = DFFE(L1_q_a[5]_PORT_B_address, L1_q_a[5]_clock_0, , , );
+L1_q_a[5]_PORT_A_write_enable = F1L93;
+L1_q_a[5]_PORT_A_write_enable_reg = DFFE(L1_q_a[5]_PORT_A_write_enable, L1_q_a[5]_clock_0, , , );
+L1_q_a[5]_clock_0 = H1__clk0;
+L1_q_a[5]_PORT_A_data_out = MEMORY(L1_q_a[5]_PORT_A_data_in_reg, , L1_q_a[5]_PORT_A_address_reg, L1_q_a[5]_PORT_B_address_reg, L1_q_a[5]_PORT_A_write_enable_reg, , , , L1_q_a[5]_clock_0, , , , , );
+L1_q_a[5] = L1_q_a[5]_PORT_A_data_out[0];
+
+
+--F1L92 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[5]~141
+F1L92 = F1_bufferSel & L2_q_a[5] # !F1_bufferSel & (L1_q_a[5]);
+
+
+--L2_q_a[6] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[6]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[6]_PORT_A_data_in = G1_bufferData[6];
+L2_q_a[6]_PORT_A_data_in_reg = DFFE(L2_q_a[6]_PORT_A_data_in, L2_q_a[6]_clock_0, , , );
+L2_q_a[6]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[6]_PORT_A_address_reg = DFFE(L2_q_a[6]_PORT_A_address, L2_q_a[6]_clock_0, , , );
+L2_q_a[6]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[6]_PORT_B_address_reg = DFFE(L2_q_a[6]_PORT_B_address, L2_q_a[6]_clock_0, , , );
+L2_q_a[6]_PORT_A_write_enable = F1L04;
+L2_q_a[6]_PORT_A_write_enable_reg = DFFE(L2_q_a[6]_PORT_A_write_enable, L2_q_a[6]_clock_0, , , );
+L2_q_a[6]_clock_0 = H1__clk0;
+L2_q_a[6]_PORT_A_data_out = MEMORY(L2_q_a[6]_PORT_A_data_in_reg, , L2_q_a[6]_PORT_A_address_reg, L2_q_a[6]_PORT_B_address_reg, L2_q_a[6]_PORT_A_write_enable_reg, , , , L2_q_a[6]_clock_0, , , , , );
+L2_q_a[6] = L2_q_a[6]_PORT_A_data_out[0];
+
+
+--L1_q_a[6] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[6]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[6]_PORT_A_data_in = G1_bufferData[6];
+L1_q_a[6]_PORT_A_data_in_reg = DFFE(L1_q_a[6]_PORT_A_data_in, L1_q_a[6]_clock_0, , , );
+L1_q_a[6]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[6]_PORT_A_address_reg = DFFE(L1_q_a[6]_PORT_A_address, L1_q_a[6]_clock_0, , , );
+L1_q_a[6]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[6]_PORT_B_address_reg = DFFE(L1_q_a[6]_PORT_B_address, L1_q_a[6]_clock_0, , , );
+L1_q_a[6]_PORT_A_write_enable = F1L93;
+L1_q_a[6]_PORT_A_write_enable_reg = DFFE(L1_q_a[6]_PORT_A_write_enable, L1_q_a[6]_clock_0, , , );
+L1_q_a[6]_clock_0 = H1__clk0;
+L1_q_a[6]_PORT_A_data_out = MEMORY(L1_q_a[6]_PORT_A_data_in_reg, , L1_q_a[6]_PORT_A_address_reg, L1_q_a[6]_PORT_B_address_reg, L1_q_a[6]_PORT_A_write_enable_reg, , , , L1_q_a[6]_clock_0, , , , , );
+L1_q_a[6] = L1_q_a[6]_PORT_A_data_out[0];
+
+
+--F1L03 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[6]~142
+F1L03 = F1_bufferSel & L2_q_a[6] # !F1_bufferSel & (L1_q_a[6]);
+
+
+--L2_q_a[7] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[7]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[7]_PORT_A_data_in = G1_bufferData[7];
+L2_q_a[7]_PORT_A_data_in_reg = DFFE(L2_q_a[7]_PORT_A_data_in, L2_q_a[7]_clock_0, , , );
+L2_q_a[7]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[7]_PORT_A_address_reg = DFFE(L2_q_a[7]_PORT_A_address, L2_q_a[7]_clock_0, , , );
+L2_q_a[7]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[7]_PORT_B_address_reg = DFFE(L2_q_a[7]_PORT_B_address, L2_q_a[7]_clock_0, , , );
+L2_q_a[7]_PORT_A_write_enable = F1L04;
+L2_q_a[7]_PORT_A_write_enable_reg = DFFE(L2_q_a[7]_PORT_A_write_enable, L2_q_a[7]_clock_0, , , );
+L2_q_a[7]_clock_0 = H1__clk0;
+L2_q_a[7]_PORT_A_data_out = MEMORY(L2_q_a[7]_PORT_A_data_in_reg, , L2_q_a[7]_PORT_A_address_reg, L2_q_a[7]_PORT_B_address_reg, L2_q_a[7]_PORT_A_write_enable_reg, , , , L2_q_a[7]_clock_0, , , , , );
+L2_q_a[7] = L2_q_a[7]_PORT_A_data_out[0];
+
+
+--L1_q_a[7] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[7]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[7]_PORT_A_data_in = G1_bufferData[7];
+L1_q_a[7]_PORT_A_data_in_reg = DFFE(L1_q_a[7]_PORT_A_data_in, L1_q_a[7]_clock_0, , , );
+L1_q_a[7]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[7]_PORT_A_address_reg = DFFE(L1_q_a[7]_PORT_A_address, L1_q_a[7]_clock_0, , , );
+L1_q_a[7]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[7]_PORT_B_address_reg = DFFE(L1_q_a[7]_PORT_B_address, L1_q_a[7]_clock_0, , , );
+L1_q_a[7]_PORT_A_write_enable = F1L93;
+L1_q_a[7]_PORT_A_write_enable_reg = DFFE(L1_q_a[7]_PORT_A_write_enable, L1_q_a[7]_clock_0, , , );
+L1_q_a[7]_clock_0 = H1__clk0;
+L1_q_a[7]_PORT_A_data_out = MEMORY(L1_q_a[7]_PORT_A_data_in_reg, , L1_q_a[7]_PORT_A_address_reg, L1_q_a[7]_PORT_B_address_reg, L1_q_a[7]_PORT_A_write_enable_reg, , , , L1_q_a[7]_clock_0, , , , , );
+L1_q_a[7] = L1_q_a[7]_PORT_A_data_out[0];
+
+
+--F1L13 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[7]~143
+F1L13 = F1_bufferSel & L2_q_a[7] # !F1_bufferSel & (L1_q_a[7]);
+
+
+--L2_q_a[8] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[8]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[8]_PORT_A_data_in = G1_bufferData[8];
+L2_q_a[8]_PORT_A_data_in_reg = DFFE(L2_q_a[8]_PORT_A_data_in, L2_q_a[8]_clock_0, , , );
+L2_q_a[8]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[8]_PORT_A_address_reg = DFFE(L2_q_a[8]_PORT_A_address, L2_q_a[8]_clock_0, , , );
+L2_q_a[8]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[8]_PORT_B_address_reg = DFFE(L2_q_a[8]_PORT_B_address, L2_q_a[8]_clock_0, , , );
+L2_q_a[8]_PORT_A_write_enable = F1L04;
+L2_q_a[8]_PORT_A_write_enable_reg = DFFE(L2_q_a[8]_PORT_A_write_enable, L2_q_a[8]_clock_0, , , );
+L2_q_a[8]_clock_0 = H1__clk0;
+L2_q_a[8]_PORT_A_data_out = MEMORY(L2_q_a[8]_PORT_A_data_in_reg, , L2_q_a[8]_PORT_A_address_reg, L2_q_a[8]_PORT_B_address_reg, L2_q_a[8]_PORT_A_write_enable_reg, , , , L2_q_a[8]_clock_0, , , , , );
+L2_q_a[8] = L2_q_a[8]_PORT_A_data_out[0];
+
+
+--L1_q_a[8] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[8]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[8]_PORT_A_data_in = G1_bufferData[8];
+L1_q_a[8]_PORT_A_data_in_reg = DFFE(L1_q_a[8]_PORT_A_data_in, L1_q_a[8]_clock_0, , , );
+L1_q_a[8]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[8]_PORT_A_address_reg = DFFE(L1_q_a[8]_PORT_A_address, L1_q_a[8]_clock_0, , , );
+L1_q_a[8]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[8]_PORT_B_address_reg = DFFE(L1_q_a[8]_PORT_B_address, L1_q_a[8]_clock_0, , , );
+L1_q_a[8]_PORT_A_write_enable = F1L93;
+L1_q_a[8]_PORT_A_write_enable_reg = DFFE(L1_q_a[8]_PORT_A_write_enable, L1_q_a[8]_clock_0, , , );
+L1_q_a[8]_clock_0 = H1__clk0;
+L1_q_a[8]_PORT_A_data_out = MEMORY(L1_q_a[8]_PORT_A_data_in_reg, , L1_q_a[8]_PORT_A_address_reg, L1_q_a[8]_PORT_B_address_reg, L1_q_a[8]_PORT_A_write_enable_reg, , , , L1_q_a[8]_clock_0, , , , , );
+L1_q_a[8] = L1_q_a[8]_PORT_A_data_out[0];
+
+
+--F1L23 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[8]~144
+F1L23 = F1_bufferSel & L2_q_a[8] # !F1_bufferSel & (L1_q_a[8]);
+
+
+--L2_q_a[9] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[9]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[9]_PORT_A_data_in = G1_bufferData[9];
+L2_q_a[9]_PORT_A_data_in_reg = DFFE(L2_q_a[9]_PORT_A_data_in, L2_q_a[9]_clock_0, , , );
+L2_q_a[9]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[9]_PORT_A_address_reg = DFFE(L2_q_a[9]_PORT_A_address, L2_q_a[9]_clock_0, , , );
+L2_q_a[9]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[9]_PORT_B_address_reg = DFFE(L2_q_a[9]_PORT_B_address, L2_q_a[9]_clock_0, , , );
+L2_q_a[9]_PORT_A_write_enable = F1L04;
+L2_q_a[9]_PORT_A_write_enable_reg = DFFE(L2_q_a[9]_PORT_A_write_enable, L2_q_a[9]_clock_0, , , );
+L2_q_a[9]_clock_0 = H1__clk0;
+L2_q_a[9]_PORT_A_data_out = MEMORY(L2_q_a[9]_PORT_A_data_in_reg, , L2_q_a[9]_PORT_A_address_reg, L2_q_a[9]_PORT_B_address_reg, L2_q_a[9]_PORT_A_write_enable_reg, , , , L2_q_a[9]_clock_0, , , , , );
+L2_q_a[9] = L2_q_a[9]_PORT_A_data_out[0];
+
+
+--L1_q_a[9] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[9]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[9]_PORT_A_data_in = G1_bufferData[9];
+L1_q_a[9]_PORT_A_data_in_reg = DFFE(L1_q_a[9]_PORT_A_data_in, L1_q_a[9]_clock_0, , , );
+L1_q_a[9]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[9]_PORT_A_address_reg = DFFE(L1_q_a[9]_PORT_A_address, L1_q_a[9]_clock_0, , , );
+L1_q_a[9]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[9]_PORT_B_address_reg = DFFE(L1_q_a[9]_PORT_B_address, L1_q_a[9]_clock_0, , , );
+L1_q_a[9]_PORT_A_write_enable = F1L93;
+L1_q_a[9]_PORT_A_write_enable_reg = DFFE(L1_q_a[9]_PORT_A_write_enable, L1_q_a[9]_clock_0, , , );
+L1_q_a[9]_clock_0 = H1__clk0;
+L1_q_a[9]_PORT_A_data_out = MEMORY(L1_q_a[9]_PORT_A_data_in_reg, , L1_q_a[9]_PORT_A_address_reg, L1_q_a[9]_PORT_B_address_reg, L1_q_a[9]_PORT_A_write_enable_reg, , , , L1_q_a[9]_clock_0, , , , , );
+L1_q_a[9] = L1_q_a[9]_PORT_A_data_out[0];
+
+
+--F1L33 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[9]~145
+F1L33 = F1_bufferSel & L2_q_a[9] # !F1_bufferSel & (L1_q_a[9]);
+
+
+--L2_q_a[0] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[0]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[0]_PORT_A_data_in = G1_bufferData[0];
+L2_q_a[0]_PORT_A_data_in_reg = DFFE(L2_q_a[0]_PORT_A_data_in, L2_q_a[0]_clock_0, , , );
+L2_q_a[0]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[0]_PORT_A_address_reg = DFFE(L2_q_a[0]_PORT_A_address, L2_q_a[0]_clock_0, , , );
+L2_q_a[0]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[0]_PORT_B_address_reg = DFFE(L2_q_a[0]_PORT_B_address, L2_q_a[0]_clock_0, , , );
+L2_q_a[0]_PORT_A_write_enable = F1L04;
+L2_q_a[0]_PORT_A_write_enable_reg = DFFE(L2_q_a[0]_PORT_A_write_enable, L2_q_a[0]_clock_0, , , );
+L2_q_a[0]_clock_0 = H1__clk0;
+L2_q_a[0]_PORT_A_data_out = MEMORY(L2_q_a[0]_PORT_A_data_in_reg, , L2_q_a[0]_PORT_A_address_reg, L2_q_a[0]_PORT_B_address_reg, L2_q_a[0]_PORT_A_write_enable_reg, , , , L2_q_a[0]_clock_0, , , , , );
+L2_q_a[0] = L2_q_a[0]_PORT_A_data_out[0];
+
+
+--L1_q_a[0] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[0]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[0]_PORT_A_data_in = G1_bufferData[0];
+L1_q_a[0]_PORT_A_data_in_reg = DFFE(L1_q_a[0]_PORT_A_data_in, L1_q_a[0]_clock_0, , , );
+L1_q_a[0]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[0]_PORT_A_address_reg = DFFE(L1_q_a[0]_PORT_A_address, L1_q_a[0]_clock_0, , , );
+L1_q_a[0]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[0]_PORT_B_address_reg = DFFE(L1_q_a[0]_PORT_B_address, L1_q_a[0]_clock_0, , , );
+L1_q_a[0]_PORT_A_write_enable = F1L93;
+L1_q_a[0]_PORT_A_write_enable_reg = DFFE(L1_q_a[0]_PORT_A_write_enable, L1_q_a[0]_clock_0, , , );
+L1_q_a[0]_clock_0 = H1__clk0;
+L1_q_a[0]_PORT_A_data_out = MEMORY(L1_q_a[0]_PORT_A_data_in_reg, , L1_q_a[0]_PORT_A_address_reg, L1_q_a[0]_PORT_B_address_reg, L1_q_a[0]_PORT_A_write_enable_reg, , , , L1_q_a[0]_clock_0, , , , , );
+L1_q_a[0] = L1_q_a[0]_PORT_A_data_out[0];
+
+
+--F1L42 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[0]~146
+F1L42 = F1_bufferSel & L2_q_a[0] # !F1_bufferSel & (L1_q_a[0]);
+
+
+--L2_q_a[1] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[1]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[1]_PORT_A_data_in = G1_bufferData[1];
+L2_q_a[1]_PORT_A_data_in_reg = DFFE(L2_q_a[1]_PORT_A_data_in, L2_q_a[1]_clock_0, , , );
+L2_q_a[1]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[1]_PORT_A_address_reg = DFFE(L2_q_a[1]_PORT_A_address, L2_q_a[1]_clock_0, , , );
+L2_q_a[1]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[1]_PORT_B_address_reg = DFFE(L2_q_a[1]_PORT_B_address, L2_q_a[1]_clock_0, , , );
+L2_q_a[1]_PORT_A_write_enable = F1L04;
+L2_q_a[1]_PORT_A_write_enable_reg = DFFE(L2_q_a[1]_PORT_A_write_enable, L2_q_a[1]_clock_0, , , );
+L2_q_a[1]_clock_0 = H1__clk0;
+L2_q_a[1]_PORT_A_data_out = MEMORY(L2_q_a[1]_PORT_A_data_in_reg, , L2_q_a[1]_PORT_A_address_reg, L2_q_a[1]_PORT_B_address_reg, L2_q_a[1]_PORT_A_write_enable_reg, , , , L2_q_a[1]_clock_0, , , , , );
+L2_q_a[1] = L2_q_a[1]_PORT_A_data_out[0];
+
+
+--L1_q_a[1] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[1]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[1]_PORT_A_data_in = G1_bufferData[1];
+L1_q_a[1]_PORT_A_data_in_reg = DFFE(L1_q_a[1]_PORT_A_data_in, L1_q_a[1]_clock_0, , , );
+L1_q_a[1]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[1]_PORT_A_address_reg = DFFE(L1_q_a[1]_PORT_A_address, L1_q_a[1]_clock_0, , , );
+L1_q_a[1]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[1]_PORT_B_address_reg = DFFE(L1_q_a[1]_PORT_B_address, L1_q_a[1]_clock_0, , , );
+L1_q_a[1]_PORT_A_write_enable = F1L93;
+L1_q_a[1]_PORT_A_write_enable_reg = DFFE(L1_q_a[1]_PORT_A_write_enable, L1_q_a[1]_clock_0, , , );
+L1_q_a[1]_clock_0 = H1__clk0;
+L1_q_a[1]_PORT_A_data_out = MEMORY(L1_q_a[1]_PORT_A_data_in_reg, , L1_q_a[1]_PORT_A_address_reg, L1_q_a[1]_PORT_B_address_reg, L1_q_a[1]_PORT_A_write_enable_reg, , , , L1_q_a[1]_clock_0, , , , , );
+L1_q_a[1] = L1_q_a[1]_PORT_A_data_out[0];
+
+
+--F1L52 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[1]~147
+F1L52 = F1_bufferSel & L2_q_a[1] # !F1_bufferSel & (L1_q_a[1]);
+
+
+--L2_q_a[2] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[2]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[2]_PORT_A_data_in = G1_bufferData[2];
+L2_q_a[2]_PORT_A_data_in_reg = DFFE(L2_q_a[2]_PORT_A_data_in, L2_q_a[2]_clock_0, , , );
+L2_q_a[2]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[2]_PORT_A_address_reg = DFFE(L2_q_a[2]_PORT_A_address, L2_q_a[2]_clock_0, , , );
+L2_q_a[2]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[2]_PORT_B_address_reg = DFFE(L2_q_a[2]_PORT_B_address, L2_q_a[2]_clock_0, , , );
+L2_q_a[2]_PORT_A_write_enable = F1L04;
+L2_q_a[2]_PORT_A_write_enable_reg = DFFE(L2_q_a[2]_PORT_A_write_enable, L2_q_a[2]_clock_0, , , );
+L2_q_a[2]_clock_0 = H1__clk0;
+L2_q_a[2]_PORT_A_data_out = MEMORY(L2_q_a[2]_PORT_A_data_in_reg, , L2_q_a[2]_PORT_A_address_reg, L2_q_a[2]_PORT_B_address_reg, L2_q_a[2]_PORT_A_write_enable_reg, , , , L2_q_a[2]_clock_0, , , , , );
+L2_q_a[2] = L2_q_a[2]_PORT_A_data_out[0];
+
+
+--L1_q_a[2] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[2]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[2]_PORT_A_data_in = G1_bufferData[2];
+L1_q_a[2]_PORT_A_data_in_reg = DFFE(L1_q_a[2]_PORT_A_data_in, L1_q_a[2]_clock_0, , , );
+L1_q_a[2]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[2]_PORT_A_address_reg = DFFE(L1_q_a[2]_PORT_A_address, L1_q_a[2]_clock_0, , , );
+L1_q_a[2]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[2]_PORT_B_address_reg = DFFE(L1_q_a[2]_PORT_B_address, L1_q_a[2]_clock_0, , , );
+L1_q_a[2]_PORT_A_write_enable = F1L93;
+L1_q_a[2]_PORT_A_write_enable_reg = DFFE(L1_q_a[2]_PORT_A_write_enable, L1_q_a[2]_clock_0, , , );
+L1_q_a[2]_clock_0 = H1__clk0;
+L1_q_a[2]_PORT_A_data_out = MEMORY(L1_q_a[2]_PORT_A_data_in_reg, , L1_q_a[2]_PORT_A_address_reg, L1_q_a[2]_PORT_B_address_reg, L1_q_a[2]_PORT_A_write_enable_reg, , , , L1_q_a[2]_clock_0, , , , , );
+L1_q_a[2] = L1_q_a[2]_PORT_A_data_out[0];
+
+
+--F1L62 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[2]~148
+F1L62 = F1_bufferSel & L2_q_a[2] # !F1_bufferSel & (L1_q_a[2]);
+
+
+--L2_q_a[3] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[3]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[3]_PORT_A_data_in = G1_bufferData[3];
+L2_q_a[3]_PORT_A_data_in_reg = DFFE(L2_q_a[3]_PORT_A_data_in, L2_q_a[3]_clock_0, , , );
+L2_q_a[3]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[3]_PORT_A_address_reg = DFFE(L2_q_a[3]_PORT_A_address, L2_q_a[3]_clock_0, , , );
+L2_q_a[3]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[3]_PORT_B_address_reg = DFFE(L2_q_a[3]_PORT_B_address, L2_q_a[3]_clock_0, , , );
+L2_q_a[3]_PORT_A_write_enable = F1L04;
+L2_q_a[3]_PORT_A_write_enable_reg = DFFE(L2_q_a[3]_PORT_A_write_enable, L2_q_a[3]_clock_0, , , );
+L2_q_a[3]_clock_0 = H1__clk0;
+L2_q_a[3]_PORT_A_data_out = MEMORY(L2_q_a[3]_PORT_A_data_in_reg, , L2_q_a[3]_PORT_A_address_reg, L2_q_a[3]_PORT_B_address_reg, L2_q_a[3]_PORT_A_write_enable_reg, , , , L2_q_a[3]_clock_0, , , , , );
+L2_q_a[3] = L2_q_a[3]_PORT_A_data_out[0];
+
+
+--L1_q_a[3] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[3]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[3]_PORT_A_data_in = G1_bufferData[3];
+L1_q_a[3]_PORT_A_data_in_reg = DFFE(L1_q_a[3]_PORT_A_data_in, L1_q_a[3]_clock_0, , , );
+L1_q_a[3]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[3]_PORT_A_address_reg = DFFE(L1_q_a[3]_PORT_A_address, L1_q_a[3]_clock_0, , , );
+L1_q_a[3]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[3]_PORT_B_address_reg = DFFE(L1_q_a[3]_PORT_B_address, L1_q_a[3]_clock_0, , , );
+L1_q_a[3]_PORT_A_write_enable = F1L93;
+L1_q_a[3]_PORT_A_write_enable_reg = DFFE(L1_q_a[3]_PORT_A_write_enable, L1_q_a[3]_clock_0, , , );
+L1_q_a[3]_clock_0 = H1__clk0;
+L1_q_a[3]_PORT_A_data_out = MEMORY(L1_q_a[3]_PORT_A_data_in_reg, , L1_q_a[3]_PORT_A_address_reg, L1_q_a[3]_PORT_B_address_reg, L1_q_a[3]_PORT_A_write_enable_reg, , , , L1_q_a[3]_clock_0, , , , , );
+L1_q_a[3] = L1_q_a[3]_PORT_A_data_out[0];
+
+
+--F1L72 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[3]~149
+F1L72 = F1_bufferSel & L2_q_a[3] # !F1_bufferSel & (L1_q_a[3]);
+
+
+--L2_q_a[4] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_91|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[4]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L2_q_a[4]_PORT_A_data_in = G1_bufferData[4];
+L2_q_a[4]_PORT_A_data_in_reg = DFFE(L2_q_a[4]_PORT_A_data_in, L2_q_a[4]_clock_0, , , );
+L2_q_a[4]_PORT_A_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[4]_PORT_A_address_reg = DFFE(L2_q_a[4]_PORT_A_address, L2_q_a[4]_clock_0, , , );
+L2_q_a[4]_PORT_B_address = BUS(F1L41, F1L51, F1L61, F1L71, F1L81, F1L91, F1L02, F1L12, F1L22, F1L32);
+L2_q_a[4]_PORT_B_address_reg = DFFE(L2_q_a[4]_PORT_B_address, L2_q_a[4]_clock_0, , , );
+L2_q_a[4]_PORT_A_write_enable = F1L04;
+L2_q_a[4]_PORT_A_write_enable_reg = DFFE(L2_q_a[4]_PORT_A_write_enable, L2_q_a[4]_clock_0, , , );
+L2_q_a[4]_clock_0 = H1__clk0;
+L2_q_a[4]_PORT_A_data_out = MEMORY(L2_q_a[4]_PORT_A_data_in_reg, , L2_q_a[4]_PORT_A_address_reg, L2_q_a[4]_PORT_B_address_reg, L2_q_a[4]_PORT_A_write_enable_reg, , , , L2_q_a[4]_clock_0, , , , , );
+L2_q_a[4] = L2_q_a[4]_PORT_A_data_out[0];
+
+
+--L1_q_a[4] is VgaAdapter:comb_718|LineBuffer:comb_16|LineBufferRam:comb_90|altsyncram:altsyncram_component|altsyncram_6251:auto_generated|q_a[4]
+--RAM Block Operation Mode: Single Port
+--Port A Depth: 1024, Port A Width: 1
+--Port A Logical Depth: 1024, Port A Logical Width: 16
+--Port A Input: Registered, Port A Output: Un-registered
+L1_q_a[4]_PORT_A_data_in = G1_bufferData[4];
+L1_q_a[4]_PORT_A_data_in_reg = DFFE(L1_q_a[4]_PORT_A_data_in, L1_q_a[4]_clock_0, , , );
+L1_q_a[4]_PORT_A_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[4]_PORT_A_address_reg = DFFE(L1_q_a[4]_PORT_A_address, L1_q_a[4]_clock_0, , , );
+L1_q_a[4]_PORT_B_address = BUS(F1L4, F1L5, F1L6, F1L7, F1L8, F1L9, F1L01, F1L11, F1L21, F1L31);
+L1_q_a[4]_PORT_B_address_reg = DFFE(L1_q_a[4]_PORT_B_address, L1_q_a[4]_clock_0, , , );
+L1_q_a[4]_PORT_A_write_enable = F1L93;
+L1_q_a[4]_PORT_A_write_enable_reg = DFFE(L1_q_a[4]_PORT_A_write_enable, L1_q_a[4]_clock_0, , , );
+L1_q_a[4]_clock_0 = H1__clk0;
+L1_q_a[4]_PORT_A_data_out = MEMORY(L1_q_a[4]_PORT_A_data_in_reg, , L1_q_a[4]_PORT_A_address_reg, L1_q_a[4]_PORT_B_address_reg, L1_q_a[4]_PORT_A_write_enable_reg, , , , L1_q_a[4]_clock_0, , , , , );
+L1_q_a[4] = L1_q_a[4]_PORT_A_data_out[0];
+
+
+--F1L82 is VgaAdapter:comb_718|LineBuffer:comb_16|readData[4]~150
+F1L82 = F1_bufferSel & L2_q_a[4] # !F1_bufferSel & (L1_q_a[4]);
+
+
+--C1L5 is DisplayExample:comb_720|add~468
+C1L5 = C1_x[0] $ VCC;
+
+--C1L6 is DisplayExample:comb_720|add~469
+C1L6 = CARRY(C1_x[0]);
+
+
+--C1L7 is DisplayExample:comb_720|add~470
+C1L7 = C1_x[1] & !C1L6 # !C1_x[1] & (C1L6 # GND);
+
+--C1L8 is DisplayExample:comb_720|add~471
+C1L8 = CARRY(!C1L6 # !C1_x[1]);
+
+
+--C1L9 is DisplayExample:comb_720|add~472
+C1L9 = C1_x[2] & (C1L8 $ GND) # !C1_x[2] & !C1L8 & VCC;
+
+--C1L01 is DisplayExample:comb_720|add~473
+C1L01 = CARRY(C1_x[2] & !C1L8);
+
+
+--C1L11 is DisplayExample:comb_720|add~474
+C1L11 = C1_x[3] & !C1L01 # !C1_x[3] & (C1L01 # GND);
+
+--C1L21 is DisplayExample:comb_720|add~475
+C1L21 = CARRY(!C1L01 # !C1_x[3]);
+
+
+--C1L31 is DisplayExample:comb_720|add~476
+C1L31 = C1_x[4] & (C1L21 $ GND) # !C1_x[4] & !C1L21 & VCC;
+
+--C1L41 is DisplayExample:comb_720|add~477
+C1L41 = CARRY(C1_x[4] & !C1L21);
+
+
+--C1L51 is DisplayExample:comb_720|add~478
+C1L51 = C1_x[5] & !C1L41 # !C1_x[5] & (C1L41 # GND);
+
+--C1L61 is DisplayExample:comb_720|add~479
+C1L61 = CARRY(!C1L41 # !C1_x[5]);
+
+
+--C1L71 is DisplayExample:comb_720|add~480
+C1L71 = C1_x[6] & (C1L61 $ GND) # !C1_x[6] & !C1L61 & VCC;
+
+--C1L81 is DisplayExample:comb_720|add~481
+C1L81 = CARRY(C1_x[6] & !C1L61);
+
+
+--C1L91 is DisplayExample:comb_720|add~482
+C1L91 = C1_x[7] & !C1L81 # !C1_x[7] & (C1L81 # GND);
+
+--C1L02 is DisplayExample:comb_720|add~483
+C1L02 = CARRY(!C1L81 # !C1_x[7]);
+
+
+--C1L12 is DisplayExample:comb_720|add~484
+C1L12 = C1_x[8] & (C1L02 $ GND) # !C1_x[8] & !C1L02 & VCC;
+
+--C1L22 is DisplayExample:comb_720|add~485
+C1L22 = CARRY(C1_x[8] & !C1L02);
+
+
+--C1_s.S0 is DisplayExample:comb_720|s.S0
+C1_s.S0 = DFFEAS(C1L1, H1__clk0,  ,  ,  ,  ,  ,  ,  );
+
+
+--G1_counter[0] is VgaAdapter:comb_718|SdRam:comb_47|counter[0]
+G1_counter[0] = DFFEAS(G1L87, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1_counter[1] is VgaAdapter:comb_718|SdRam:comb_47|counter[1]
+G1_counter[1] = DFFEAS(G1L18, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1_counter[2] is VgaAdapter:comb_718|SdRam:comb_47|counter[2]
+G1_counter[2] = DFFEAS(G1L48, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1L561 is VgaAdapter:comb_718|SdRam:comb_47|reduce_nor~82
+G1L561 = G1_counter[0] & G1_counter[1] & G1_counter[2];
+
+
+--G1L351 is VgaAdapter:comb_718|SdRam:comb_47|nextState[2]~2348
+G1L351 = G1L621Q # !G1L421Q & (G1L521Q # G1L561);
+
+
+--G1_bufferFlag is VgaAdapter:comb_718|SdRam:comb_47|bufferFlag
+G1_bufferFlag = DFFEAS(G1L47, H1__clk0,  ,  ,  ,  ,  ,  ,  );
+
+
+--C1_s.S2 is DisplayExample:comb_720|s.S2
+C1_s.S2 = DFFEAS(C1L3, H1__clk0,  ,  ,  ,  ,  ,  ,  );
+
+
+--G1L821 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2349
+G1L821 = !G1_bufferFlag & !C1_s.S2;
+
+
+--G1L451 is VgaAdapter:comb_718|SdRam:comb_47|nextState[2]~2350
+G1L451 = G1L521Q # G1L221Q & G1L821 # !G1L621Q;
+
+
+--G1L461 is VgaAdapter:comb_718|SdRam:comb_47|reduce_nor~10
+G1L461 = G1_counter[8] & G1_counter[9];
+
+
+--G1L551 is VgaAdapter:comb_718|SdRam:comb_47|nextState[2]~2351
+G1L551 = G1L321Q & (!G1L221Q) # !G1L321Q & (G1L451 # G1L461 & !G1L221Q);
+
+
+--G1L651 is VgaAdapter:comb_718|SdRam:comb_47|nextState[2]~2352
+G1L651 = G1L421Q & (G1L551 # G1L33 & G1L351) # !G1L421Q & G1L33 & G1L351;
+
+
+--G1_counter[7] is VgaAdapter:comb_718|SdRam:comb_47|counter[7]
+G1_counter[7] = DFFEAS(G1L99, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1_counter[6] is VgaAdapter:comb_718|SdRam:comb_47|counter[6]
+G1_counter[6] = DFFEAS(G1L69, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1_counter[5] is VgaAdapter:comb_718|SdRam:comb_47|counter[5]
+G1_counter[5] = DFFEAS(G1L39, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1_counter[4] is VgaAdapter:comb_718|SdRam:comb_47|counter[4]
+G1_counter[4] = DFFEAS(G1L09, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1_counter[3] is VgaAdapter:comb_718|SdRam:comb_47|counter[3]
+G1_counter[3] = DFFEAS(G1L78, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1L171 is VgaAdapter:comb_718|SdRam:comb_47|reduce_or~176
+G1L171 = G1L221Q & (G1L421Q $ (!G1L621Q # !G1L321Q)) # !G1L221Q & G1L321Q & G1L421Q & !G1L621Q;
+
+
+--G1L271 is VgaAdapter:comb_718|SdRam:comb_47|reduce_or~177
+G1L271 = G1L171 & !G1L521Q;
+
+
+--G1L87 is VgaAdapter:comb_718|SdRam:comb_47|counter[0]~296
+G1L87 = G1L271 & (G1_counter[0] $ VCC) # !G1L271 & G1_counter[0] & VCC;
+
+--G1L97 is VgaAdapter:comb_718|SdRam:comb_47|counter[0]~297
+G1L97 = CARRY(G1L271 & G1_counter[0]);
+
+
+--G1L18 is VgaAdapter:comb_718|SdRam:comb_47|counter[1]~298
+G1L18 = G1_counter[1] & !G1L97 # !G1_counter[1] & (G1L97 # GND);
+
+--G1L28 is VgaAdapter:comb_718|SdRam:comb_47|counter[1]~299
+G1L28 = CARRY(!G1L97 # !G1_counter[1]);
+
+
+--G1L48 is VgaAdapter:comb_718|SdRam:comb_47|counter[2]~300
+G1L48 = G1_counter[2] & (G1L28 $ GND) # !G1_counter[2] & !G1L28 & VCC;
+
+--G1L58 is VgaAdapter:comb_718|SdRam:comb_47|counter[2]~301
+G1L58 = CARRY(G1_counter[2] & !G1L28);
+
+
+--G1L78 is VgaAdapter:comb_718|SdRam:comb_47|counter[3]~302
+G1L78 = G1_counter[3] & !G1L58 # !G1_counter[3] & (G1L58 # GND);
+
+--G1L88 is VgaAdapter:comb_718|SdRam:comb_47|counter[3]~303
+G1L88 = CARRY(!G1L58 # !G1_counter[3]);
+
+
+--G1L09 is VgaAdapter:comb_718|SdRam:comb_47|counter[4]~304
+G1L09 = G1_counter[4] & (G1L88 $ GND) # !G1_counter[4] & !G1L88 & VCC;
+
+--G1L19 is VgaAdapter:comb_718|SdRam:comb_47|counter[4]~305
+G1L19 = CARRY(G1_counter[4] & !G1L88);
+
+
+--G1L39 is VgaAdapter:comb_718|SdRam:comb_47|counter[5]~306
+G1L39 = G1_counter[5] & !G1L19 # !G1_counter[5] & (G1L19 # GND);
+
+--G1L49 is VgaAdapter:comb_718|SdRam:comb_47|counter[5]~307
+G1L49 = CARRY(!G1L19 # !G1_counter[5]);
+
+
+--G1L69 is VgaAdapter:comb_718|SdRam:comb_47|counter[6]~308
+G1L69 = G1_counter[6] & (G1L49 $ GND) # !G1_counter[6] & !G1L49 & VCC;
+
+--G1L79 is VgaAdapter:comb_718|SdRam:comb_47|counter[6]~309
+G1L79 = CARRY(G1_counter[6] & !G1L49);
+
+
+--G1L99 is VgaAdapter:comb_718|SdRam:comb_47|counter[7]~310
+G1L99 = G1_counter[7] & !G1L79 # !G1_counter[7] & (G1L79 # GND);
+
+--G1L001 is VgaAdapter:comb_718|SdRam:comb_47|counter[7]~311
+G1L001 = CARRY(!G1L79 # !G1_counter[7]);
+
+
+--G1L201 is VgaAdapter:comb_718|SdRam:comb_47|counter[8]~312
+G1L201 = G1_counter[8] & (G1L001 $ GND) # !G1_counter[8] & !G1L001 & VCC;
+
+--G1L301 is VgaAdapter:comb_718|SdRam:comb_47|counter[8]~313
+G1L301 = CARRY(G1_counter[8] & !G1L001);
+
+
+--G1L371 is VgaAdapter:comb_718|SdRam:comb_47|reduce_or~178
+G1L371 = G1L621Q & (G1L521Q # !G1L421Q # !G1L321Q) # !G1L621Q & (G1L321Q & G1L421Q # !G1L321Q & (G1L521Q));
+
+
+--G1L471 is VgaAdapter:comb_718|SdRam:comb_47|reduce_or~179
+G1L471 = !G1L221Q & !G1L371;
+
+
+--G1L161 is VgaAdapter:comb_718|SdRam:comb_47|nextState[4]~2353
+G1L161 = G1L321Q # G1L221Q & (!G1_bufferFlag) # !G1L221Q & G1L461;
+
+
+--G1L261 is VgaAdapter:comb_718|SdRam:comb_47|nextState[4]~2354
+G1L261 = G1L521Q & (G1L621Q # G1L33) # !G1L521Q & G1L621Q & (G1L161);
+
+
+--G1_refreshFlag is VgaAdapter:comb_718|SdRam:comb_47|refreshFlag
+G1_refreshFlag = DFFEAS(G1L212, H1__clk0,  ,  ,  ,  ,  ,  ,  );
+
+
+--G1L921 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2355
+G1L921 = G1L621Q & !G1L521Q;
+
+
+--G1L031 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2356
+G1L031 = G1_bufferFlag # G1_refreshFlag & !C1_s.S2 # !G1L921;
+
+
+--G1L131 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2357
+G1L131 = G1L221Q & G1L031 # !G1L221Q & (G1L921 & !G1L461);
+
+
+--G1L231 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2358
+G1L231 = !G1L521Q & !G1L621Q & !G1L561 # !G1L221Q;
+
+
+--G1_counter[14] is VgaAdapter:comb_718|SdRam:comb_47|counter[14]
+G1_counter[14] = DFFEAS(G1L021, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1L331 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2359
+G1L331 = G1L221Q & G1_counter[3] & !G1_counter[0] & !G1_counter[2];
+
+
+--G1L431 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2360
+G1L431 = G1_counter[9] & !G1L621Q & !G1_counter[8] & !G1_counter[1];
+
+
+--G1L531 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2361
+G1L531 = !G1_counter[4] & !G1_counter[5] & !G1_counter[6] & !G1_counter[7];
+
+
+--G1_counter[12] is VgaAdapter:comb_718|SdRam:comb_47|counter[12]
+G1_counter[12] = DFFEAS(G1L411, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1_counter[10] is VgaAdapter:comb_718|SdRam:comb_47|counter[10]
+G1_counter[10] = DFFEAS(G1L801, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1_counter[11] is VgaAdapter:comb_718|SdRam:comb_47|counter[11]
+G1_counter[11] = DFFEAS(G1L111, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1_counter[13] is VgaAdapter:comb_718|SdRam:comb_47|counter[13]
+G1_counter[13] = DFFEAS(G1L711, H1__clk0,  ,  ,  ,  ,  , G1L471,  );
+
+
+--G1L631 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2362
+G1L631 = G1_counter[12] & !G1_counter[10] & !G1_counter[11] & !G1_counter[13];
+
+
+--G1L731 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2363
+G1L731 = G1L331 & G1L431 & G1L531 & G1L631;
+
+
+--G1L831 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2364
+G1L831 = G1_counter[4] & G1_counter[5] & G1_counter[6] & G1_counter[7];
+
+
+--G1L931 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2365
+G1L931 = G1_counter[3] & G1L561 & G1L831;
+
+
+--G1L041 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2366
+G1L041 = G1L521Q # G1L621Q & G1L931;
+
+
+--G1L141 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2367
+G1L141 = G1L221Q & (G1L041 # G1_counter[14] & G1L731) # !G1L221Q & G1_counter[14] & G1L731;
+
+
+--G1L151 is VgaAdapter:comb_718|SdRam:comb_47|nextState[1]~2368
+G1L151 = G1L421Q & (G1L321Q) # !G1L421Q & (G1L321Q & G1L231 # !G1L321Q & (G1L141));
+
+
+--G1L241 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2369
+G1L241 = C1_s.S2 # !G1L621Q;
+
+
+--G1L341 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2370
+G1L341 = G1L831 # !G1_counter[3] # !G1L561;
+
+
+--G1L441 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2371
+G1L441 = !G1L221Q & (G1L521Q & G1L241 # !G1L521Q & (G1L341));
+
+
+--G1L541 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2372
+G1L541 = G1L441 # G1L921 & (!G1L331 # !G1_counter[1]);
+
+
+--G1L251 is VgaAdapter:comb_718|SdRam:comb_47|nextState[1]~2373
+G1L251 = G1L421Q & (G1L151 & (G1L541) # !G1L151 & G1L131) # !G1L421Q & (G1L151);
+
+
+--G1L641 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2374
+G1L641 = G1L921 & G1L821 & !G1_refreshFlag # !G1L221Q;
+
+
+--G1L741 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2375
+G1L741 = G1L421Q & (G1L321Q) # !G1L421Q & (G1L321Q & G1L231 # !G1L321Q & (!G1L141));
+
+
+--G1L841 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2376
+G1L841 = G1L521Q & !G1L221Q & (!C1_s.S2 # !G1L621Q) # !G1L521Q & G1L621Q;
+
+
+--G1L941 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2377
+G1L941 = G1L841 # G1L721 & G1L561 & G1_counter[3];
+
+
+--G1L051 is VgaAdapter:comb_718|SdRam:comb_47|nextState[0]~2378
+G1L051 = G1L421Q & (G1L741 & (G1L941) # !G1L741 & G1L641) # !G1L421Q & (G1L741);
+
+
+--G1L751 is VgaAdapter:comb_718|SdRam:comb_47|nextState[3]~2379
+G1L751 = G1L221Q & (G1L821 # G1L521Q) # !G1L221Q & G1L461 & (!G1L521Q);
+
+
+--G1L851 is VgaAdapter:comb_718|SdRam:comb_47|nextState[3]~2380
+G1L851 = G1L321Q & (G1L751 # !G1L521Q # !G1L241) # !G1L321Q & (!G1L521Q & G1L751);
+
+
+--G1L951 is VgaAdapter:comb_718|SdRam:comb_47|nextState[3]~2381
+G1L951 = G1L521Q # G1L421Q & G1L621Q;
+
+
+--G1L061 is VgaAdapter:comb_718|SdRam:comb_47|nextState[3]~2382
+G1L061 = G1L421Q & (G1L951 & (!G1L851) # !G1L951 & G1L33) # !G1L421Q & (G1L951);
+
+
+--G1L501 is VgaAdapter:comb_718|SdRam:comb_47|counter[9]~314
+G1L501 = G1_counter[9] & !G1L301 # !G1_counter[9] & (G1L301 # GND);
+
+--G1L601 is VgaAdapter:comb_718|SdRam:comb_47|counter[9]~315
+G1L601 = CARRY(!G1L301 # !G1_counter[9]);
+
+
+--C1L32 is DisplayExample:comb_720|add~486
+C1L32 = C1_x[9] $ C1L22;
+
+
+--C1L101 is DisplayExample:comb_720|xClear~67
+C1L101 = C1_x[8] # !C1_x[1] # !C1_x[9] # !C1_x[0];
+
+
+--C1L201 is DisplayExample:comb_720|xClear~68
+C1L201 = !C1_x[5] # !C1_x[4] # !C1_x[3] # !C1_x[2];
+
+
+--C1L301 is DisplayExample:comb_720|xClear~69
+C1L301 = C1_x[7] # C1L101 # C1L201 # !C1_x[6];
+
+
+--C1L411 is DisplayExample:comb_720|x~200
+C1L411 = C1L32 & C1L301;
+
+
+--E1_xcounter[6] is VgaAdapter:comb_718|Crtc:comb_5|xcounter[6]
+E1_xcounter[6] = DFFEAS(E1L53, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1_xcounter[5] is VgaAdapter:comb_718|Crtc:comb_5|xcounter[5]
+E1_xcounter[5] = DFFEAS(E1L77, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1_xcounter[1] is VgaAdapter:comb_718|Crtc:comb_5|xcounter[1]
+E1_xcounter[1] = DFFEAS(E1L52, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1_xcounter[0] is VgaAdapter:comb_718|Crtc:comb_5|xcounter[0]
+E1_xcounter[0] = DFFEAS(E1L32, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1L27 is VgaAdapter:comb_718|Crtc:comb_5|xcounter_clear~53
+E1L27 = E1_xcounter[6] # E1_xcounter[5] # !E1_xcounter[0] # !E1_xcounter[1];
+
+
+--E1_xcounter[4] is VgaAdapter:comb_718|Crtc:comb_5|xcounter[4]
+E1_xcounter[4] = DFFEAS(E1L13, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1L37 is VgaAdapter:comb_718|Crtc:comb_5|xcounter_clear~54
+E1L37 = E1_xcounter[7] # !E1_xcounter[4] # !E1_xcounter[8] # !E1_xcounter[9];
+
+
+--E1_xcounter[3] is VgaAdapter:comb_718|Crtc:comb_5|xcounter[3]
+E1_xcounter[3] = DFFEAS(E1L92, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1_xcounter[2] is VgaAdapter:comb_718|Crtc:comb_5|xcounter[2]
+E1_xcounter[2] = DFFEAS(E1L72, H1__clk1,  ,  ,  ,  ,  ,  ,  );
+
+
+--E1L47 is VgaAdapter:comb_718|Crtc:comb_5|xcounter_clear~55
+E1L47 = E1L27 # E1L37 # !E1_xcounter[2] # !E1_xcounter[3];
+
+
+--E1L3 is VgaAdapter:comb_718|Crtc:comb_5|add~302
+E1L3 = E1_ycounter[0] & (E1L47 $ GND) # !E1_ycounter[0] & !E1L47 & VCC;
+
+--E1L4 is VgaAdapter:comb_718|Crtc:comb_5|add~303
+E1L4 = CARRY(E1_ycounter[0] & !E1L47);
+
+
+--E1L54 is VgaAdapter:comb_718|Crtc:comb_5|always1~71
+E1L54 = E1_ycounter[0] # E1_ycounter[1] # !E1_ycounter[2] # !E1_ycounter[3];
+
+
+--E1L64 is VgaAdapter:comb_718|Crtc:comb_5|always1~72
+E1L64 = E1_ycounter[8] # E1_ycounter[7] # E1_ycounter[5] # E1_ycounter[4];
+
+
+--E1L74 is VgaAdapter:comb_718|Crtc:comb_5|always1~73
+E1L74 = E1_ycounter[6] # !E1L88Q;
+
+
+--E1L34 is VgaAdapter:comb_718|Crtc:comb_5|always1~0
+E1L34 = E1L47 # E1L54 # E1L64 # E1L74;
+
+
+--E1L98 is VgaAdapter:comb_718|Crtc:comb_5|ycounter~547
+E1L98 = E1L3 & E1L34;
+
+
+--C1L52 is DisplayExample:comb_720|add~488
+C1L52 = C1_y[0] & (C1L301 $ GND) # !C1_y[0] & !C1L301 & VCC;
+
+--C1L62 is DisplayExample:comb_720|add~489
+C1L62 = CARRY(C1_y[0] & !C1L301);
+
+
+--E1L5 is VgaAdapter:comb_718|Crtc:comb_5|add~304
+E1L5 = E1_ycounter[1] & !E1L4 # !E1_ycounter[1] & (E1L4 # GND);
+
+--E1L6 is VgaAdapter:comb_718|Crtc:comb_5|add~305
+E1L6 = CARRY(!E1L4 # !E1_ycounter[1]);
+
+
+--E1L7 is VgaAdapter:comb_718|Crtc:comb_5|add~306
+E1L7 = E1_ycounter[2] & (E1L6 $ GND) # !E1_ycounter[2] & !E1L6 & VCC;
+
+--E1L8 is VgaAdapter:comb_718|Crtc:comb_5|add~307
+E1L8 = CARRY(E1_ycounter[2] & !E1L6);
+
+
+--E1L9 is VgaAdapter:comb_718|Crtc:comb_5|add~308
+E1L9 = E1_ycounter[3] & !E1L8 # !E1_ycounter[3] & (E1L8 # GND);
+
+--E1L01 is VgaAdapter:comb_718|Crtc:comb_5|add~309
+E1L01 = CARRY(!E1L8 # !E1_ycounter[3]);
+
+
+--E1L11 is VgaAdapter:comb_718|Crtc:comb_5|add~310
+E1L11 = E1_ycounter[4] & (E1L01 $ GND) # !E1_ycounter[4] & !E1L01 & VCC;
+
+--E1L21 is VgaAdapter:comb_718|Crtc:comb_5|add~311
+E1L21 = CARRY(E1_ycounter[4] & !E1L01);
+
+
+--E1L31 is VgaAdapter:comb_718|Crtc:comb_5|add~312
+E1L31 = E1_ycounter[5] & !E1L21 # !E1_ycounter[5] & (E1L21 # GND);
+
+--E1L41 is VgaAdapter:comb_718|Crtc:comb_5|add~313
+E1L41 = CARRY(!E1L21 # !E1_ycounter[5]);
+
+
+--E1L51 is VgaAdapter:comb_718|Crtc:comb_5|add~314
+E1L51 = E1_ycounter[6] & (E1L41 $ GND) # !E1_ycounter[6] & !E1L41 & VCC;
+
+--E1L61 is VgaAdapter:comb_718|Crtc:comb_5|add~315
+E1L61 = CARRY(E1_ycounter[6] & !E1L41);
+
+
+--E1L71 is VgaAdapter:comb_718|Crtc:comb_5|add~316
+E1L71 = E1_ycounter[7] & !E1L61 # !E1_ycounter[7] & (E1L61 # GND);
+
+--E1L81 is VgaAdapter:comb_718|Crtc:comb_5|add~317
+E1L81 = CARRY(!E1L61 # !E1_ycounter[7]);
+
+
+--E1L91 is VgaAdapter:comb_718|Crtc:comb_5|add~318
+E1L91 = E1_ycounter[8] & (E1L81 $ GND) # !E1_ycounter[8] & !E1L81 & VCC;
+
+--E1L02 is VgaAdapter:comb_718|Crtc:comb_5|add~319
+E1L02 = CARRY(E1_ycounter[8] & !E1L81);
+
+
+--E1L09 is VgaAdapter:comb_718|Crtc:comb_5|ycounter~548
+E1L09 = E1L34 & E1L9;
+
+
+--E1L19 is VgaAdapter:comb_718|Crtc:comb_5|ycounter~549
+E1L19 = E1L34 & E1L7;
+
+
+--C1L72 is DisplayExample:comb_720|add~490
+C1L72 = C1_y[1] & !C1L62 # !C1_y[1] & (C1L62 # GND);
+
+--C1L82 is DisplayExample:comb_720|add~491
+C1L82 = CARRY(!C1L62 # !C1_y[1]);
+
+
+--C1L92 is DisplayExample:comb_720|add~492
+C1L92 = C1_y[2] & (C1L82 $ GND) # !C1_y[2] & !C1L82 & VCC;
+
+--C1L03 is DisplayExample:comb_720|add~493
+C1L03 = CARRY(C1_y[2] & !C1L82);
+
+
+--C1L13 is DisplayExample:comb_720|add~494
+C1L13 = C1_y[3] & !C1L03 # !C1_y[3] & (C1L03 # GND);
+
+--C1L23 is DisplayExample:comb_720|add~495
+C1L23 = CARRY(!C1L03 # !C1_y[3]);
+
+
+--C1L33 is DisplayExample:comb_720|add~496
+C1L33 = C1_y[4] & (C1L23 $ GND) # !C1_y[4] & !C1L23 & VCC;
+
+--C1L43 is DisplayExample:comb_720|add~497
+C1L43 = CARRY(C1_y[4] & !C1L23);
+
+
+--C1L511 is DisplayExample:comb_720|x~201
+C1L511 = C1L91 & C1L301;
+
+
+--C1L53 is DisplayExample:comb_720|add~498
+C1L53 = C1_y[5] & !C1L43 # !C1_y[5] & (C1L43 # GND);
+
+--C1L63 is DisplayExample:comb_720|add~499
+C1L63 = CARRY(!C1L43 # !C1_y[5]);
+
+
+--C1L44 is DisplayExample:comb_720|always1~83
+C1L44 = !C1_y[3] # !C1_y[2] # !C1_y[1] # !C1_y[0];
+
+
+--C1L54 is DisplayExample:comb_720|always1~84
+C1L54 = C1_y[5] # !C1_y[7] # !C1_y[6] # !C1_y[4];
+
+
+--C1L34 is DisplayExample:comb_720|always1~0
+C1L34 = C1L301 # C1L44 # C1L54 # !C1_y[8];
+
+
+--C1L621 is DisplayExample:comb_720|y~342
+C1L621 = C1L53 & C1L34;
+
+
+--C1L73 is DisplayExample:comb_720|add~500
+C1L73 = C1_y[6] & (C1L63 $ GND) # !C1_y[6] & !C1L63 & VCC;
+
+--C1L83 is DisplayExample:comb_720|add~501
+C1L83 = CARRY(C1_y[6] & !C1L63);
+
+
+--C1L721 is DisplayExample:comb_720|y~343
+C1L721 = C1L34 & C1L73;
+
+
+--C1L93 is DisplayExample:comb_720|add~502
+C1L93 = C1_y[7] & !C1L83 # !C1_y[7] & (C1L83 # GND);
+
+--C1L04 is DisplayExample:comb_720|add~503
+C1L04 = CARRY(!C1L83 # !C1_y[7]);
+
+
+--C1L821 is DisplayExample:comb_720|y~344
+C1L821 = C1L34 & C1L93;
+
+
+--C1L14 is DisplayExample:comb_720|add~504
+C1L14 = C1_y[8] $ !C1L04;
+
+
+--C1L921 is DisplayExample:comb_720|y~345
+C1L921 = C1L14 & C1L34;
+
+
+--E1L94 is VgaAdapter:comb_718|Crtc:comb_5|bufferSwap~78
+E1L94 = !E1_xcounter[3] & !E1_xcounter[2];
+
+
+--E1L65 is VgaAdapter:comb_718|Crtc:comb_5|hsync~201
+E1L65 = E1_xcounter[4] & (E1_xcounter[1] & E1_xcounter[0] # !E1L94);
+
+
+--E1L05 is VgaAdapter:comb_718|Crtc:comb_5|bufferSwap~79
+E1L05 = E1_xcounter[9] & E1_xcounter[7] & !E1_xcounter[8];
+
+
+--E1L75 is VgaAdapter:comb_718|Crtc:comb_5|hsync~202
+E1L75 = E1_xcounter[6] & E1_xcounter[5] & E1L65 # !E1_xcounter[6] & !E1_xcounter[5] & !E1L65 # !E1L05;
+
+
+--E1L95 is VgaAdapter:comb_718|Crtc:comb_5|vsync~47
+E1L95 = E1_ycounter[4] # E1_ycounter[0] $ !E1_ycounter[1] # !E1_ycounter[5];
+
+
+--E1L06 is VgaAdapter:comb_718|Crtc:comb_5|vsync~48
+E1L06 = E1L88Q # E1L95 # !E1L44 # !E1L1;
+
+
+--E1L12 is VgaAdapter:comb_718|Crtc:comb_5|add~320
+E1L12 = E1L88Q $ E1L02;
+
+
+--E1L29 is VgaAdapter:comb_718|Crtc:comb_5|ycounter~550
+E1L29 = E1L12 & E1L34;
+
+
+--E1L32 is VgaAdapter:comb_718|Crtc:comb_5|add~322
+E1L32 = E1_xcounter[0] $ VCC;
+
+--E1L42 is VgaAdapter:comb_718|Crtc:comb_5|add~323
+E1L42 = CARRY(E1_xcounter[0]);
+
+
+--E1L52 is VgaAdapter:comb_718|Crtc:comb_5|add~324
+E1L52 = E1_xcounter[1] & !E1L42 # !E1_xcounter[1] & (E1L42 # GND);
+
+--E1L62 is VgaAdapter:comb_718|Crtc:comb_5|add~325
+E1L62 = CARRY(!E1L42 # !E1_xcounter[1]);
+
+
+--E1L72 is VgaAdapter:comb_718|Crtc:comb_5|add~326
+E1L72 = E1_xcounter[2] & (E1L62 $ GND) # !E1_xcounter[2] & !E1L62 & VCC;
+
+--E1L82 is VgaAdapter:comb_718|Crtc:comb_5|add~327
+E1L82 = CARRY(E1_xcounter[2] & !E1L62);
+
+
+--E1L92 is VgaAdapter:comb_718|Crtc:comb_5|add~328
+E1L92 = E1_xcounter[3] & !E1L82 # !E1_xcounter[3] & (E1L82 # GND);
+
+--E1L03 is VgaAdapter:comb_718|Crtc:comb_5|add~329
+E1L03 = CARRY(!E1L82 # !E1_xcounter[3]);
+
+
+--E1L13 is VgaAdapter:comb_718|Crtc:comb_5|add~330
+E1L13 = E1_xcounter[4] & (E1L03 $ GND) # !E1_xcounter[4] & !E1L03 & VCC;
+
+--E1L23 is VgaAdapter:comb_718|Crtc:comb_5|add~331
+E1L23 = CARRY(E1_xcounter[4] & !E1L03);
+
+
+--E1L33 is VgaAdapter:comb_718|Crtc:comb_5|add~332
+E1L33 = E1_xcounter[5] & !E1L23 # !E1_xcounter[5] & (E1L23 # GND);
+
+--E1L43 is VgaAdapter:comb_718|Crtc:comb_5|add~333
+E1L43 = CARRY(!E1L23 # !E1_xcounter[5]);
+
+
+--E1L53 is VgaAdapter:comb_718|Crtc:comb_5|add~334
+E1L53 = E1_xcounter[6] & (E1L43 $ GND) # !E1_xcounter[6] & !E1L43 & VCC;
+
+--E1L63 is VgaAdapter:comb_718|Crtc:comb_5|add~335
+E1L63 = CARRY(E1_xcounter[6] & !E1L43);
+
+
+--E1L73 is VgaAdapter:comb_718|Crtc:comb_5|add~336
+E1L73 = E1_xcounter[7] & !E1L63 # !E1_xcounter[7] & (E1L63 # GND);
+
+--E1L83 is VgaAdapter:comb_718|Crtc:comb_5|add~337
+E1L83 = CARRY(!E1L63 # !E1_xcounter[7]);
+
+
+--E1L93 is VgaAdapter:comb_718|Crtc:comb_5|add~338
+E1L93 = E1_xcounter[8] & (E1L83 $ GND) # !E1_xcounter[8] & !E1L83 & VCC;
+
+--E1L04 is VgaAdapter:comb_718|Crtc:comb_5|add~339
+E1L04 = CARRY(E1_xcounter[8] & !E1L83);
+
+
+--E1L57 is VgaAdapter:comb_718|Crtc:comb_5|xcounter~284
+E1L57 = E1L47 & E1L93;
+
+
+--E1L14 is VgaAdapter:comb_718|Crtc:comb_5|add~340
+E1L14 = E1_xcounter[9] $ E1L04;
+
+
+--E1L67 is VgaAdapter:comb_718|Crtc:comb_5|xcounter~285
+E1L67 = E1L14 & E1L47;
+
+
+--G1L13 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_DQ~56
+G1L13 = !G1L321Q & !G1L421Q;
+
+
+--F1L04 is VgaAdapter:comb_718|LineBuffer:comb_16|writeEn2~10
+F1L04 = G1L221Q & G1L921 & G1L13 & !F1_bufferSel;
+
+
+--F1L41 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr2[0]~90
+F1L41 = F1_bufferSel & E1_xcounter[0] # !F1_bufferSel & (G1_counter[0]);
+
+
+--F1L51 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr2[1]~91
+F1L51 = F1_bufferSel & E1_xcounter[1] # !F1_bufferSel & (G1_counter[1]);
+
+
+--F1L61 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr2[2]~92
+F1L61 = F1_bufferSel & E1_xcounter[2] # !F1_bufferSel & (G1_counter[2]);
+
+
+--F1L71 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr2[3]~93
+F1L71 = F1_bufferSel & E1_xcounter[3] # !F1_bufferSel & (G1_counter[3]);
+
+
+--F1L81 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr2[4]~94
+F1L81 = F1_bufferSel & E1_xcounter[4] # !F1_bufferSel & (G1_counter[4]);
+
+
+--F1L91 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr2[5]~95
+F1L91 = F1_bufferSel & E1_xcounter[5] # !F1_bufferSel & (G1_counter[5]);
+
+
+--F1L02 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr2[6]~96
+F1L02 = F1_bufferSel & E1_xcounter[6] # !F1_bufferSel & (G1_counter[6]);
+
+
+--F1L12 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr2[7]~97
+F1L12 = F1_bufferSel & E1_xcounter[7] # !F1_bufferSel & (G1_counter[7]);
+
+
+--F1L22 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr2[8]~98
+F1L22 = F1_bufferSel & E1_xcounter[8] # !F1_bufferSel & (G1_counter[8]);
+
+
+--F1L32 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr2[9]~99
+F1L32 = F1_bufferSel & E1_xcounter[9] # !F1_bufferSel & (G1_counter[9]);
+
+
+--F1L93 is VgaAdapter:comb_718|LineBuffer:comb_16|writeEn1~19
+F1L93 = G1L221Q & F1_bufferSel & G1L921 & G1L13;
+
+
+--F1L4 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr1[0]~90
+F1L4 = F1_bufferSel & G1_counter[0] # !F1_bufferSel & (E1_xcounter[0]);
+
+
+--F1L5 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr1[1]~91
+F1L5 = F1_bufferSel & G1_counter[1] # !F1_bufferSel & (E1_xcounter[1]);
+
+
+--F1L6 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr1[2]~92
+F1L6 = F1_bufferSel & G1_counter[2] # !F1_bufferSel & (E1_xcounter[2]);
+
+
+--F1L7 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr1[3]~93
+F1L7 = F1_bufferSel & G1_counter[3] # !F1_bufferSel & (E1_xcounter[3]);
+
+
+--F1L8 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr1[4]~94
+F1L8 = F1_bufferSel & G1_counter[4] # !F1_bufferSel & (E1_xcounter[4]);
+
+
+--F1L9 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr1[5]~95
+F1L9 = F1_bufferSel & G1_counter[5] # !F1_bufferSel & (E1_xcounter[5]);
+
+
+--F1L01 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr1[6]~96
+F1L01 = F1_bufferSel & G1_counter[6] # !F1_bufferSel & (E1_xcounter[6]);
+
+
+--F1L11 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr1[7]~97
+F1L11 = F1_bufferSel & G1_counter[7] # !F1_bufferSel & (E1_xcounter[7]);
+
+
+--F1L21 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr1[8]~98
+F1L21 = F1_bufferSel & G1_counter[8] # !F1_bufferSel & (E1_xcounter[8]);
+
+
+--F1L31 is VgaAdapter:comb_718|LineBuffer:comb_16|ramAddr1[9]~99
+F1L31 = F1_bufferSel & G1_counter[9] # !F1_bufferSel & (E1_xcounter[9]);
+
+
+--E1L15 is VgaAdapter:comb_718|Crtc:comb_5|bufferSwap~80
+E1L15 = E1_xcounter[9] & E1_xcounter[7] & !E1_xcounter[8] & !E1_xcounter[4];
+
+
+--E1L25 is VgaAdapter:comb_718|Crtc:comb_5|bufferSwap~81
+E1L25 = E1L94 & E1L15 & !E1_xcounter[6] & !E1_xcounter[5];
+
+
+--E1L35 is VgaAdapter:comb_718|Crtc:comb_5|bufferSwap~82
+E1L35 = !E1_xcounter[1] & !E1_xcounter[0];
+
+
+--G1_bufferSwapOld is VgaAdapter:comb_718|SdRam:comb_47|bufferSwapOld
+G1_bufferSwapOld = DFFEAS(E1_bufferSwap, H1__clk0,  ,  ,  ,  ,  ,  ,  );
+
+
+--F1L1 is VgaAdapter:comb_718|LineBuffer:comb_16|always1~0
+F1L1 = E1L2 & E1L25 & E1L35 & !G1_bufferSwapOld;
+
+
+--C1_s.S3 is DisplayExample:comb_720|s.S3
+C1_s.S3 = DFFEAS(C1L4, H1__clk0,  ,  ,  ,  ,  ,  ,  );
+
+
+--G1L312 is VgaAdapter:comb_718|SdRam:comb_47|writeDone~24
+G1L312 = G1L421Q & G1L521Q & G1L621Q;
+
+
+--C1L1 is DisplayExample:comb_720|S.S0~47
+C1L1 = C1_s.S3 & G1L312 & (C1_s.S0 # KEY[0]) # !C1_s.S3 & (C1_s.S0 # KEY[0]);
+
+
+--G1L37 is VgaAdapter:comb_718|SdRam:comb_47|bufferFlag~77
+G1L37 = G1L421Q # G1L221Q # !G1L521Q # !G1L321Q;
+
+
+--G1L47 is VgaAdapter:comb_718|SdRam:comb_47|bufferFlag~78
+G1L47 = G1L621Q & (G1_bufferFlag # F1L1) # !G1L621Q & G1L37 & (G1_bufferFlag # F1L1);
+
+
+--C1_s.S1 is DisplayExample:comb_720|s.S1
+C1_s.S1 = DFFEAS(C1L2, H1__clk0,  ,  ,  ,  ,  ,  ,  );
+
+
+--C1L3 is DisplayExample:comb_720|S.S2~42
+C1L3 = C1_s.S1 # C1_s.S2 & !G1L312;
+
+
+--G1L361 is VgaAdapter:comb_718|SdRam:comb_47|reduce_nor~3
+G1L361 = !G1L221Q & G1L321Q & G1L421Q & G1L921;
+
+
+--G1_refreshCounter[3] is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[3]
+G1_refreshCounter[3] = DFFEAS(G1L881, H1__clk0,  ,  ,  ,  ,  , G1L361,  );
+
+
+--G1_refreshCounter[0] is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[0]
+G1_refreshCounter[0] = DFFEAS(G1L971, H1__clk0,  ,  ,  ,  ,  , G1L361,  );
+
+
+--G1_refreshCounter[1] is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[1]
+G1_refreshCounter[1] = DFFEAS(G1L281, H1__clk0,  ,  ,  ,  ,  , G1L361,  );
+
+
+--G1_refreshCounter[2] is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[2]
+G1_refreshCounter[2] = DFFEAS(G1L581, H1__clk0,  ,  ,  ,  ,  , G1L361,  );
+
+
+--G1L902 is VgaAdapter:comb_718|SdRam:comb_47|refreshFlag~108
+G1L902 = G1_refreshCounter[3] & !G1_refreshCounter[0] & !G1_refreshCounter[1] & !G1_refreshCounter[2];
+
+
+--G1_refreshCounter[5] is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[5]
+G1_refreshCounter[5] = DFFEAS(G1L491, H1__clk0,  ,  ,  ,  ,  , G1L361,  );
+
+
+--G1_refreshCounter[6] is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[6]
+G1_refreshCounter[6] = DFFEAS(G1L791, H1__clk0,  ,  ,  ,  ,  , G1L361,  );
+
+
+--G1_refreshCounter[7] is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[7]
+G1_refreshCounter[7] = DFFEAS(G1L002, H1__clk0,  ,  ,  ,  ,  , G1L361,  );
+
+
+--G1_refreshCounter[4] is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[4]
+G1_refreshCounter[4] = DFFEAS(G1L191, H1__clk0,  ,  ,  ,  ,  , G1L361,  );
+
+
+--G1L012 is VgaAdapter:comb_718|SdRam:comb_47|refreshFlag~109
+G1L012 = G1_refreshCounter[5] & G1_refreshCounter[6] & G1_refreshCounter[7] & !G1_refreshCounter[4];
+
+
+--G1_refreshCounter[8] is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[8]
+G1_refreshCounter[8] = DFFEAS(G1L302, H1__clk0,  ,  ,  ,  ,  , G1L361,  );
+
+
+--G1_refreshCounter[9] is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[9]
+G1_refreshCounter[9] = DFFEAS(G1L602, H1__clk0,  ,  ,  ,  ,  , G1L361,  );
+
+
+--G1L112 is VgaAdapter:comb_718|SdRam:comb_47|refreshFlag~110
+G1L112 = G1L012 & G1_refreshCounter[8] & G1_refreshCounter[9];
+
+
+--G1L212 is VgaAdapter:comb_718|SdRam:comb_47|refreshFlag~111
+G1L212 = !G1L361 & (G1_refreshFlag # G1L902 & G1L112);
+
+
+--G1L801 is VgaAdapter:comb_718|SdRam:comb_47|counter[10]~316
+G1L801 = G1_counter[10] & (G1L601 $ GND) # !G1_counter[10] & !G1L601 & VCC;
+
+--G1L901 is VgaAdapter:comb_718|SdRam:comb_47|counter[10]~317
+G1L901 = CARRY(G1_counter[10] & !G1L601);
+
+
+--G1L111 is VgaAdapter:comb_718|SdRam:comb_47|counter[11]~318
+G1L111 = G1_counter[11] & !G1L901 # !G1_counter[11] & (G1L901 # GND);
+
+--G1L211 is VgaAdapter:comb_718|SdRam:comb_47|counter[11]~319
+G1L211 = CARRY(!G1L901 # !G1_counter[11]);
+
+
+--G1L411 is VgaAdapter:comb_718|SdRam:comb_47|counter[12]~320
+G1L411 = G1_counter[12] & (G1L211 $ GND) # !G1_counter[12] & !G1L211 & VCC;
+
+--G1L511 is VgaAdapter:comb_718|SdRam:comb_47|counter[12]~321
+G1L511 = CARRY(G1_counter[12] & !G1L211);
+
+
+--G1L711 is VgaAdapter:comb_718|SdRam:comb_47|counter[13]~322
+G1L711 = G1_counter[13] & !G1L511 # !G1_counter[13] & (G1L511 # GND);
+
+--G1L811 is VgaAdapter:comb_718|SdRam:comb_47|counter[13]~323
+G1L811 = CARRY(!G1L511 # !G1_counter[13]);
+
+
+--G1L021 is VgaAdapter:comb_718|SdRam:comb_47|counter[14]~324
+G1L021 = G1_counter[14] $ !G1L811;
+
+
+--E1L77 is VgaAdapter:comb_718|Crtc:comb_5|xcounter~286
+E1L77 = E1L47 & E1L33;
+
+
+--E1_bufferSwap is VgaAdapter:comb_718|Crtc:comb_5|bufferSwap
+E1_bufferSwap = E1L2 & E1L25 & !E1_xcounter[1] & !E1_xcounter[0];
+
+
+--G1L23 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_DQ~57
+G1L23 = !G1L321Q & !G1L421Q & !G1L521Q & !G1L621Q;
+
+
+--G1L571 is VgaAdapter:comb_718|SdRam:comb_47|reduce_or~180
+G1L571 = G1L321Q & (!G1L521Q # !G1L621Q # !G1L221Q) # !G1L321Q & (G1L621Q # G1L521Q);
+
+
+--G1L671 is VgaAdapter:comb_718|SdRam:comb_47|reduce_or~181
+G1L671 = G1L421Q & G1L521Q & G1L43 # !G1L421Q & (!G1L571);
+
+
+--C1_color[9] is DisplayExample:comb_720|color[9]
+C1_color[9] = DFFEAS(C1L94, H1__clk0,  ,  ,  ,  ,  ,  ,  );
+
+
+--G1L93 is VgaAdapter:comb_718|SdRam:comb_47|Select~498
+G1L93 = C1_color[9] # G1L13 & !G1L521Q & !G1L621Q;
+
+
+--C1L4 is DisplayExample:comb_720|S.S3~22
+C1L4 = !C1_s.S1 & C1_s.S0 & G1L312;
+
+
+--C1L2 is DisplayExample:comb_720|S.S1~8
+C1L2 = KEY[0] & !C1_s.S0;
+
+
+--G1L971 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[0]~170
+G1L971 = G1_refreshCounter[0] $ VCC;
+
+--G1L081 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[0]~171
+G1L081 = CARRY(G1_refreshCounter[0]);
+
+
+--G1L281 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[1]~172
+G1L281 = G1_refreshCounter[1] & !G1L081 # !G1_refreshCounter[1] & (G1L081 # GND);
+
+--G1L381 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[1]~173
+G1L381 = CARRY(!G1L081 # !G1_refreshCounter[1]);
+
+
+--G1L581 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[2]~174
+G1L581 = G1_refreshCounter[2] & (G1L381 $ GND) # !G1_refreshCounter[2] & !G1L381 & VCC;
+
+--G1L681 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[2]~175
+G1L681 = CARRY(G1_refreshCounter[2] & !G1L381);
+
+
+--G1L881 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[3]~176
+G1L881 = G1_refreshCounter[3] & !G1L681 # !G1_refreshCounter[3] & (G1L681 # GND);
+
+--G1L981 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[3]~177
+G1L981 = CARRY(!G1L681 # !G1_refreshCounter[3]);
+
+
+--G1L191 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[4]~178
+G1L191 = G1_refreshCounter[4] & (G1L981 $ GND) # !G1_refreshCounter[4] & !G1L981 & VCC;
+
+--G1L291 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[4]~179
+G1L291 = CARRY(G1_refreshCounter[4] & !G1L981);
+
+
+--G1L491 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[5]~180
+G1L491 = G1_refreshCounter[5] & !G1L291 # !G1_refreshCounter[5] & (G1L291 # GND);
+
+--G1L591 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[5]~181
+G1L591 = CARRY(!G1L291 # !G1_refreshCounter[5]);
+
+
+--G1L791 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[6]~182
+G1L791 = G1_refreshCounter[6] & (G1L591 $ GND) # !G1_refreshCounter[6] & !G1L591 & VCC;
+
+--G1L891 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[6]~183
+G1L891 = CARRY(G1_refreshCounter[6] & !G1L591);
+
+
+--G1L002 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[7]~184
+G1L002 = G1_refreshCounter[7] & !G1L891 # !G1_refreshCounter[7] & (G1L891 # GND);
+
+--G1L102 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[7]~185
+G1L102 = CARRY(!G1L891 # !G1_refreshCounter[7]);
+
+
+--G1L302 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[8]~186
+G1L302 = G1_refreshCounter[8] & (G1L102 $ GND) # !G1_refreshCounter[8] & !G1L102 & VCC;
+
+--G1L402 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[8]~187
+G1L402 = CARRY(G1_refreshCounter[8] & !G1L102);
+
+
+--G1L602 is VgaAdapter:comb_718|SdRam:comb_47|refreshCounter[9]~188
+G1L602 = G1_refreshCounter[9] $ G1L402;
+
+
+--C1_slowCount[3] is DisplayExample:comb_720|slowCount[3]
+C1_slowCount[3] = DFFEAS(C1L77, H1__clk0,  ,  , C1L07,  ,  ,  ,  );
+
+
+--C1_slowCount[1] is DisplayExample:comb_720|slowCount[1]
+C1_slowCount[1] = DFFEAS(C1L17, H1__clk0,  ,  , C1L07,  ,  ,  ,  );
+
+
+--C1L05 is DisplayExample:comb_720|color~239
+C1L05 = C1_x[0] & C1_slowCount[1] & (C1_x[2] $ !C1_slowCount[3]) # !C1_x[0] & !C1_slowCount[1] & (C1_x[2] $ !C1_slowCount[3]);
+
+
+--C1_slowCount[10] is DisplayExample:comb_720|slowCount[10]
+C1_slowCount[10] = DFFEAS(C1L89, H1__clk0,  ,  , C1L07,  ,  ,  ,  );
+
+
+--C1_slowCount[9] is DisplayExample:comb_720|slowCount[9]
+C1_slowCount[9] = DFFEAS(C1L59, H1__clk0,  ,  , C1L07,  ,  ,  ,  );
+
+
+--C1L15 is DisplayExample:comb_720|color~240
+C1L15 = C1_x[8] & C1_slowCount[9] & (C1_x[9] $ !C1_slowCount[10]) # !C1_x[8] & !C1_slowCount[9] & (C1_x[9] $ !C1_slowCount[10]);
+
+
+--C1_slowCount[7] is DisplayExample:comb_720|slowCount[7]
+C1_slowCount[7] = DFFEAS(C1L98, H1__clk0,  ,  , C1L07,  ,  ,  ,  );
+
+
+--C1_slowCount[5] is DisplayExample:comb_720|slowCount[5]
+C1_slowCount[5] = DFFEAS(C1L38, H1__clk0,  ,  , C1L07,  ,  ,  ,  );
+
+
+--C1L25 is DisplayExample:comb_720|color~241
+C1L25 = C1_x[4] & C1_slowCount[5] & (C1_x[6] $ !C1_slowCount[7]) # !C1_x[4] & !C1_slowCount[5] & (C1_x[6] $ !C1_slowCount[7]);
+
+
+--C1_slowCount[8] is DisplayExample:comb_720|slowCount[8]
+C1_slowCount[8] = DFFEAS(C1L29, H1__clk0,  ,  , C1L07,  ,  ,  ,  );
+
+
+--C1_slowCount[4] is DisplayExample:comb_720|slowCount[4]
+C1_slowCount[4] = DFFEAS(C1L08, H1__clk0,  ,  , C1L07,  ,  ,  ,  );
+
+
+--C1L35 is DisplayExample:comb_720|color~242
+C1L35 = C1_x[3] & C1_slowCount[4] & (C1_x[7] $ !C1_slowCount[8]) # !C1_x[3] & !C1_slowCount[4] & (C1_x[7] $ !C1_slowCount[8]);
+
+
+--C1L45 is DisplayExample:comb_720|color~243
+C1L45 = C1L05 & C1L15 & C1L25 & C1L35;
+
+
+--C1_slowCount[6] is DisplayExample:comb_720|slowCount[6]
+C1_slowCount[6] = DFFEAS(C1L68, H1__clk0,  ,  , C1L07,  ,  ,  ,  );
+
+
+--C1_slowCount[2] is DisplayExample:comb_720|slowCount[2]
+C1_slowCount[2] = DFFEAS(C1L47, H1__clk0,  ,  , C1L07,  ,  ,  ,  );
+
+
+--C1L55 is DisplayExample:comb_720|color~244
+C1L55 = C1_x[1] & C1_slowCount[2] & (C1_x[5] $ !C1_slowCount[6]) # !C1_x[1] & !C1_slowCount[2] & (C1_x[5] $ !C1_slowCount[6]);
+
+
+--C1L65 is DisplayExample:comb_720|color~245
+C1L65 = C1_y[0] & C1_slowCount[1] & (C1_y[2] $ !C1_slowCount[3]) # !C1_y[0] & !C1_slowCount[1] & (C1_y[2] $ !C1_slowCount[3]);
+
+
+--C1L75 is DisplayExample:comb_720|color~246
+C1L75 = C1_y[1] & C1_slowCount[2] & (C1_y[6] $ !C1_slowCount[7]) # !C1_y[1] & !C1_slowCount[2] & (C1_y[6] $ !C1_slowCount[7]);
+
+
+--C1L85 is DisplayExample:comb_720|color~247
+C1L85 = C1_y[3] & C1_slowCount[4] & (C1_y[8] $ !C1_slowCount[9]) # !C1_y[3] & !C1_slowCount[4] & (C1_y[8] $ !C1_slowCount[9]);
+
+
+--C1L95 is DisplayExample:comb_720|color~248
+C1L95 = C1_y[4] & C1_slowCount[5] & (C1_y[5] $ !C1_slowCount[6]) # !C1_y[4] & !C1_slowCount[5] & (C1_y[5] $ !C1_slowCount[6]);
+
+
+--C1L06 is DisplayExample:comb_720|color~249
+C1L06 = C1L65 & C1L75 & C1L85 & C1L95;
+
+
+--C1L84 is DisplayExample:comb_720|color~7
+C1L84 = C1_y[7] $ C1_slowCount[8];
+
+
+--C1L94 is DisplayExample:comb_720|color~19
+C1L94 = C1L45 & (C1L55 # C1L06 & !C1L84) # !C1L45 & (C1L06 & !C1L84);
+
+
+--C1_slowCount[0] is DisplayExample:comb_720|slowCount[0]
+C1_slowCount[0] = DFFEAS(C1L76, H1__clk0,  ,  , C1L07,  ,  ,  ,  );
+
+
+--C1L76 is DisplayExample:comb_720|slowCount[0]~194
+C1L76 = C1_slowCount[0] $ VCC;
+
+--C1L86 is DisplayExample:comb_720|slowCount[0]~195
+C1L86 = CARRY(C1_slowCount[0]);
+
+
+--C1L17 is DisplayExample:comb_720|slowCount[1]~196
+C1L17 = C1_slowCount[1] & !C1L86 # !C1_slowCount[1] & (C1L86 # GND);
+
+--C1L27 is DisplayExample:comb_720|slowCount[1]~197
+C1L27 = CARRY(!C1L86 # !C1_slowCount[1]);
+
+
+--C1L47 is DisplayExample:comb_720|slowCount[2]~198
+C1L47 = C1_slowCount[2] & (C1L27 $ GND) # !C1_slowCount[2] & !C1L27 & VCC;
+
+--C1L57 is DisplayExample:comb_720|slowCount[2]~199
+C1L57 = CARRY(C1_slowCount[2] & !C1L27);
+
+
+--C1L77 is DisplayExample:comb_720|slowCount[3]~200
+C1L77 = C1_slowCount[3] & !C1L57 # !C1_slowCount[3] & (C1L57 # GND);
+
+--C1L87 is DisplayExample:comb_720|slowCount[3]~201
+C1L87 = CARRY(!C1L57 # !C1_slowCount[3]);
+
+
+--C1L07 is DisplayExample:comb_720|slowCount[1]~16
+C1L07 = !C1_s.S0 & !C1L34;
+
+
+--C1L08 is DisplayExample:comb_720|slowCount[4]~202
+C1L08 = C1_slowCount[4] & (C1L87 $ GND) # !C1_slowCount[4] & !C1L87 & VCC;
+
+--C1L18 is DisplayExample:comb_720|slowCount[4]~203
+C1L18 = CARRY(C1_slowCount[4] & !C1L87);
+
+
+--C1L38 is DisplayExample:comb_720|slowCount[5]~204
+C1L38 = C1_slowCount[5] & !C1L18 # !C1_slowCount[5] & (C1L18 # GND);
+
+--C1L48 is DisplayExample:comb_720|slowCount[5]~205
+C1L48 = CARRY(!C1L18 # !C1_slowCount[5]);
+
+
+--C1L68 is DisplayExample:comb_720|slowCount[6]~206
+C1L68 = C1_slowCount[6] & (C1L48 $ GND) # !C1_slowCount[6] & !C1L48 & VCC;
+
+--C1L78 is DisplayExample:comb_720|slowCount[6]~207
+C1L78 = CARRY(C1_slowCount[6] & !C1L48);
+
+
+--C1L98 is DisplayExample:comb_720|slowCount[7]~208
+C1L98 = C1_slowCount[7] & !C1L78 # !C1_slowCount[7] & (C1L78 # GND);
+
+--C1L09 is DisplayExample:comb_720|slowCount[7]~209
+C1L09 = CARRY(!C1L78 # !C1_slowCount[7]);
+
+
+--C1L29 is DisplayExample:comb_720|slowCount[8]~210
+C1L29 = C1_slowCount[8] & (C1L09 $ GND) # !C1_slowCount[8] & !C1L09 & VCC;
+
+--C1L39 is DisplayExample:comb_720|slowCount[8]~211
+C1L39 = CARRY(C1_slowCount[8] & !C1L09);
+
+
+--C1L59 is DisplayExample:comb_720|slowCount[9]~212
+C1L59 = C1_slowCount[9] & !C1L39 # !C1_slowCount[9] & (C1L39 # GND);
+
+--C1L69 is DisplayExample:comb_720|slowCount[9]~213
+C1L69 = CARRY(!C1L39 # !C1_slowCount[9]);
+
+
+--C1L89 is DisplayExample:comb_720|slowCount[10]~214
+C1L89 = C1_slowCount[10] $ !C1L69;
+
+
+--G1L82 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_ADDR[9]~2534
+G1L82 = G1L321Q & G1L221Q & G1L42;
+
+
+--G1L73 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_WE_N~28
+G1L73 = G1L221Q & (G1L521Q & G1L321Q & !G1L421Q # !G1L521Q & !G1L321Q & G1L421Q) # !G1L221Q & (G1L321Q $ !G1L421Q);
+
+
+--G1L83 is VgaAdapter:comb_718|SdRam:comb_47|DRAM_WE_N~29
+G1L83 = G1L73 & (G1L521Q $ G1L321Q $ !G1L621Q);
+
+
+--F1L3 is VgaAdapter:comb_718|LineBuffer:comb_16|bufferSel~3
+F1L3 = !F1_bufferSel;
+
+
+--CLOCK_27 is CLOCK_27
+--operation mode is input
+
+CLOCK_27 = INPUT();
+
+
+--EXT_CLOCK is EXT_CLOCK
+--operation mode is input
+
+EXT_CLOCK = INPUT();
+
+
+--KEY[1] is KEY[1]
+--operation mode is input
+
+KEY[1] = INPUT();
+
+
+--KEY[2] is KEY[2]
+--operation mode is input
+
+KEY[2] = INPUT();
+
+
+--KEY[3] is KEY[3]
+--operation mode is input
+
+KEY[3] = INPUT();
+
+
+--SW[0] is SW[0]
+--operation mode is input
+
+SW[0] = INPUT();
+
+
+--SW[1] is SW[1]
+--operation mode is input
+
+SW[1] = INPUT();
+
+
+--SW[2] is SW[2]
+--operation mode is input
+
+SW[2] = INPUT();
+
+
+--SW[3] is SW[3]
+--operation mode is input
+
+SW[3] = INPUT();
+
+
+--SW[4] is SW[4]
+--operation mode is input
+
+SW[4] = INPUT();
+
+
+--SW[5] is SW[5]
+--operation mode is input
+
+SW[5] = INPUT();
+
+
+--SW[6] is SW[6]
+--operation mode is input
+
+SW[6] = INPUT();
+
+
+--SW[7] is SW[7]
+--operation mode is input
+
+SW[7] = INPUT();
+
+
+--SW[8] is SW[8]
+--operation mode is input
+
+SW[8] = INPUT();
+
+
+--SW[9] is SW[9]
+--operation mode is input
+
+SW[9] = INPUT();
+
+
+--SW[10] is SW[10]
+--operation mode is input
+
+SW[10] = INPUT();
+
+
+--SW[11] is SW[11]
+--operation mode is input
+
+SW[11] = INPUT();
+
+
+--SW[12] is SW[12]
+--operation mode is input
+
+SW[12] = INPUT();
+
+
+--SW[13] is SW[13]
+--operation mode is input
+
+SW[13] = INPUT();
+
+
+--SW[14] is SW[14]
+--operation mode is input
+
+SW[14] = INPUT();
+
+
+--SW[15] is SW[15]
+--operation mode is input
+
+SW[15] = INPUT();
+
+
+--SW[16] is SW[16]
+--operation mode is input
+
+SW[16] = INPUT();
+
+
+--SW[17] is SW[17]
+--operation mode is input
+
+SW[17] = INPUT();
+
+
+--UART_RXD is UART_RXD
+--operation mode is input
+
+UART_RXD = INPUT();
+
+
+--IRDA_RXD is IRDA_RXD
+--operation mode is input
+
+IRDA_RXD = INPUT();
+
+
+--TDI is TDI
+--operation mode is input
+
+TDI = INPUT();
+
+
+--TCK is TCK
+--operation mode is input
+
+TCK = INPUT();
+
+
+--TCS is TCS
+--operation mode is input
+
+TCS = INPUT();
+
+
+--PS2_DAT is PS2_DAT
+--operation mode is input
+
+PS2_DAT = INPUT();
+
+
+--PS2_CLK is PS2_CLK
+--operation mode is input
+
+PS2_CLK = INPUT();
+
+
+--ENET_INT is ENET_INT
+--operation mode is input
+
+ENET_INT = INPUT();
+
+
+--AUD_ADCDAT is AUD_ADCDAT
+--operation mode is input
+
+AUD_ADCDAT = INPUT();
+
+
+--TD_DATA[0] is TD_DATA[0]
+--operation mode is input
+
+TD_DATA[0] = INPUT();
+
+
+--TD_DATA[1] is TD_DATA[1]
+--operation mode is input
+
+TD_DATA[1] = INPUT();
+
+
+--TD_DATA[2] is TD_DATA[2]
+--operation mode is input
+
+TD_DATA[2] = INPUT();
+
+
+--TD_DATA[3] is TD_DATA[3]
+--operation mode is input
+
+TD_DATA[3] = INPUT();
+
+
+--TD_DATA[4] is TD_DATA[4]
+--operation mode is input
+
+TD_DATA[4] = INPUT();
+
+
+--TD_DATA[5] is TD_DATA[5]
+--operation mode is input
+
+TD_DATA[5] = INPUT();
+
+
+--TD_DATA[6] is TD_DATA[6]
+--operation mode is input
+
+TD_DATA[6] = INPUT();
+
+
+--TD_DATA[7] is TD_DATA[7]
+--operation mode is input
+
+TD_DATA[7] = INPUT();
+
+
+--TD_HS is TD_HS
+--operation mode is input
+
+TD_HS = INPUT();
+
+
+--TD_VS is TD_VS
+--operation mode is input
+
+TD_VS = INPUT();
+
+
+--CLOCK_50 is CLOCK_50
+--operation mode is input
+
+CLOCK_50 = INPUT();
+
+
+--KEY[0] is KEY[0]
+--operation mode is input
+
+KEY[0] = INPUT();
+
+
+--HEX0[0] is HEX0[0]
+--operation mode is output
+
+HEX0[0] = OUTPUT(GND);
+
+
+--HEX0[1] is HEX0[1]
+--operation mode is output
+
+HEX0[1] = OUTPUT(GND);
+
+
+--HEX0[2] is HEX0[2]
+--operation mode is output
+
+HEX0[2] = OUTPUT(GND);
+
+
+--HEX0[3] is HEX0[3]
+--operation mode is output
+
+HEX0[3] = OUTPUT(GND);
+
+
+--HEX0[4] is HEX0[4]
+--operation mode is output
+
+HEX0[4] = OUTPUT(GND);
+
+
+--HEX0[5] is HEX0[5]
+--operation mode is output
+
+HEX0[5] = OUTPUT(GND);
+
+
+--HEX0[6] is HEX0[6]
+--operation mode is output
+
+HEX0[6] = OUTPUT(GND);
+
+
+--HEX1[0] is HEX1[0]
+--operation mode is output
+
+HEX1[0] = OUTPUT(GND);
+
+
+--HEX1[1] is HEX1[1]
+--operation mode is output
+
+HEX1[1] = OUTPUT(GND);
+
+
+--HEX1[2] is HEX1[2]
+--operation mode is output
+
+HEX1[2] = OUTPUT(GND);
+
+
+--HEX1[3] is HEX1[3]
+--operation mode is output
+
+HEX1[3] = OUTPUT(GND);
+
+
+--HEX1[4] is HEX1[4]
+--operation mode is output
+
+HEX1[4] = OUTPUT(GND);
+
+
+--HEX1[5] is HEX1[5]
+--operation mode is output
+
+HEX1[5] = OUTPUT(GND);
+
+
+--HEX1[6] is HEX1[6]
+--operation mode is output
+
+HEX1[6] = OUTPUT(GND);
+
+
+--HEX2[0] is HEX2[0]
+--operation mode is output
+
+HEX2[0] = OUTPUT(GND);
+
+
+--HEX2[1] is HEX2[1]
+--operation mode is output
+
+HEX2[1] = OUTPUT(GND);
+
+
+--HEX2[2] is HEX2[2]
+--operation mode is output
+
+HEX2[2] = OUTPUT(GND);
+
+
+--HEX2[3] is HEX2[3]
+--operation mode is output
+
+HEX2[3] = OUTPUT(GND);
+
+
+--HEX2[4] is HEX2[4]
+--operation mode is output
+
+HEX2[4] = OUTPUT(GND);
+
+
+--HEX2[5] is HEX2[5]
+--operation mode is output
+
+HEX2[5] = OUTPUT(GND);
+
+
+--HEX2[6] is HEX2[6]
+--operation mode is output
+
+HEX2[6] = OUTPUT(GND);
+
+
+--HEX3[0] is HEX3[0]
+--operation mode is output
+
+HEX3[0] = OUTPUT(GND);
+
+
+--HEX3[1] is HEX3[1]
+--operation mode is output
+
+HEX3[1] = OUTPUT(GND);
+
+
+--HEX3[2] is HEX3[2]
+--operation mode is output
+
+HEX3[2] = OUTPUT(GND);
+
+
+--HEX3[3] is HEX3[3]
+--operation mode is output
+
+HEX3[3] = OUTPUT(GND);
+
+
+--HEX3[4] is HEX3[4]
+--operation mode is output
+
+HEX3[4] = OUTPUT(GND);
+
+
+--HEX3[5] is HEX3[5]
+--operation mode is output
+
+HEX3[5] = OUTPUT(GND);
+
+
+--HEX3[6] is HEX3[6]
+--operation mode is output
+
+HEX3[6] = OUTPUT(GND);
+
+
+--HEX4[0] is HEX4[0]
+--operation mode is output
+
+HEX4[0] = OUTPUT(GND);
+
+
+--HEX4[1] is HEX4[1]
+--operation mode is output
+
+HEX4[1] = OUTPUT(GND);
+
+
+--HEX4[2] is HEX4[2]
+--operation mode is output
+
+HEX4[2] = OUTPUT(GND);
+
+
+--HEX4[3] is HEX4[3]
+--operation mode is output
+
+HEX4[3] = OUTPUT(GND);
+
+
+--HEX4[4] is HEX4[4]
+--operation mode is output
+
+HEX4[4] = OUTPUT(GND);
+
+
+--HEX4[5] is HEX4[5]
+--operation mode is output
+
+HEX4[5] = OUTPUT(GND);
+
+
+--HEX4[6] is HEX4[6]
+--operation mode is output
+
+HEX4[6] = OUTPUT(GND);
+
+
+--HEX5[0] is HEX5[0]
+--operation mode is output
+
+HEX5[0] = OUTPUT(GND);
+
+
+--HEX5[1] is HEX5[1]
+--operation mode is output
+
+HEX5[1] = OUTPUT(GND);
+
+
+--HEX5[2] is HEX5[2]
+--operation mode is output
+
+HEX5[2] = OUTPUT(GND);
+
+
+--HEX5[3] is HEX5[3]
+--operation mode is output
+
+HEX5[3] = OUTPUT(GND);
+
+
+--HEX5[4] is HEX5[4]
+--operation mode is output
+
+HEX5[4] = OUTPUT(GND);
+
+
+--HEX5[5] is HEX5[5]
+--operation mode is output
+
+HEX5[5] = OUTPUT(GND);
+
+
+--HEX5[6] is HEX5[6]
+--operation mode is output
+
+HEX5[6] = OUTPUT(GND);
+
+
+--HEX6[0] is HEX6[0]
+--operation mode is output
+
+HEX6[0] = OUTPUT(GND);
+
+
+--HEX6[1] is HEX6[1]
+--operation mode is output
+
+HEX6[1] = OUTPUT(GND);
+
+
+--HEX6[2] is HEX6[2]
+--operation mode is output
+
+HEX6[2] = OUTPUT(GND);
+
+
+--HEX6[3] is HEX6[3]
+--operation mode is output
+
+HEX6[3] = OUTPUT(GND);
+
+
+--HEX6[4] is HEX6[4]
+--operation mode is output
+
+HEX6[4] = OUTPUT(GND);
+
+
+--HEX6[5] is HEX6[5]
+--operation mode is output
+
+HEX6[5] = OUTPUT(GND);
+
+
+--HEX6[6] is HEX6[6]
+--operation mode is output
+
+HEX6[6] = OUTPUT(GND);
+
+
+--HEX7[0] is HEX7[0]
+--operation mode is output
+
+HEX7[0] = OUTPUT(GND);
+
+
+--HEX7[1] is HEX7[1]
+--operation mode is output
+
+HEX7[1] = OUTPUT(GND);
+
+
+--HEX7[2] is HEX7[2]
+--operation mode is output
+
+HEX7[2] = OUTPUT(GND);
+
+
+--HEX7[3] is HEX7[3]
+--operation mode is output
+
+HEX7[3] = OUTPUT(GND);
+
+
+--HEX7[4] is HEX7[4]
+--operation mode is output
+
+HEX7[4] = OUTPUT(GND);
+
+
+--HEX7[5] is HEX7[5]
+--operation mode is output
+
+HEX7[5] = OUTPUT(GND);
+
+
+--HEX7[6] is HEX7[6]
+--operation mode is output
+
+HEX7[6] = OUTPUT(GND);
+
+
+--LEDG[0] is LEDG[0]
+--operation mode is output
+
+LEDG[0] = OUTPUT(VCC);
+
+
+--LEDG[1] is LEDG[1]
+--operation mode is output
+
+LEDG[1] = OUTPUT(VCC);
+
+
+--LEDG[2] is LEDG[2]
+--operation mode is output
+
+LEDG[2] = OUTPUT(VCC);
+
+
+--LEDG[3] is LEDG[3]
+--operation mode is output
+
+LEDG[3] = OUTPUT(VCC);
+
+
+--LEDG[4] is LEDG[4]
+--operation mode is output
+
+LEDG[4] = OUTPUT(VCC);
+
+
+--LEDG[5] is LEDG[5]
+--operation mode is output
+
+LEDG[5] = OUTPUT(VCC);
+
+
+--LEDG[6] is LEDG[6]
+--operation mode is output
+
+LEDG[6] = OUTPUT(VCC);
+
+
+--LEDG[7] is LEDG[7]
+--operation mode is output
+
+LEDG[7] = OUTPUT(VCC);
+
+
+--LEDG[8] is LEDG[8]
+--operation mode is output
+
+LEDG[8] = OUTPUT(VCC);
+
+
+--LEDR[0] is LEDR[0]
+--operation mode is output
+
+LEDR[0] = OUTPUT(VCC);
+
+
+--LEDR[1] is LEDR[1]
+--operation mode is output
+
+LEDR[1] = OUTPUT(VCC);
+
+
+--LEDR[2] is LEDR[2]
+--operation mode is output
+
+LEDR[2] = OUTPUT(VCC);
+
+
+--LEDR[3] is LEDR[3]
+--operation mode is output
+
+LEDR[3] = OUTPUT(VCC);
+
+
+--LEDR[4] is LEDR[4]
+--operation mode is output
+
+LEDR[4] = OUTPUT(VCC);
+
+
+--LEDR[5] is LEDR[5]
+--operation mode is output
+
+LEDR[5] = OUTPUT(VCC);
+
+
+--LEDR[6] is LEDR[6]
+--operation mode is output
+
+LEDR[6] = OUTPUT(VCC);
+
+
+--LEDR[7] is LEDR[7]
+--operation mode is output
+
+LEDR[7] = OUTPUT(VCC);
+
+
+--LEDR[8] is LEDR[8]
+--operation mode is output
+
+LEDR[8] = OUTPUT(VCC);
+
+
+--LEDR[9] is LEDR[9]
+--operation mode is output
+
+LEDR[9] = OUTPUT(VCC);
+
+
+--LEDR[10] is LEDR[10]
+--operation mode is output
+
+LEDR[10] = OUTPUT(VCC);
+
+
+--LEDR[11] is LEDR[11]
+--operation mode is output
+
+LEDR[11] = OUTPUT(VCC);
+
+
+--LEDR[12] is LEDR[12]
+--operation mode is output
+
+LEDR[12] = OUTPUT(VCC);
+
+
+--LEDR[13] is LEDR[13]
+--operation mode is output
+
+LEDR[13] = OUTPUT(VCC);
+
+
+--LEDR[14] is LEDR[14]
+--operation mode is output
+
+LEDR[14] = OUTPUT(VCC);
+
+
+--LEDR[15] is LEDR[15]
+--operation mode is output
+
+LEDR[15] = OUTPUT(VCC);
+
+
+--LEDR[16] is LEDR[16]
+--operation mode is output
+
+LEDR[16] = OUTPUT(VCC);
+
+
+--LEDR[17] is LEDR[17]
+--operation mode is output
+
+LEDR[17] = OUTPUT(VCC);
+
+
+--UART_TXD is UART_TXD
+--operation mode is output
+
+UART_TXD = OUTPUT(GND);
+
+
+--IRDA_TXD is IRDA_TXD
+--operation mode is output
+
+IRDA_TXD = OUTPUT(GND);
+
+
+--DRAM_ADDR[0] is DRAM_ADDR[0]
+--operation mode is output
+
+DRAM_ADDR[0] = OUTPUT(G1L2);
+
+
+--DRAM_ADDR[1] is DRAM_ADDR[1]
+--operation mode is output
+
+DRAM_ADDR[1] = OUTPUT(G1L4);
+
+
+--DRAM_ADDR[2] is DRAM_ADDR[2]
+--operation mode is output
+
+DRAM_ADDR[2] = OUTPUT(G1L6);
+
+
+--DRAM_ADDR[3] is DRAM_ADDR[3]
+--operation mode is output
+
+DRAM_ADDR[3] = OUTPUT(G1L01);
+
+
+--DRAM_ADDR[4] is DRAM_ADDR[4]
+--operation mode is output
+
+DRAM_ADDR[4] = OUTPUT(G1L31);
+
+
+--DRAM_ADDR[5] is DRAM_ADDR[5]
+--operation mode is output
+
+DRAM_ADDR[5] = OUTPUT(G1L61);
+
+
+--DRAM_ADDR[6] is DRAM_ADDR[6]
+--operation mode is output
+
+DRAM_ADDR[6] = OUTPUT(G1L81);
+
+
+--DRAM_ADDR[7] is DRAM_ADDR[7]
+--operation mode is output
+
+DRAM_ADDR[7] = OUTPUT(G1L12);
+
+
+--DRAM_ADDR[8] is DRAM_ADDR[8]
+--operation mode is output
+
+DRAM_ADDR[8] = OUTPUT(G1L32);
+
+
+--DRAM_ADDR[9] is DRAM_ADDR[9]
+--operation mode is output
+
+DRAM_ADDR[9] = OUTPUT(G1L72);
+
+
+--DRAM_ADDR[10] is DRAM_ADDR[10]
+--operation mode is output
+
+DRAM_ADDR[10] = OUTPUT(G1L03);
+
+
+--DRAM_ADDR[11] is DRAM_ADDR[11]
+--operation mode is output
+
+DRAM_ADDR[11] = OUTPUT(GND);
+
+
+--DRAM_LDQM is DRAM_LDQM
+--operation mode is output
+
+DRAM_LDQM = OUTPUT(GND);
+
+
+--DRAM_UDQM is DRAM_UDQM
+--operation mode is output
+
+DRAM_UDQM = OUTPUT(GND);
+
+
+--DRAM_WE_N is DRAM_WE_N
+--operation mode is output
+
+DRAM_WE_N = OUTPUT(G1L83);
+
+
+--DRAM_CAS_N is DRAM_CAS_N
+--operation mode is output
+
+DRAM_CAS_N = OUTPUT(!G1L761);
+
+
+--DRAM_RAS_N is DRAM_RAS_N
+--operation mode is output
+
+DRAM_RAS_N = OUTPUT(G1L63);
+
+
+--DRAM_CS_N is DRAM_CS_N
+--operation mode is output
+
+DRAM_CS_N = OUTPUT(G1L071);
+
+
+--DRAM_BA_0 is DRAM_BA_0
+--operation mode is output
+
+DRAM_BA_0 = OUTPUT(GND);
+
+
+--DRAM_BA_1 is DRAM_BA_1
+--operation mode is output
+
+DRAM_BA_1 = OUTPUT(GND);
+
+
+--DRAM_CLK is DRAM_CLK
+--operation mode is output
+
+DRAM_CLK = OUTPUT(H1__clk0);
+
+
+--DRAM_CKE is DRAM_CKE
+--operation mode is output
+
+DRAM_CKE = OUTPUT(VCC);
+
+
+--FL_ADDR[0] is FL_ADDR[0]
+--operation mode is output
+
+FL_ADDR[0] = OUTPUT(GND);
+
+
+--FL_ADDR[1] is FL_ADDR[1]
+--operation mode is output
+
+FL_ADDR[1] = OUTPUT(GND);
+
+
+--FL_ADDR[2] is FL_ADDR[2]
+--operation mode is output
+
+FL_ADDR[2] = OUTPUT(GND);
+
+
+--FL_ADDR[3] is FL_ADDR[3]
+--operation mode is output
+
+FL_ADDR[3] = OUTPUT(GND);
+
+
+--FL_ADDR[4] is FL_ADDR[4]
+--operation mode is output
+
+FL_ADDR[4] = OUTPUT(GND);
+
+
+--FL_ADDR[5] is FL_ADDR[5]
+--operation mode is output
+
+FL_ADDR[5] = OUTPUT(GND);
+
+
+--FL_ADDR[6] is FL_ADDR[6]
+--operation mode is output
+
+FL_ADDR[6] = OUTPUT(GND);
+
+
+--FL_ADDR[7] is FL_ADDR[7]
+--operation mode is output
+
+FL_ADDR[7] = OUTPUT(GND);
+
+
+--FL_ADDR[8] is FL_ADDR[8]
+--operation mode is output
+
+FL_ADDR[8] = OUTPUT(GND);
+
+
+--FL_ADDR[9] is FL_ADDR[9]
+--operation mode is output
+
+FL_ADDR[9] = OUTPUT(GND);
+
+
+--FL_ADDR[10] is FL_ADDR[10]
+--operation mode is output
+
+FL_ADDR[10] = OUTPUT(GND);
+
+
+--FL_ADDR[11] is FL_ADDR[11]
+--operation mode is output
+
+FL_ADDR[11] = OUTPUT(GND);
+
+
+--FL_ADDR[12] is FL_ADDR[12]
+--operation mode is output
+
+FL_ADDR[12] = OUTPUT(GND);
+
+
+--FL_ADDR[13] is FL_ADDR[13]
+--operation mode is output
+
+FL_ADDR[13] = OUTPUT(GND);
+
+
+--FL_ADDR[14] is FL_ADDR[14]
+--operation mode is output
+
+FL_ADDR[14] = OUTPUT(GND);
+
+
+--FL_ADDR[15] is FL_ADDR[15]
+--operation mode is output
+
+FL_ADDR[15] = OUTPUT(GND);
+
+
+--FL_ADDR[16] is FL_ADDR[16]
+--operation mode is output
+
+FL_ADDR[16] = OUTPUT(GND);
+
+
+--FL_ADDR[17] is FL_ADDR[17]
+--operation mode is output
+
+FL_ADDR[17] = OUTPUT(GND);
+
+
+--FL_ADDR[18] is FL_ADDR[18]
+--operation mode is output
+
+FL_ADDR[18] = OUTPUT(GND);
+
+
+--FL_ADDR[19] is FL_ADDR[19]
+--operation mode is output
+
+FL_ADDR[19] = OUTPUT(GND);
+
+
+--FL_WE_N is FL_WE_N
+--operation mode is output
+
+FL_WE_N = OUTPUT(GND);
+
+
+--FL_RST_N is FL_RST_N
+--operation mode is output
+
+FL_RST_N = OUTPUT(GND);
+
+
+--FL_OE_N is FL_OE_N
+--operation mode is output
+
+FL_OE_N = OUTPUT(GND);
+
+
+--FL_CE_N is FL_CE_N
+--operation mode is output
+
+FL_CE_N = OUTPUT(GND);
+
+
+--SRAM_ADDR[0] is SRAM_ADDR[0]
+--operation mode is output
+
+SRAM_ADDR[0] = OUTPUT(GND);
+
+
+--SRAM_ADDR[1] is SRAM_ADDR[1]
+--operation mode is output
+
+SRAM_ADDR[1] = OUTPUT(GND);
+
+
+--SRAM_ADDR[2] is SRAM_ADDR[2]
+--operation mode is output
+
+SRAM_ADDR[2] = OUTPUT(GND);
+
+
+--SRAM_ADDR[3] is SRAM_ADDR[3]
+--operation mode is output
+
+SRAM_ADDR[3] = OUTPUT(GND);
+
+
+--SRAM_ADDR[4] is SRAM_ADDR[4]
+--operation mode is output
+
+SRAM_ADDR[4] = OUTPUT(GND);
+
+
+--SRAM_ADDR[5] is SRAM_ADDR[5]
+--operation mode is output
+
+SRAM_ADDR[5] = OUTPUT(GND);
+
+
+--SRAM_ADDR[6] is SRAM_ADDR[6]
+--operation mode is output
+
+SRAM_ADDR[6] = OUTPUT(GND);
+
+
+--SRAM_ADDR[7] is SRAM_ADDR[7]
+--operation mode is output
+
+SRAM_ADDR[7] = OUTPUT(GND);
+
+
+--SRAM_ADDR[8] is SRAM_ADDR[8]
+--operation mode is output
+
+SRAM_ADDR[8] = OUTPUT(GND);
+
+
+--SRAM_ADDR[9] is SRAM_ADDR[9]
+--operation mode is output
+
+SRAM_ADDR[9] = OUTPUT(GND);
+
+
+--SRAM_ADDR[10] is SRAM_ADDR[10]
+--operation mode is output
+
+SRAM_ADDR[10] = OUTPUT(GND);
+
+
+--SRAM_ADDR[11] is SRAM_ADDR[11]
+--operation mode is output
+
+SRAM_ADDR[11] = OUTPUT(GND);
+
+
+--SRAM_ADDR[12] is SRAM_ADDR[12]
+--operation mode is output
+
+SRAM_ADDR[12] = OUTPUT(GND);
+
+
+--SRAM_ADDR[13] is SRAM_ADDR[13]
+--operation mode is output
+
+SRAM_ADDR[13] = OUTPUT(GND);
+
+
+--SRAM_ADDR[14] is SRAM_ADDR[14]
+--operation mode is output
+
+SRAM_ADDR[14] = OUTPUT(GND);
+
+
+--SRAM_ADDR[15] is SRAM_ADDR[15]
+--operation mode is output
+
+SRAM_ADDR[15] = OUTPUT(GND);
+
+
+--SRAM_ADDR[16] is SRAM_ADDR[16]
+--operation mode is output
+
+SRAM_ADDR[16] = OUTPUT(GND);
+
+
+--SRAM_ADDR[17] is SRAM_ADDR[17]
+--operation mode is output
+
+SRAM_ADDR[17] = OUTPUT(GND);
+
+
+--SRAM_UB_N is SRAM_UB_N
+--operation mode is output
+
+SRAM_UB_N = OUTPUT(GND);
+
+
+--SRAM_LB_N is SRAM_LB_N
+--operation mode is output
+
+SRAM_LB_N = OUTPUT(GND);
+
+
+--SRAM_WE_N is SRAM_WE_N
+--operation mode is output
+
+SRAM_WE_N = OUTPUT(GND);
+
+
+--SRAM_CE_N is SRAM_CE_N
+--operation mode is output
+
+SRAM_CE_N = OUTPUT(GND);
+
+
+--SRAM_OE_N is SRAM_OE_N
+--operation mode is output
+
+SRAM_OE_N = OUTPUT(GND);
+
+
+--OTG_ADDR[0] is OTG_ADDR[0]
+--operation mode is output
+
+OTG_ADDR[0] = OUTPUT(GND);
+
+
+--OTG_ADDR[1] is OTG_ADDR[1]
+--operation mode is output
+
+OTG_ADDR[1] = OUTPUT(GND);
+
+
+--OTG_CS_N is OTG_CS_N
+--operation mode is output
+
+OTG_CS_N = OUTPUT(GND);
+
+
+--OTG_RD_N is OTG_RD_N
+--operation mode is output
+
+OTG_RD_N = OUTPUT(GND);
+
+
+--OTG_WR_N is OTG_WR_N
+--operation mode is output
+
+OTG_WR_N = OUTPUT(GND);
+
+
+--OTG_RST_N is OTG_RST_N
+--operation mode is output
+
+OTG_RST_N = OUTPUT(GND);
+
+
+--OTG_FSPEED is OTG_FSPEED
+--operation mode is output
+
+OTG_FSPEED = OUTPUT(GND);
+
+
+--OTG_LSPEED is OTG_LSPEED
+--operation mode is output
+
+OTG_LSPEED = OUTPUT(GND);
+
+
+--OTG_INT0 is OTG_INT0
+--operation mode is output
+
+OTG_INT0 = OUTPUT(GND);
+
+
+--OTG_INT1 is OTG_INT1
+--operation mode is output
+
+OTG_INT1 = OUTPUT(GND);
+
+
+--OTG_DREQ0 is OTG_DREQ0
+--operation mode is output
+
+OTG_DREQ0 = OUTPUT(GND);
+
+
+--OTG_DREQ1 is OTG_DREQ1
+--operation mode is output
+
+OTG_DREQ1 = OUTPUT(GND);
+
+
+--OTG_DACK0_N is OTG_DACK0_N
+--operation mode is output
+
+OTG_DACK0_N = OUTPUT(GND);
+
+
+--OTG_DACK1_N is OTG_DACK1_N
+--operation mode is output
+
+OTG_DACK1_N = OUTPUT(GND);
+
+
+--LCD_ON is LCD_ON
+--operation mode is output
+
+LCD_ON = OUTPUT(VCC);
+
+
+--LCD_BLON is LCD_BLON
+--operation mode is output
+
+LCD_BLON = OUTPUT(VCC);
+
+
+--LCD_RW is LCD_RW
+--operation mode is output
+
+LCD_RW = OUTPUT(GND);
+
+
+--LCD_EN is LCD_EN
+--operation mode is output
+
+LCD_EN = OUTPUT(GND);
+
+
+--LCD_RS is LCD_RS
+--operation mode is output
+
+LCD_RS = OUTPUT(GND);
+
+
+--SD_CLK is SD_CLK
+--operation mode is output
+
+SD_CLK = OUTPUT(GND);
+
+
+--TDO is TDO
+--operation mode is output
+
+TDO = OUTPUT(GND);
+
+
+--I2C_SCLK is I2C_SCLK
+--operation mode is output
+
+I2C_SCLK = OUTPUT(GND);
+
+
+--VGA_CLK is VGA_CLK
+--operation mode is output
+
+VGA_CLK = OUTPUT(H1__clk1);
+
+
+--VGA_HS is VGA_HS
+--operation mode is output
+
+VGA_HS = OUTPUT(E1_hsync);
+
+
+--VGA_VS is VGA_VS
+--operation mode is output
+
+VGA_VS = OUTPUT(E1_vsync);
+
+
+--VGA_BLANK is VGA_BLANK
+--operation mode is output
+
+VGA_BLANK = OUTPUT(E1L45);
+
+
+--VGA_SYNC is VGA_SYNC
+--operation mode is output
+
+VGA_SYNC = OUTPUT(VCC);
+
+
+--VGA_R[0] is VGA_R[0]
+--operation mode is output
+
+VGA_R[0] = OUTPUT(GND);
+
+
+--VGA_R[1] is VGA_R[1]
+--operation mode is output
+
+VGA_R[1] = OUTPUT(GND);
+
+
+--VGA_R[2] is VGA_R[2]
+--operation mode is output
+
+VGA_R[2] = OUTPUT(GND);
+
+
+--VGA_R[3] is VGA_R[3]
+--operation mode is output
+
+VGA_R[3] = OUTPUT(GND);
+
+
+--VGA_R[4] is VGA_R[4]
+--operation mode is output
+
+VGA_R[4] = OUTPUT(GND);
+
+
+--VGA_R[5] is VGA_R[5]
+--operation mode is output
+
+VGA_R[5] = OUTPUT(F1L43);
+
+
+--VGA_R[6] is VGA_R[6]
+--operation mode is output
+
+VGA_R[6] = OUTPUT(F1L53);
+
+
+--VGA_R[7] is VGA_R[7]
+--operation mode is output
+
+VGA_R[7] = OUTPUT(F1L63);
+
+
+--VGA_R[8] is VGA_R[8]
+--operation mode is output
+
+VGA_R[8] = OUTPUT(F1L73);
+
+
+--VGA_R[9] is VGA_R[9]
+--operation mode is output
+
+VGA_R[9] = OUTPUT(F1L83);
+
+
+--VGA_G[0] is VGA_G[0]
+--operation mode is output
+
+VGA_G[0] = OUTPUT(GND);
+
+
+--VGA_G[1] is VGA_G[1]
+--operation mode is output
+
+VGA_G[1] = OUTPUT(GND);
+
+
+--VGA_G[2] is VGA_G[2]
+--operation mode is output
+
+VGA_G[2] = OUTPUT(GND);
+
+
+--VGA_G[3] is VGA_G[3]
+--operation mode is output
+
+VGA_G[3] = OUTPUT(GND);
+
+
+--VGA_G[4] is VGA_G[4]
+--operation mode is output
+
+VGA_G[4] = OUTPUT(GND);
+
+
+--VGA_G[5] is VGA_G[5]
+--operation mode is output
+
+VGA_G[5] = OUTPUT(F1L92);
+
+
+--VGA_G[6] is VGA_G[6]
+--operation mode is output
+
+VGA_G[6] = OUTPUT(F1L03);
+
+
+--VGA_G[7] is VGA_G[7]
+--operation mode is output
+
+VGA_G[7] = OUTPUT(F1L13);
+
+
+--VGA_G[8] is VGA_G[8]
+--operation mode is output
+
+VGA_G[8] = OUTPUT(F1L23);
+
+
+--VGA_G[9] is VGA_G[9]
+--operation mode is output
+
+VGA_G[9] = OUTPUT(F1L33);
+
+
+--VGA_B[0] is VGA_B[0]
+--operation mode is output
+
+VGA_B[0] = OUTPUT(GND);
+
+
+--VGA_B[1] is VGA_B[1]
+--operation mode is output
+
+VGA_B[1] = OUTPUT(GND);
+
+
+--VGA_B[2] is VGA_B[2]
+--operation mode is output
+
+VGA_B[2] = OUTPUT(GND);
+
+
+--VGA_B[3] is VGA_B[3]
+--operation mode is output
+
+VGA_B[3] = OUTPUT(GND);
+
+
+--VGA_B[4] is VGA_B[4]
+--operation mode is output
+
+VGA_B[4] = OUTPUT(GND);
+
+
+--VGA_B[5] is VGA_B[5]
+--operation mode is output
+
+VGA_B[5] = OUTPUT(F1L42);
+
+
+--VGA_B[6] is VGA_B[6]
+--operation mode is output
+
+VGA_B[6] = OUTPUT(F1L52);
+
+
+--VGA_B[7] is VGA_B[7]
+--operation mode is output
+
+VGA_B[7] = OUTPUT(F1L62);
+
+
+--VGA_B[8] is VGA_B[8]
+--operation mode is output
+
+VGA_B[8] = OUTPUT(F1L72);
+
+
+--VGA_B[9] is VGA_B[9]
+--operation mode is output
+
+VGA_B[9] = OUTPUT(F1L82);
+
+
+--ENET_CMD is ENET_CMD
+--operation mode is output
+
+ENET_CMD = OUTPUT(GND);
+
+
+--ENET_CS_N is ENET_CS_N
+--operation mode is output
+
+ENET_CS_N = OUTPUT(GND);
+
+
+--ENET_WR_N is ENET_WR_N
+--operation mode is output
+
+ENET_WR_N = OUTPUT(GND);
+
+
+--ENET_RD_N is ENET_RD_N
+--operation mode is output
+
+ENET_RD_N = OUTPUT(GND);
+
+
+--ENET_RST_N is ENET_RST_N
+--operation mode is output
+
+ENET_RST_N = OUTPUT(GND);
+
+
+--ENET_CLK is ENET_CLK
+--operation mode is output
+
+ENET_CLK = OUTPUT(GND);
+
+
+--AUD_DACDAT is AUD_DACDAT
+--operation mode is output
+
+AUD_DACDAT = OUTPUT(GND);
+
+
+--AUD_XCK is AUD_XCK
+--operation mode is output
+
+AUD_XCK = OUTPUT(GND);
+
+
+--TD_RESET is TD_RESET
+--operation mode is output
+
+TD_RESET = OUTPUT(GND);
+
+
+--SD_DAT3 is SD_DAT3
+--operation mode is bidir
+
+SD_DAT3 = BIDIR(OPNDRN(VCC));
+
+
+--SD_CMD is SD_CMD
+--operation mode is bidir
+
+SD_CMD = BIDIR(OPNDRN(VCC));
+
+
+--G1_bufferData[0] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[0]
+--operation mode is bidir
+
+G1_bufferData[0] = DRAM_DQ[0];
+
+--DRAM_DQ[0] is DRAM_DQ[0]
+--operation mode is bidir
+
+DRAM_DQ[0]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[0] = BIDIR(DRAM_DQ[0]_tri_out);
+
+
+--G1_bufferData[1] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[1]
+--operation mode is bidir
+
+G1_bufferData[1] = DRAM_DQ[1];
+
+--DRAM_DQ[1] is DRAM_DQ[1]
+--operation mode is bidir
+
+DRAM_DQ[1]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[1] = BIDIR(DRAM_DQ[1]_tri_out);
+
+
+--G1_bufferData[2] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[2]
+--operation mode is bidir
+
+G1_bufferData[2] = DRAM_DQ[2];
+
+--DRAM_DQ[2] is DRAM_DQ[2]
+--operation mode is bidir
+
+DRAM_DQ[2]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[2] = BIDIR(DRAM_DQ[2]_tri_out);
+
+
+--G1_bufferData[3] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[3]
+--operation mode is bidir
+
+G1_bufferData[3] = DRAM_DQ[3];
+
+--DRAM_DQ[3] is DRAM_DQ[3]
+--operation mode is bidir
+
+DRAM_DQ[3]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[3] = BIDIR(DRAM_DQ[3]_tri_out);
+
+
+--G1_bufferData[4] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[4]
+--operation mode is bidir
+
+G1_bufferData[4] = DRAM_DQ[4];
+
+--DRAM_DQ[4] is DRAM_DQ[4]
+--operation mode is bidir
+
+DRAM_DQ[4]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[4] = BIDIR(DRAM_DQ[4]_tri_out);
+
+
+--G1_bufferData[5] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[5]
+--operation mode is bidir
+
+G1_bufferData[5] = DRAM_DQ[5];
+
+--DRAM_DQ[5] is DRAM_DQ[5]
+--operation mode is bidir
+
+DRAM_DQ[5]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[5] = BIDIR(DRAM_DQ[5]_tri_out);
+
+
+--G1_bufferData[6] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[6]
+--operation mode is bidir
+
+G1_bufferData[6] = DRAM_DQ[6];
+
+--DRAM_DQ[6] is DRAM_DQ[6]
+--operation mode is bidir
+
+DRAM_DQ[6]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[6] = BIDIR(DRAM_DQ[6]_tri_out);
+
+
+--G1_bufferData[7] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[7]
+--operation mode is bidir
+
+G1_bufferData[7] = DRAM_DQ[7];
+
+--DRAM_DQ[7] is DRAM_DQ[7]
+--operation mode is bidir
+
+DRAM_DQ[7]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[7] = BIDIR(DRAM_DQ[7]_tri_out);
+
+
+--G1_bufferData[8] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[8]
+--operation mode is bidir
+
+G1_bufferData[8] = DRAM_DQ[8];
+
+--DRAM_DQ[8] is DRAM_DQ[8]
+--operation mode is bidir
+
+DRAM_DQ[8]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[8] = BIDIR(DRAM_DQ[8]_tri_out);
+
+
+--G1_bufferData[9] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[9]
+--operation mode is bidir
+
+G1_bufferData[9] = DRAM_DQ[9];
+
+--DRAM_DQ[9] is DRAM_DQ[9]
+--operation mode is bidir
+
+DRAM_DQ[9]_tri_out = TRI(G1L93, G1L671);
+DRAM_DQ[9] = BIDIR(DRAM_DQ[9]_tri_out);
+
+
+--G1_bufferData[10] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[10]
+--operation mode is bidir
+
+G1_bufferData[10] = DRAM_DQ[10];
+
+--DRAM_DQ[10] is DRAM_DQ[10]
+--operation mode is bidir
+
+DRAM_DQ[10]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[10] = BIDIR(DRAM_DQ[10]_tri_out);
+
+
+--G1_bufferData[11] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[11]
+--operation mode is bidir
+
+G1_bufferData[11] = DRAM_DQ[11];
+
+--DRAM_DQ[11] is DRAM_DQ[11]
+--operation mode is bidir
+
+DRAM_DQ[11]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[11] = BIDIR(DRAM_DQ[11]_tri_out);
+
+
+--G1_bufferData[12] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[12]
+--operation mode is bidir
+
+G1_bufferData[12] = DRAM_DQ[12];
+
+--DRAM_DQ[12] is DRAM_DQ[12]
+--operation mode is bidir
+
+DRAM_DQ[12]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[12] = BIDIR(DRAM_DQ[12]_tri_out);
+
+
+--G1_bufferData[13] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[13]
+--operation mode is bidir
+
+G1_bufferData[13] = DRAM_DQ[13];
+
+--DRAM_DQ[13] is DRAM_DQ[13]
+--operation mode is bidir
+
+DRAM_DQ[13]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[13] = BIDIR(DRAM_DQ[13]_tri_out);
+
+
+--G1_bufferData[14] is VgaAdapter:comb_718|SdRam:comb_47|bufferData[14]
+--operation mode is bidir
+
+G1_bufferData[14] = DRAM_DQ[14];
+
+--DRAM_DQ[14] is DRAM_DQ[14]
+--operation mode is bidir
+
+DRAM_DQ[14]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[14] = BIDIR(DRAM_DQ[14]_tri_out);
+
+
+--DRAM_DQ[15] is DRAM_DQ[15]
+--operation mode is bidir
+
+DRAM_DQ[15]_tri_out = TRI(G1L23, G1L671);
+DRAM_DQ[15] = BIDIR(DRAM_DQ[15]_tri_out);
+
+
+--FL_DQ[0] is FL_DQ[0]
+--operation mode is bidir
+
+FL_DQ[0] = BIDIR(OPNDRN(VCC));
+
+
+--FL_DQ[1] is FL_DQ[1]
+--operation mode is bidir
+
+FL_DQ[1] = BIDIR(OPNDRN(VCC));
+
+
+--FL_DQ[2] is FL_DQ[2]
+--operation mode is bidir
+
+FL_DQ[2] = BIDIR(OPNDRN(VCC));
+
+
+--FL_DQ[3] is FL_DQ[3]
+--operation mode is bidir
+
+FL_DQ[3] = BIDIR(OPNDRN(VCC));
+
+
+--FL_DQ[4] is FL_DQ[4]
+--operation mode is bidir
+
+FL_DQ[4] = BIDIR(OPNDRN(VCC));
+
+
+--FL_DQ[5] is FL_DQ[5]
+--operation mode is bidir
+
+FL_DQ[5] = BIDIR(OPNDRN(VCC));
+
+
+--FL_DQ[6] is FL_DQ[6]
+--operation mode is bidir
+
+FL_DQ[6] = BIDIR(OPNDRN(VCC));
+
+
+--FL_DQ[7] is FL_DQ[7]
+--operation mode is bidir
+
+FL_DQ[7] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[0] is SRAM_DQ[0]
+--operation mode is bidir
+
+SRAM_DQ[0] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[1] is SRAM_DQ[1]
+--operation mode is bidir
+
+SRAM_DQ[1] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[2] is SRAM_DQ[2]
+--operation mode is bidir
+
+SRAM_DQ[2] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[3] is SRAM_DQ[3]
+--operation mode is bidir
+
+SRAM_DQ[3] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[4] is SRAM_DQ[4]
+--operation mode is bidir
+
+SRAM_DQ[4] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[5] is SRAM_DQ[5]
+--operation mode is bidir
+
+SRAM_DQ[5] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[6] is SRAM_DQ[6]
+--operation mode is bidir
+
+SRAM_DQ[6] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[7] is SRAM_DQ[7]
+--operation mode is bidir
+
+SRAM_DQ[7] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[8] is SRAM_DQ[8]
+--operation mode is bidir
+
+SRAM_DQ[8] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[9] is SRAM_DQ[9]
+--operation mode is bidir
+
+SRAM_DQ[9] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[10] is SRAM_DQ[10]
+--operation mode is bidir
+
+SRAM_DQ[10] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[11] is SRAM_DQ[11]
+--operation mode is bidir
+
+SRAM_DQ[11] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[12] is SRAM_DQ[12]
+--operation mode is bidir
+
+SRAM_DQ[12] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[13] is SRAM_DQ[13]
+--operation mode is bidir
+
+SRAM_DQ[13] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[14] is SRAM_DQ[14]
+--operation mode is bidir
+
+SRAM_DQ[14] = BIDIR(OPNDRN(VCC));
+
+
+--SRAM_DQ[15] is SRAM_DQ[15]
+--operation mode is bidir
+
+SRAM_DQ[15] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[0] is OTG_DATA[0]
+--operation mode is bidir
+
+OTG_DATA[0] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[1] is OTG_DATA[1]
+--operation mode is bidir
+
+OTG_DATA[1] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[2] is OTG_DATA[2]
+--operation mode is bidir
+
+OTG_DATA[2] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[3] is OTG_DATA[3]
+--operation mode is bidir
+
+OTG_DATA[3] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[4] is OTG_DATA[4]
+--operation mode is bidir
+
+OTG_DATA[4] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[5] is OTG_DATA[5]
+--operation mode is bidir
+
+OTG_DATA[5] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[6] is OTG_DATA[6]
+--operation mode is bidir
+
+OTG_DATA[6] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[7] is OTG_DATA[7]
+--operation mode is bidir
+
+OTG_DATA[7] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[8] is OTG_DATA[8]
+--operation mode is bidir
+
+OTG_DATA[8] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[9] is OTG_DATA[9]
+--operation mode is bidir
+
+OTG_DATA[9] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[10] is OTG_DATA[10]
+--operation mode is bidir
+
+OTG_DATA[10] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[11] is OTG_DATA[11]
+--operation mode is bidir
+
+OTG_DATA[11] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[12] is OTG_DATA[12]
+--operation mode is bidir
+
+OTG_DATA[12] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[13] is OTG_DATA[13]
+--operation mode is bidir
+
+OTG_DATA[13] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[14] is OTG_DATA[14]
+--operation mode is bidir
+
+OTG_DATA[14] = BIDIR(OPNDRN(VCC));
+
+
+--OTG_DATA[15] is OTG_DATA[15]
+--operation mode is bidir
+
+OTG_DATA[15] = BIDIR(OPNDRN(VCC));
+
+
+--LCD_DATA[0] is LCD_DATA[0]
+--operation mode is bidir
+
+LCD_DATA[0] = BIDIR(OPNDRN(VCC));
+
+
+--LCD_DATA[1] is LCD_DATA[1]
+--operation mode is bidir
+
+LCD_DATA[1] = BIDIR(OPNDRN(VCC));
+
+
+--LCD_DATA[2] is LCD_DATA[2]
+--operation mode is bidir
+
+LCD_DATA[2] = BIDIR(OPNDRN(VCC));
+
+
+--LCD_DATA[3] is LCD_DATA[3]
+--operation mode is bidir
+
+LCD_DATA[3] = BIDIR(OPNDRN(VCC));
+
+
+--LCD_DATA[4] is LCD_DATA[4]
+--operation mode is bidir
+
+LCD_DATA[4] = BIDIR(OPNDRN(VCC));
+
+
+--LCD_DATA[5] is LCD_DATA[5]
+--operation mode is bidir
+
+LCD_DATA[5] = BIDIR(OPNDRN(VCC));
+
+
+--LCD_DATA[6] is LCD_DATA[6]
+--operation mode is bidir
+
+LCD_DATA[6] = BIDIR(OPNDRN(VCC));
+
+
+--LCD_DATA[7] is LCD_DATA[7]
+--operation mode is bidir
+
+LCD_DATA[7] = BIDIR(OPNDRN(VCC));
+
+
+--SD_DAT is SD_DAT
+--operation mode is bidir
+
+SD_DAT = BIDIR(OPNDRN(VCC));
+
+
+--I2C_SDAT is I2C_SDAT
+--operation mode is bidir
+
+I2C_SDAT = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[0] is ENET_DATA[0]
+--operation mode is bidir
+
+ENET_DATA[0] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[1] is ENET_DATA[1]
+--operation mode is bidir
+
+ENET_DATA[1] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[2] is ENET_DATA[2]
+--operation mode is bidir
+
+ENET_DATA[2] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[3] is ENET_DATA[3]
+--operation mode is bidir
+
+ENET_DATA[3] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[4] is ENET_DATA[4]
+--operation mode is bidir
+
+ENET_DATA[4] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[5] is ENET_DATA[5]
+--operation mode is bidir
+
+ENET_DATA[5] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[6] is ENET_DATA[6]
+--operation mode is bidir
+
+ENET_DATA[6] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[7] is ENET_DATA[7]
+--operation mode is bidir
+
+ENET_DATA[7] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[8] is ENET_DATA[8]
+--operation mode is bidir
+
+ENET_DATA[8] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[9] is ENET_DATA[9]
+--operation mode is bidir
+
+ENET_DATA[9] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[10] is ENET_DATA[10]
+--operation mode is bidir
+
+ENET_DATA[10] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[11] is ENET_DATA[11]
+--operation mode is bidir
+
+ENET_DATA[11] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[12] is ENET_DATA[12]
+--operation mode is bidir
+
+ENET_DATA[12] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[13] is ENET_DATA[13]
+--operation mode is bidir
+
+ENET_DATA[13] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[14] is ENET_DATA[14]
+--operation mode is bidir
+
+ENET_DATA[14] = BIDIR(OPNDRN(VCC));
+
+
+--ENET_DATA[15] is ENET_DATA[15]
+--operation mode is bidir
+
+ENET_DATA[15] = BIDIR(OPNDRN(VCC));
+
+
+--AUD_ADCLRCK is AUD_ADCLRCK
+--operation mode is bidir
+
+AUD_ADCLRCK = BIDIR(OPNDRN(VCC));
+
+
+--AUD_DACLRCK is AUD_DACLRCK
+--operation mode is bidir
+
+AUD_DACLRCK = BIDIR(OPNDRN(VCC));
+
+
+--AUD_BCLK is AUD_BCLK
+--operation mode is bidir
+
+AUD_BCLK = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[0] is GPIO_0[0]
+--operation mode is bidir
+
+GPIO_0[0] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[1] is GPIO_0[1]
+--operation mode is bidir
+
+GPIO_0[1] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[2] is GPIO_0[2]
+--operation mode is bidir
+
+GPIO_0[2] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[3] is GPIO_0[3]
+--operation mode is bidir
+
+GPIO_0[3] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[4] is GPIO_0[4]
+--operation mode is bidir
+
+GPIO_0[4] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[5] is GPIO_0[5]
+--operation mode is bidir
+
+GPIO_0[5] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[6] is GPIO_0[6]
+--operation mode is bidir
+
+GPIO_0[6] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[7] is GPIO_0[7]
+--operation mode is bidir
+
+GPIO_0[7] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[8] is GPIO_0[8]
+--operation mode is bidir
+
+GPIO_0[8] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[9] is GPIO_0[9]
+--operation mode is bidir
+
+GPIO_0[9] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[10] is GPIO_0[10]
+--operation mode is bidir
+
+GPIO_0[10] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[11] is GPIO_0[11]
+--operation mode is bidir
+
+GPIO_0[11] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[12] is GPIO_0[12]
+--operation mode is bidir
+
+GPIO_0[12] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[13] is GPIO_0[13]
+--operation mode is bidir
+
+GPIO_0[13] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[14] is GPIO_0[14]
+--operation mode is bidir
+
+GPIO_0[14] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[15] is GPIO_0[15]
+--operation mode is bidir
+
+GPIO_0[15] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[16] is GPIO_0[16]
+--operation mode is bidir
+
+GPIO_0[16] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[17] is GPIO_0[17]
+--operation mode is bidir
+
+GPIO_0[17] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[18] is GPIO_0[18]
+--operation mode is bidir
+
+GPIO_0[18] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[19] is GPIO_0[19]
+--operation mode is bidir
+
+GPIO_0[19] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[20] is GPIO_0[20]
+--operation mode is bidir
+
+GPIO_0[20] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[21] is GPIO_0[21]
+--operation mode is bidir
+
+GPIO_0[21] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[22] is GPIO_0[22]
+--operation mode is bidir
+
+GPIO_0[22] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[23] is GPIO_0[23]
+--operation mode is bidir
+
+GPIO_0[23] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[24] is GPIO_0[24]
+--operation mode is bidir
+
+GPIO_0[24] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[25] is GPIO_0[25]
+--operation mode is bidir
+
+GPIO_0[25] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[26] is GPIO_0[26]
+--operation mode is bidir
+
+GPIO_0[26] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[27] is GPIO_0[27]
+--operation mode is bidir
+
+GPIO_0[27] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[28] is GPIO_0[28]
+--operation mode is bidir
+
+GPIO_0[28] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[29] is GPIO_0[29]
+--operation mode is bidir
+
+GPIO_0[29] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[30] is GPIO_0[30]
+--operation mode is bidir
+
+GPIO_0[30] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[31] is GPIO_0[31]
+--operation mode is bidir
+
+GPIO_0[31] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[32] is GPIO_0[32]
+--operation mode is bidir
+
+GPIO_0[32] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[33] is GPIO_0[33]
+--operation mode is bidir
+
+GPIO_0[33] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[34] is GPIO_0[34]
+--operation mode is bidir
+
+GPIO_0[34] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_0[35] is GPIO_0[35]
+--operation mode is bidir
+
+GPIO_0[35] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[0] is GPIO_1[0]
+--operation mode is bidir
+
+GPIO_1[0] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[1] is GPIO_1[1]
+--operation mode is bidir
+
+GPIO_1[1] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[2] is GPIO_1[2]
+--operation mode is bidir
+
+GPIO_1[2] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[3] is GPIO_1[3]
+--operation mode is bidir
+
+GPIO_1[3] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[4] is GPIO_1[4]
+--operation mode is bidir
+
+GPIO_1[4] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[5] is GPIO_1[5]
+--operation mode is bidir
+
+GPIO_1[5] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[6] is GPIO_1[6]
+--operation mode is bidir
+
+GPIO_1[6] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[7] is GPIO_1[7]
+--operation mode is bidir
+
+GPIO_1[7] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[8] is GPIO_1[8]
+--operation mode is bidir
+
+GPIO_1[8] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[9] is GPIO_1[9]
+--operation mode is bidir
+
+GPIO_1[9] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[10] is GPIO_1[10]
+--operation mode is bidir
+
+GPIO_1[10] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[11] is GPIO_1[11]
+--operation mode is bidir
+
+GPIO_1[11] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[12] is GPIO_1[12]
+--operation mode is bidir
+
+GPIO_1[12] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[13] is GPIO_1[13]
+--operation mode is bidir
+
+GPIO_1[13] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[14] is GPIO_1[14]
+--operation mode is bidir
+
+GPIO_1[14] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[15] is GPIO_1[15]
+--operation mode is bidir
+
+GPIO_1[15] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[16] is GPIO_1[16]
+--operation mode is bidir
+
+GPIO_1[16] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[17] is GPIO_1[17]
+--operation mode is bidir
+
+GPIO_1[17] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[18] is GPIO_1[18]
+--operation mode is bidir
+
+GPIO_1[18] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[19] is GPIO_1[19]
+--operation mode is bidir
+
+GPIO_1[19] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[20] is GPIO_1[20]
+--operation mode is bidir
+
+GPIO_1[20] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[21] is GPIO_1[21]
+--operation mode is bidir
+
+GPIO_1[21] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[22] is GPIO_1[22]
+--operation mode is bidir
+
+GPIO_1[22] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[23] is GPIO_1[23]
+--operation mode is bidir
+
+GPIO_1[23] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[24] is GPIO_1[24]
+--operation mode is bidir
+
+GPIO_1[24] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[25] is GPIO_1[25]
+--operation mode is bidir
+
+GPIO_1[25] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[26] is GPIO_1[26]
+--operation mode is bidir
+
+GPIO_1[26] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[27] is GPIO_1[27]
+--operation mode is bidir
+
+GPIO_1[27] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[28] is GPIO_1[28]
+--operation mode is bidir
+
+GPIO_1[28] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[29] is GPIO_1[29]
+--operation mode is bidir
+
+GPIO_1[29] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[30] is GPIO_1[30]
+--operation mode is bidir
+
+GPIO_1[30] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[31] is GPIO_1[31]
+--operation mode is bidir
+
+GPIO_1[31] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[32] is GPIO_1[32]
+--operation mode is bidir
+
+GPIO_1[32] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[33] is GPIO_1[33]
+--operation mode is bidir
+
+GPIO_1[33] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[34] is GPIO_1[34]
+--operation mode is bidir
+
+GPIO_1[34] = BIDIR(OPNDRN(VCC));
+
+
+--GPIO_1[35] is GPIO_1[35]
+--operation mode is bidir
+
+GPIO_1[35] = BIDIR(OPNDRN(VCC));
+
+

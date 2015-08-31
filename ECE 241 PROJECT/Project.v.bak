@@ -1,0 +1,4 @@
+module Project(input [5:0]SW,output reg [5:0]GPIO, output reg [5:0]LED);
+always GPIO <= SW;
+always LED <= SW;
+endmodule 

@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--Created by Liquid XML 2008 (www.liquid-technologies.com) for Altera-->
+<ProgramExecution xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+	<QuartusExecution>
+		<AddressBits>32</AddressBits>
+		<ApplicationError>
+		<Bits>64</Bits>
+		<CommandLine>qwedt</CommandLine>
+		<ErrorMessage>end_of_selection &lt;= m_data-&gt;get_end_time()</ErrorMessage>
+		<Line>4766</Line>
+		<Platform>windows</Platform>
+		<SourceFile>/quartus/db/vdb/vdb_channel.cpp</SourceFile>
+		<StackTrace>
+	  0x49f5b14: db_vdb + 0x55b14 (?create_level_collection@VDB_CHANNEL@@QAEX_J0PAVVDB_LEVEL_COLLECTION@@@Z + 0xcb)
+	  0x7f4ac8a: edt_wedtq + 0x5ac8a (??0WEDTQ_OVERWRITE_CLOCK_CMD@@QAE@_J0HPAVWEDTQ_WAVEFORM_VIEW@@@Z + 0x35a)
+	  0x7f2dc16: edt_wedtq + 0x3dc16 (?update_overwrite_clock@WEDTQ_WAVEFORM_VIEW@@QAEXXZ + 0x176)
+	  0x7f158da: edt_wedtq + 0x258da (?qt_metacall@WEDTQ_FRAME_WND@@UAEHW4Call@QMetaObject@@HPAPAX@Z + 0x18a)
+	 0x670e0eae: QtCore4 + 0xe0eae (?metacall@QMetaObject@@SAHPAVQObject@@W4Call@1@HPAPAX@Z + 0x3e)
+	 0x6500c57d: QtGui4 + 0xc57d (?activate@QAction@@QAEXW4ActionEvent@1@@Z + 0xcd)
+	 0x6537ddaa: QtGui4 + 0x37ddaa (?nextCheckState@QToolButton@@MAEXXZ + 0x1a)
+	 0x652e1bc8: QtGui4 + 0x2e1bc8 (?setId@QButtonGroup@@QAEXPAVQAbstractButton@@H@Z + 0xa78)
+		</StackTrace>
+		<Subsystem>VDB</Subsystem>
+	</ApplicationError>
+	<Compilation>
+			<CompileID>0</CompileID>
+			<DeviceFamily/>
+			<IncrementalCompilation/>
+			<TopLevelEntityName/>
+		</Compilation>
+		<DateInvoked>2013/10/20 18:06:37</DateInvoked>
+		<ElapsedTime>65</ElapsedTime>
+		<IP>192.168.2.21</IP>
+		<IsInternal>false</IsInternal>
+		<IsQt>true</IsQt>
+		<License>
+			<Edition>Web Edition</Edition>
+			<LicenseHostID/>
+		</License>
+		<Machine>
+			<CPUCountLogical>4</CPUCountLogical>
+			<CPUCountPhysical>1</CPUCountPhysical>
+			<CPUSpeed>2893</CPUSpeed>
+			<Hostname>Vaibhav-PC</Hostname>
+			<NIC>
+				<Address>406c8f4f9b39</Address>
+			</NIC>
+			<NIC>
+				<Address>7cd1c392a7de</Address>
+			</NIC>
+			<NIC>
+				<Address>7cd1c392a7df</Address>
+			</NIC>
+			<OS>Windows 7</OS>
+			<OSAddressBits>64</OSAddressBits>
+			<OSVersion>6.1</OSVersion>
+			<Platform>windows</Platform>
+			<ScreenResolution>unknown</ScreenResolution>
+			<TotalPhysicalRAM>4095</TotalPhysicalRAM>
+			<TotalVirtualRAM>0</TotalVirtualRAM>
+		</Machine>
+		<Name>qwedt</Name>
+		<PeakMemoryUsed>0</PeakMemoryUsed>
+		<ProjectRevision>
+			<ProjectName/>
+			<Revision/>
+		</ProjectRevision>
+		<QuartusInstallation>
+			<InstallationID>70835005004601.138224288603972</InstallationID>
+			<Version>
+				<Build>173</Build>
+				<BuildSite>SJ</BuildSite>
+				<BuildSuffix/>
+				<Edition>Web Edition</Edition>
+				<ServicePack>0</ServicePack>
+				<VersionNumber>11.1</VersionNumber>
+			</Version>
+		</QuartusInstallation>
+		<QuartusUser>
+			<AlteraUserName/>
+			<FAEContactName/>
+			<TalkbackStatus>
+				<DateSet/>
+				<TalkbackOn>true</TalkbackOn>
+			</TalkbackStatus>
+			<UserID>70835005004601.138224294403868</UserID>
+			<UserName>Vaibhav</UserName>
+		</QuartusUser>
+	</QuartusExecution>
+	<SchemaVersion>schema_2011-08-26</SchemaVersion>
+</ProgramExecution>
+

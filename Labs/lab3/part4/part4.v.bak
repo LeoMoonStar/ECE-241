@@ -1,0 +1,17 @@
+module part4(input [15:0]SW, input [2:0]KEY, output [7:0]LEDR);
+
+	wire [7:0] A, B, Z;
+	wire [2:0] Q;
+	
+	reg Z;
+	always@(A, B, Q)
+	case(Q)
+		3'b000: Z = ~A | B;
+		3'b001: Z = A | ~B;
+		3'b010: Z = ~A;
+		3'b011: Z = A & B;
+		3'b100: add_FA_8bit(A, B, Z);
+		3'b101: Z = ~(A | B);
+		3'b110: Z = 
+		3'b111: Z = 
+	endcase 

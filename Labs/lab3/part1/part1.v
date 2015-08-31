@@ -1,0 +1,35 @@
+module part1(input [17:0]SW, input [2:0]KEY, output [17:0]LEDR, output [2:0]LEDG, output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7);
+
+	wire [2:0] T, U, V, W, X, Y, Z, S, M0, M1, M2, M3, M4, M5, M6, trash;
+	
+	assign T = SW[2:0];
+	assign U = SW[5:3];
+	assign V = SW[8:6];
+	assign W = SW[8:6];
+	assign X = SW[11:9];
+	assign Y = SW[14:12];
+	assign Z = SW[17:15];
+	assign S = KEY[2:0];
+	assign LEDR = SW;
+	assign LEDG = KEY;
+	
+	mux_3bit_7to1 call1(T, U, V, W, X, Y, Z, S, M0);
+	mux_3bit_7to1 call2(U, V, W, X, Y, Z, T, S, M1);
+	mux_3bit_7to1 call3(V, W, X, Y, Z, T, U, S, M2);
+	mux_3bit_7to1 call4(W, X, Y, Z, T, U, V, S, M3);
+	mux_3bit_7to1 call5(X, Y, Z, T, U, V, W, S, M4);
+	mux_3bit_7to1 call6(Y, Z, T, U, V, W, X, S, M5);
+	mux_3bit_7to1 call7(Z, T, U, V, W, X, Y, S, M6);
+	
+	assign trash = 3'b111;
+	
+	char_7seg inst1(M6, HEX0);
+	char_7seg inst2(M5, HEX1);
+	char_7seg inst3(M4, HEX2);
+	char_7seg inst4(M3, HEX3);
+	char_7seg inst5(M2, HEX4);
+	char_7seg inst6(M1, HEX5);
+	char_7seg inst7(M0, HEX6);
+	char_7seg inst8(trash, HEX7);
+	
+endmodule 

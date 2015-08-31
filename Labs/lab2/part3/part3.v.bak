@@ -1,0 +1,39 @@
+module part3(input [2:0]KEY, input[17:0]SW, output [17:0]LEDR, output [2:0]LEDG);
+	
+	wire [2:0] U, V, W, X, Y, Z, M;	
+	
+	
+	assign U = SW[2:0];
+	assign V = SW[5:3];
+	assign W = SW[8:6];
+	assign X = SW[11:9];
+	assign Y = SW[14:12];
+	assign Z = SW[17:15];
+	assign LEDR = SW;
+	
+	mp6to1 call1(U[0], V[0], W[0], X[0], Y[0], Z[0], KEY, M[0]);
+	mp6to1 call2(U[1], V[1], W[1], X[1], Y[1], Z[1], KEY, M[1]);
+	mp6to1 call3(U[2], V[2], W[2], X[2], Y[2], Z[2], KEY, M[2]);
+	
+	assign LEDG = M;
+	
+endmodule
+
+module mp6to1(input u, v, w, x, y, z, [2:0]S, output m);
+	
+	wire a, b, c, d;
+	
+	mp2to1 inst1(u, v, S[0], a);
+	mp2to1 inst2(w, x, S[0], b);
+	mp2to1 inst3(y, z, S[0], c);
+	mp2to1 inst4(a, b, S[1], d);	
+	mp2to1 inst5(c, d, S[2], m);
+
+endmodule	
+
+
+module mp2to1(input x, y, s, output m);
+	
+	assign m = (~s & x) | (s & y);
+
+endmodule

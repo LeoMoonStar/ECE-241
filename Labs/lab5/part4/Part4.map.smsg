@@ -1,0 +1,5 @@
+Warning (10268): Verilog HDL information at Part4.v(20): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at Part4.v(2): object "a" differs only in case from object "A" in the same scope
+Info (10281): Verilog HDL Declaration information at Part4.v(3): object "b" differs only in case from object "B" in the same scope
+Info (10281): Verilog HDL Declaration information at Part4.v(4): object "c" differs only in case from object "C" in the same scope
+Info (10281): Verilog HDL Declaration information at Part4.v(5): object "d" differs only in case from object "D" in the same scope

@@ -1,0 +1,208 @@
+|part1
+KEY[0] => Clock.IN8
+SW[0] => Clear.IN8
+SW[1] => Enable.IN1
+
+
+|part1|T_flip_flop:call1
+T => comb.IN1
+clk => clk.IN1
+clr => clr.IN1
+
+
+|part1|T_flip_flop:call1|D_flip_flop:call
+w => z~reg0.DATAIN
+clk => z~reg0.CLK
+clr => z~reg0.ACLR
+
+
+|part1|T_flip_flop:call2
+T => comb.IN1
+clk => clk.IN1
+clr => clr.IN1
+
+
+|part1|T_flip_flop:call2|D_flip_flop:call
+w => z~reg0.DATAIN
+clk => z~reg0.CLK
+clr => z~reg0.ACLR
+
+
+|part1|T_flip_flop:call3
+T => comb.IN1
+clk => clk.IN1
+clr => clr.IN1
+
+
+|part1|T_flip_flop:call3|D_flip_flop:call
+w => z~reg0.DATAIN
+clk => z~reg0.CLK
+clr => z~reg0.ACLR
+
+
+|part1|T_flip_flop:call4
+T => comb.IN1
+clk => clk.IN1
+clr => clr.IN1
+
+
+|part1|T_flip_flop:call4|D_flip_flop:call
+w => z~reg0.DATAIN
+clk => z~reg0.CLK
+clr => z~reg0.ACLR
+
+
+|part1|T_flip_flop:call5
+T => comb.IN1
+clk => clk.IN1
+clr => clr.IN1
+
+
+|part1|T_flip_flop:call5|D_flip_flop:call
+w => z~reg0.DATAIN
+clk => z~reg0.CLK
+clr => z~reg0.ACLR
+
+
+|part1|T_flip_flop:call6
+T => comb.IN1
+clk => clk.IN1
+clr => clr.IN1
+
+
+|part1|T_flip_flop:call6|D_flip_flop:call
+w => z~reg0.DATAIN
+clk => z~reg0.CLK
+clr => z~reg0.ACLR
+
+
+|part1|T_flip_flop:call7
+T => comb.IN1
+clk => clk.IN1
+clr => clr.IN1
+
+
+|part1|T_flip_flop:call7|D_flip_flop:call
+w => z~reg0.DATAIN
+clk => z~reg0.CLK
+clr => z~reg0.ACLR
+
+
+|part1|T_flip_flop:call8
+T => comb.IN1
+clk => clk.IN1
+clr => clr.IN1
+
+
+|part1|T_flip_flop:call8|D_flip_flop:call
+w => z~reg0.DATAIN
+clk => z~reg0.CLK
+clr => z~reg0.ACLR
+
+
+|part1|hex_decoder:inst1
+D[3] => display.IN0
+D[3] => display.IN1
+D[3] => display.IN1
+D[3] => display.IN0
+D[3] => display.IN1
+D[3] => display.IN0
+D[3] => display.IN1
+D[3] => display.IN0
+D[3] => display.IN1
+D[3] => display.IN1
+D[3] => display.IN1
+D[3] => display.IN1
+D[3] => display.IN1
+D[3] => display.IN0
+D[3] => display.IN1
+D[3] => display.IN0
+D[2] => display.IN0
+D[2] => display.IN0
+D[2] => display.IN0
+D[2] => display.IN1
+D[2] => display.IN1
+D[2] => display.IN0
+D[2] => display.IN1
+D[2] => display.IN1
+D[2] => display.IN0
+D[2] => display.IN1
+D[2] => display.IN1
+D[2] => display.IN1
+D[2] => display.IN1
+D[2] => display.IN0
+D[2] => display.IN0
+D[1] => display.IN1
+D[1] => display.IN1
+D[1] => display.IN1
+D[1] => display.IN1
+D[1] => display.IN0
+D[1] => display.IN0
+D[1] => display.IN0
+D[1] => display.IN1
+D[1] => display.IN0
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+
+
+|part1|hex_decoder:inst2
+D[3] => display.IN0
+D[3] => display.IN1
+D[3] => display.IN1
+D[3] => display.IN0
+D[3] => display.IN1
+D[3] => display.IN0
+D[3] => display.IN1
+D[3] => display.IN0
+D[3] => display.IN1
+D[3] => display.IN1
+D[3] => display.IN1
+D[3] => display.IN1
+D[3] => display.IN1
+D[3] => display.IN0
+D[3] => display.IN1
+D[3] => display.IN0
+D[2] => display.IN0
+D[2] => display.IN0
+D[2] => display.IN0
+D[2] => display.IN1
+D[2] => display.IN1
+D[2] => display.IN0
+D[2] => display.IN1
+D[2] => display.IN1
+D[2] => display.IN0
+D[2] => display.IN1
+D[2] => display.IN1
+D[2] => display.IN1
+D[2] => display.IN1
+D[2] => display.IN0
+D[2] => display.IN0
+D[1] => display.IN1
+D[1] => display.IN1
+D[1] => display.IN1
+D[1] => display.IN1
+D[1] => display.IN0
+D[1] => display.IN0
+D[1] => display.IN0
+D[1] => display.IN1
+D[1] => display.IN0
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+D[0] => display.IN1
+
+

@@ -1,0 +1,13 @@
+module testforletters();
+always @ (hex_make_code)
+		begin
+			if (hex_make_code == 8'h2B)
+				the_number <= 8'b1; ///F
+			else if (hex_make_code == 8'h4B)
+				 the_number <= 8'b10; //L
+			else if (hex_make_code == 8'h2D)
+				the_number <= 8'b11; //R
+			else
+				 the_number <= 8'b0;//8'b0 0
+		end
+	

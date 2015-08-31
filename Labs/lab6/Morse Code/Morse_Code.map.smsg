@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at Morse_Code.v(82): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Morse_Code.v(172): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at Morse_Code.v(124): object "load" differs only in case from object "LOAD" in the same scope

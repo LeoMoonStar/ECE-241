@@ -1,0 +1,10 @@
+
+State Machine - |Morse_Code|FSM:comb_3|currentState
+Name currentState.RELOAD currentState.PAUSE currentState.DASH currentState.DOT currentState.COMPUTE currentState.LOAD currentState.IDLE 
+currentState.IDLE 0 0 0 0 0 0 0 
+currentState.LOAD 0 0 0 0 0 1 1 
+currentState.COMPUTE 0 0 0 0 1 0 1 
+currentState.DOT 0 0 0 1 0 0 1 
+currentState.DASH 0 0 1 0 0 0 1 
+currentState.PAUSE 0 1 0 0 0 0 1 
+currentState.RELOAD 1 0 0 0 0 0 1 

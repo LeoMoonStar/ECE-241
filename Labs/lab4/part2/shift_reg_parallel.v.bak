@@ -1,0 +1,8 @@
+module shift_reg_parallel(input right, left, D, load, clock, output q);
+
+	wire [1:0]in;
+	
+	mux2to1 call1(right, left, left, in[0]);
+	mux2to1 call2(D, in[0], load, in[1]);
+	
+	

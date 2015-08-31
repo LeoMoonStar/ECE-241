@@ -1,0 +1,8 @@
+|part3
+SW[1] => LEDR~1.IN0
+SW[2] => LEDR~0.IN0
+SW[2] => LEDR~1.IN1
+SW[3] => ~NO_FANOUT~
+SW[4] => LEDR~0.IN1
+
+

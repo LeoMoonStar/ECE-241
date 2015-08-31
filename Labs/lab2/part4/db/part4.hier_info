@@ -1,0 +1,24 @@
+|part4
+SW[0] => temp.IN0
+SW[0] => temp.IN0
+SW[0] => temp.IN0
+SW[0] => temp.IN0
+SW[0] => LEDR[0].DATAIN
+SW[0] => temp.IN1
+SW[1] => temp[3].IN0
+SW[1] => temp.IN0
+SW[1] => temp.IN1
+SW[1] => LEDR[1].DATAIN
+SW[1] => temp.IN1
+SW[1] => temp.IN1
+SW[1] => temp[1].IN1
+SW[2] => temp.IN1
+SW[2] => temp.IN1
+SW[2] => LEDR[2].DATAIN
+SW[2] => temp[6].IN1
+SW[2] => temp[4].IN1
+SW[2] => temp[3].IN1
+SW[2] => temp.IN1
+SW[2] => HEX0[0].DATAIN
+
+

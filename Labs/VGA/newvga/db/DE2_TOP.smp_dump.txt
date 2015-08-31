@@ -1,0 +1,7 @@
+
+State Machine - |DE2_TOP|DisplayExample:comb_720|s
+Name s.S3 s.S1 s.S2 s.S0 
+s.S0 0 0 0 0 
+s.S2 0 0 1 1 
+s.S1 0 1 0 1 
+s.S3 1 0 0 1 

@@ -1,0 +1,133 @@
+
+<!--
+This XML file (created on Wed Aug 09 11:41:56 2006) contains limited information
+from the compilation of logic designs using Quartus II software (BUT NOT THE
+LOGIC DESIGN FILES) that will be transmitted to Altera Corporation through
+operation of the "TalkBack" feature.  To enable/disable this feature, run
+qtb_install.exe located in your quartus/bin folder.  For more information, go
+to license.txt.
+-->
+<talkback>
+<ver>5.0</ver>
+<schema>quartus_version_5.0_build_148.xsd</schema><license>
+	<host_id>0012f0355cc4</host_id>
+	<nic_id>0012f0355cc4</nic_id>
+	<cdrive_id>0cbb7c58</cdrive_id>
+</license>
+<tool>
+	<name>Quartus II</name>
+	<version>5.0</version>
+	<build>Build 148</build>
+	<module>quartus_tan.exe</module>
+	<edition>Full Version</edition>
+	<compilation_end_time>Wed Aug 09 11:41:57 2006</compilation_end_time>
+</tool>
+<machine>
+	<os>Windows XP</os>
+	<cpu>
+		<proc_count>1</proc_count>
+		<cpu_freq units="MHz">600</cpu_freq>
+	</cpu>
+	<ram units="MB">1015</ram>
+</machine>
+<top_file>C:/Documents and Settings/Sam/My Documents/newvga/DE2_TOP</top_file>
+<mep_data>
+	<command_line>quartus_tan --read_settings_files=off --write_settings_files=off DE2_TOP -c DE2_TOP --timing_analysis_only</command_line>
+</mep_data>
+<software_data>
+	<smart_recompile>off</smart_recompile>
+</software_data>
+<clock_settings_summary>
+	<row>
+		<clock_node_name>VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk0</clock_node_name>
+		<type>PLL output</type>
+		<fmax_requirement units="MHz">100.0</fmax_requirement>
+		<early_latency units="ns">-2.324</early_latency>
+		<late_latency units="ns">-2.324</late_latency>
+		<based_on>Master Clock</based_on>
+		<multiply_base_fmax_by>2</multiply_base_fmax_by>
+		<divide_base_fmax_by>1</divide_base_fmax_by>
+		<offset>AUTO</offset>
+	</row>
+	<row>
+		<clock_node_name>VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk1</clock_node_name>
+		<type>PLL output</type>
+		<fmax_requirement units="MHz">25.0</fmax_requirement>
+		<early_latency units="ns">-2.324</early_latency>
+		<late_latency units="ns">-2.324</late_latency>
+		<based_on>Master Clock</based_on>
+		<multiply_base_fmax_by>1</multiply_base_fmax_by>
+		<divide_base_fmax_by>2</divide_base_fmax_by>
+		<offset>AUTO</offset>
+	</row>
+	<row>
+		<clock_node_name>CLOCK_50</clock_node_name>
+		<clock_setting_name>Master Clock</clock_setting_name>
+		<type>User Pin</type>
+		<fmax_requirement units="MHz">50.0</fmax_requirement>
+		<early_latency units="ns">0.000</early_latency>
+		<late_latency units="ns">0.000</late_latency>
+		<based_on>NONE</based_on>
+		<multiply_base_fmax_by>N/A</multiply_base_fmax_by>
+		<divide_base_fmax_by>N/A</divide_base_fmax_by>
+		<offset>N/A</offset>
+	</row>
+	<row>
+		<clock_node_name>DRAM_CLK</clock_node_name>
+		<clock_setting_name>SDRAM Clock</clock_setting_name>
+		<type>Internal Node</type>
+		<fmax_requirement units="MHz">100.0</fmax_requirement>
+		<early_latency units="ns">0.000</early_latency>
+		<late_latency units="ns">0.000</late_latency>
+		<based_on>Master Clock</based_on>
+		<multiply_base_fmax_by>2</multiply_base_fmax_by>
+		<divide_base_fmax_by>1</divide_base_fmax_by>
+		<offset>AUTO</offset>
+	</row>
+	<row>
+		<clock_node_name>VGA_CLK</clock_node_name>
+		<clock_setting_name>VGA Clock</clock_setting_name>
+		<type>Internal Node</type>
+		<fmax_requirement units="MHz">25.0</fmax_requirement>
+		<early_latency units="ns">0.000</early_latency>
+		<late_latency units="ns">0.000</late_latency>
+		<based_on>Master Clock</based_on>
+		<multiply_base_fmax_by>1</multiply_base_fmax_by>
+		<divide_base_fmax_by>2</divide_base_fmax_by>
+		<offset>AUTO</offset>
+	</row>
+</clock_settings_summary>
+<performance>
+	<nonclk>
+		<type>Worst-case tsu</type>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>7.453 ns</actual>
+	</nonclk>
+	<nonclk>
+		<type>Worst-case tco</type>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>10.335 ns</actual>
+	</nonclk>
+	<nonclk>
+		<type>Worst-case th</type>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>-5.635 ns</actual>
+	</nonclk>
+	<clk>
+		<name>VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk0</name>
+		<slack>5.036 ns</slack>
+		<required>100.00 MHz ( period = 10.000 ns )</required>
+		<actual>201.45 MHz ( period = 4.964 ns )</actual>
+	</clk>
+	<clk>
+		<name>VgaAdapter:comb_718|VgaPll:comb_4|altpll:altpll_component|_clk1</name>
+		<slack>34.928 ns</slack>
+		<required>25.00 MHz ( period = 40.000 ns )</required>
+		<actual>197.16 MHz ( period = 5.072 ns )</actual>
+	</clk>
+</performance>
+<compile_id>71D92B06</compile_id>
+</talkback>

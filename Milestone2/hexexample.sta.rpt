@@ -1,0 +1,1315 @@
+TimeQuest Timing Analyzer report for hexexample
+Thu Nov 21 19:08:57 2013
+Quartus II 64-Bit Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLOCK_50'
+ 12. Slow Model Hold: 'CLOCK_50'
+ 13. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'CLOCK_50'
+ 24. Fast Model Hold: 'CLOCK_50'
+ 25. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                     ;
++--------------------+------------------------------------------------------------------+
+; Quartus II Version ; Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Full Version ;
+; Revision Name      ; hexexample                                                       ;
+; Device Family      ; Cyclone II                                                       ;
+; Device Name        ; EP2C35F672C6                                                     ;
+; Timing Models      ; Final                                                            ;
+; Delay Model        ; Combined                                                         ;
+; Rise/Fall Delays   ; Unavailable                                                      ;
++--------------------+------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-4 processors         ; < 0.1%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 141.64 MHz ; 141.64 MHz      ; CLOCK_50   ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------+
+; Slow Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -6.060 ; -432.094      ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.391 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -112.380           ;
++----------+--------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                              ;
++--------+-----------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+----------------+--------------+-------------+--------------+------------+------------+
+; -6.060 ; i[4]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.093      ;
+; -6.060 ; i[4]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.093      ;
+; -6.060 ; i[4]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.093      ;
+; -6.047 ; i[4]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.080      ;
+; -6.047 ; i[4]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.080      ;
+; -5.991 ; i[0]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.024      ;
+; -5.931 ; i[7]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.964      ;
+; -5.931 ; i[7]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.964      ;
+; -5.931 ; i[7]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.964      ;
+; -5.925 ; i[5]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.958      ;
+; -5.925 ; i[5]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.958      ;
+; -5.925 ; i[5]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.958      ;
+; -5.918 ; i[7]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.951      ;
+; -5.918 ; i[7]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.951      ;
+; -5.912 ; i[5]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.945      ;
+; -5.912 ; i[5]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.945      ;
+; -5.911 ; i[2]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.944      ;
+; -5.879 ; i[20]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.912      ;
+; -5.879 ; i[20]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.912      ;
+; -5.872 ; i[1]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.905      ;
+; -5.830 ; i[20]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.863      ;
+; -5.830 ; i[20]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.863      ;
+; -5.830 ; i[20]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.863      ;
+; -5.798 ; i[0]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.831      ;
+; -5.798 ; i[0]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.831      ;
+; -5.793 ; i[21]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.826      ;
+; -5.791 ; i[12]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.824      ;
+; -5.776 ; i[22]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.809      ;
+; -5.776 ; i[22]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.809      ;
+; -5.755 ; i[0]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.788      ;
+; -5.755 ; i[0]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.788      ;
+; -5.740 ; i[13]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.773      ;
+; -5.727 ; i[22]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.760      ;
+; -5.727 ; i[22]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.760      ;
+; -5.727 ; i[22]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.760      ;
+; -5.718 ; i[2]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.751      ;
+; -5.718 ; i[2]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.751      ;
+; -5.715 ; i[8]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.748      ;
+; -5.715 ; i[8]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.748      ;
+; -5.715 ; i[8]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.748      ;
+; -5.706 ; i[6]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.739      ;
+; -5.706 ; i[6]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.739      ;
+; -5.706 ; i[6]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.739      ;
+; -5.693 ; i[6]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.726      ;
+; -5.693 ; i[6]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.726      ;
+; -5.679 ; i[8]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.712      ;
+; -5.679 ; i[8]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.712      ;
+; -5.679 ; i[1]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.712      ;
+; -5.679 ; i[1]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.712      ;
+; -5.675 ; i[2]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.708      ;
+; -5.675 ; i[2]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.708      ;
+; -5.656 ; i[3]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.689      ;
+; -5.655 ; i[21]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.688      ;
+; -5.655 ; i[21]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.688      ;
+; -5.636 ; i[1]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.669      ;
+; -5.636 ; i[1]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.669      ;
+; -5.635 ; i[21]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.668      ;
+; -5.635 ; i[21]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.668      ;
+; -5.627 ; i[23]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.660      ;
+; -5.627 ; i[23]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.660      ;
+; -5.622 ; i[18]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.655      ;
+; -5.622 ; i[18]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.655      ;
+; -5.616 ; i[27]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.651      ;
+; -5.598 ; i[9]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.631      ;
+; -5.598 ; i[9]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.631      ;
+; -5.578 ; i[23]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.611      ;
+; -5.578 ; i[23]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.611      ;
+; -5.578 ; i[23]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.611      ;
+; -5.576 ; i[27]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.611      ;
+; -5.576 ; i[27]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.611      ;
+; -5.575 ; i[27]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.610      ;
+; -5.575 ; i[27]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.610      ;
+; -5.573 ; i[9]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.606      ;
+; -5.541 ; i[26]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.576      ;
+; -5.528 ; i[13]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.561      ;
+; -5.528 ; i[13]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.561      ;
+; -5.528 ; i[10]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.561      ;
+; -5.527 ; i[13]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.560      ;
+; -5.527 ; i[13]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.560      ;
+; -5.501 ; i[26]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.536      ;
+; -5.501 ; i[26]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.536      ;
+; -5.500 ; i[26]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.535      ;
+; -5.500 ; i[26]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.535      ;
+; -5.498 ; i[25]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.533      ;
+; -5.498 ; i[25]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.533      ;
+; -5.480 ; i[28]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.515      ;
+; -5.480 ; i[28]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.515      ;
+; -5.463 ; i[3]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.496      ;
+; -5.463 ; i[3]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.496      ;
+; -5.455 ; i[12]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.488      ;
+; -5.455 ; i[12]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.488      ;
+; -5.454 ; i[19]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.487      ;
+; -5.454 ; i[12]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.487      ;
+; -5.454 ; i[12]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.487      ;
+; -5.451 ; i[19]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.484      ;
+; -5.451 ; i[19]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.484      ;
+; -5.449 ; i[14]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.482      ;
+; -5.448 ; i[11]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.481      ;
+; -5.448 ; i[11]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.481      ;
+; -5.444 ; i[4]      ; LEDR[3]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.480      ;
++--------+-----------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                                                                                                                                         ;
++-------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                 ; To Node                                                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; j[0]                                                                                      ; j[0]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; LEDR[2]~reg0                                                                              ; LEDR[2]~reg0                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; LEDR[4]~reg0                                                                              ; LEDR[4]~reg0                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.513 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.779      ;
+; 0.531 ; j[31]                                                                                     ; j[31]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.797      ;
+; 0.545 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.811      ;
+; 0.626 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|last_ps2_clk                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.892      ;
+; 0.645 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; last_data_received[7]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.911      ;
+; 0.646 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.912      ;
+; 0.649 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.915      ;
+; 0.763 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; last_data_received[5]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.029      ;
+; 0.764 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; last_data_received[3]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.030      ;
+; 0.764 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.030      ;
+; 0.766 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.032      ;
+; 0.768 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.034      ;
+; 0.769 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; last_data_received[1]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.035      ;
+; 0.770 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; last_data_received[2]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.036      ;
+; 0.771 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.037      ;
+; 0.773 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.039      ;
+; 0.776 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.042      ;
+; 0.795 ; j[16]                                                                                     ; j[16]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.061      ;
+; 0.801 ; i[1]                                                                                      ; i[1]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.067      ;
+; 0.802 ; i[3]                                                                                      ; i[3]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.068      ;
+; 0.803 ; i[24]                                                                                     ; i[24]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.069      ;
+; 0.803 ; i[8]                                                                                      ; i[8]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.069      ;
+; 0.803 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; last_data_received[4]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.069      ;
+; 0.805 ; j[9]                                                                                      ; j[9]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; j[17]                                                                                     ; j[17]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; last_data_received[0]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.071      ;
+; 0.806 ; i[17]                                                                                     ; i[17]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; i[7]                                                                                      ; i[7]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; i[5]                                                                                      ; i[5]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; i[6]                                                                                      ; i[6]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; j[7]                                                                                      ; j[7]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; j[13]                                                                                     ; j[13]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; j[14]                                                                                     ; j[14]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; j[15]                                                                                     ; j[15]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; j[18]                                                                                     ; j[18]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; j[20]                                                                                     ; j[20]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; j[23]                                                                                     ; j[23]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; j[25]                                                                                     ; j[25]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; j[27]                                                                                     ; j[27]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; j[29]                                                                                     ; j[29]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; j[30]                                                                                     ; j[30]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.807 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.073      ;
+; 0.809 ; j[1]                                                                                      ; j[1]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.075      ;
+; 0.809 ; j[11]                                                                                     ; j[11]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.075      ;
+; 0.810 ; i[25]                                                                                     ; i[25]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; j[2]                                                                                      ; j[2]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; j[4]                                                                                      ; j[4]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.813 ; i[9]                                                                                      ; i[9]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.079      ;
+; 0.814 ; i[23]                                                                                     ; i[23]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; i[19]                                                                                     ; i[19]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; i[15]                                                                                     ; i[15]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; i[22]                                                                                     ; i[22]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; i[21]                                                                                     ; i[21]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; i[10]                                                                                     ; i[10]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; i[12]                                                                                     ; i[12]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.080      ;
+; 0.822 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.087      ;
+; 0.823 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.088      ;
+; 0.826 ; i[31]                                                                                     ; i[31]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.092      ;
+; 0.826 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.091      ;
+; 0.832 ; i[28]                                                                                     ; i[28]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.098      ;
+; 0.832 ; i[26]                                                                                     ; i[26]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.098      ;
+; 0.834 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.100      ;
+; 0.835 ; i[32]                                                                                     ; i[32]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.101      ;
+; 0.835 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.101      ;
+; 0.838 ; i[4]                                                                                      ; i[4]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; i[2]                                                                                      ; i[2]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; i[0]                                                                                      ; i[0]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; j[3]                                                                                      ; j[3]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; j[19]                                                                                     ; j[19]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; j[24]                                                                                     ; j[24]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; j[26]                                                                                     ; j[26]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; j[28]                                                                                     ; j[28]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.839 ; j[5]                                                                                      ; j[5]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.105      ;
+; 0.839 ; j[6]                                                                                      ; j[6]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.105      ;
+; 0.839 ; j[21]                                                                                     ; j[21]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.105      ;
+; 0.839 ; j[22]                                                                                     ; j[22]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.105      ;
+; 0.841 ; j[8]                                                                                      ; j[8]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.107      ;
+; 0.841 ; j[10]                                                                                     ; j[10]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.107      ;
+; 0.846 ; i[20]                                                                                     ; i[20]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.112      ;
+; 0.846 ; i[11]                                                                                     ; i[11]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.112      ;
+; 0.846 ; i[18]                                                                                     ; i[18]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.112      ;
+; 0.846 ; i[16]                                                                                     ; i[16]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.112      ;
+; 0.846 ; j[12]                                                                                     ; j[12]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.112      ;
+; 0.846 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.112      ;
+; 0.847 ; i[13]                                                                                     ; i[13]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.113      ;
+; 0.847 ; i[14]                                                                                     ; i[14]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.113      ;
+; 0.859 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.125      ;
+; 0.877 ; i[30]                                                                                     ; i[30]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.143      ;
++-------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; GPIO_0[0]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; GPIO_0[0]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; GPIO_0[2]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; GPIO_0[2]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; GPIO_0[3]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; GPIO_0[3]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; GPIO_0[5]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; GPIO_0[5]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[1]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[1]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[2]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[2]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[3]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[3]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[4]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[4]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|last_ps2_clk                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|last_ps2_clk                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_clk_reg                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_clk_reg                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_data_reg                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_data_reg                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[0]                                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[0]                                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[10]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[10]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[11]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[11]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[12]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[12]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[13]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[13]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[14]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[14]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[15]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[15]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[16]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[16]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[17]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[17]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[18]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[18]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[19]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[19]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[1]                                                                                      ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 5.347 ; 5.347 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 5.347 ; 5.347 ; Rise       ; CLOCK_50        ;
+; PS2_CLK   ; CLOCK_50   ; 4.400 ; 4.400 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; 4.449 ; 4.449 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; -3.757 ; -3.757 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -3.757 ; -3.757 ; Rise       ; CLOCK_50        ;
+; PS2_CLK   ; CLOCK_50   ; -4.170 ; -4.170 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; -4.219 ; -4.219 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; GPIO_0[*]  ; CLOCK_50   ; 8.730  ; 8.730  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[0] ; CLOCK_50   ; 7.891  ; 7.891  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[2] ; CLOCK_50   ; 8.730  ; 8.730  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[3] ; CLOCK_50   ; 8.392  ; 8.392  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[5] ; CLOCK_50   ; 8.270  ; 8.270  ; Rise       ; CLOCK_50        ;
+; HEX0[*]    ; CLOCK_50   ; 10.108 ; 10.108 ; Rise       ; CLOCK_50        ;
+;  HEX0[0]   ; CLOCK_50   ; 9.876  ; 9.876  ; Rise       ; CLOCK_50        ;
+;  HEX0[1]   ; CLOCK_50   ; 9.827  ; 9.827  ; Rise       ; CLOCK_50        ;
+;  HEX0[2]   ; CLOCK_50   ; 9.977  ; 9.977  ; Rise       ; CLOCK_50        ;
+;  HEX0[3]   ; CLOCK_50   ; 8.918  ; 8.918  ; Rise       ; CLOCK_50        ;
+;  HEX0[4]   ; CLOCK_50   ; 10.108 ; 10.108 ; Rise       ; CLOCK_50        ;
+;  HEX0[5]   ; CLOCK_50   ; 8.889  ; 8.889  ; Rise       ; CLOCK_50        ;
+;  HEX0[6]   ; CLOCK_50   ; 8.961  ; 8.961  ; Rise       ; CLOCK_50        ;
+; HEX1[*]    ; CLOCK_50   ; 8.417  ; 8.417  ; Rise       ; CLOCK_50        ;
+;  HEX1[0]   ; CLOCK_50   ; 8.417  ; 8.417  ; Rise       ; CLOCK_50        ;
+;  HEX1[1]   ; CLOCK_50   ; 8.142  ; 8.142  ; Rise       ; CLOCK_50        ;
+;  HEX1[2]   ; CLOCK_50   ; 8.207  ; 8.207  ; Rise       ; CLOCK_50        ;
+;  HEX1[3]   ; CLOCK_50   ; 8.270  ; 8.270  ; Rise       ; CLOCK_50        ;
+;  HEX1[4]   ; CLOCK_50   ; 8.289  ; 8.289  ; Rise       ; CLOCK_50        ;
+;  HEX1[5]   ; CLOCK_50   ; 8.253  ; 8.253  ; Rise       ; CLOCK_50        ;
+;  HEX1[6]   ; CLOCK_50   ; 8.297  ; 8.297  ; Rise       ; CLOCK_50        ;
+; LEDR[*]    ; CLOCK_50   ; 8.751  ; 8.751  ; Rise       ; CLOCK_50        ;
+;  LEDR[1]   ; CLOCK_50   ; 8.054  ; 8.054  ; Rise       ; CLOCK_50        ;
+;  LEDR[2]   ; CLOCK_50   ; 8.132  ; 8.132  ; Rise       ; CLOCK_50        ;
+;  LEDR[3]   ; CLOCK_50   ; 8.751  ; 8.751  ; Rise       ; CLOCK_50        ;
+;  LEDR[4]   ; CLOCK_50   ; 8.734  ; 8.734  ; Rise       ; CLOCK_50        ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; GPIO_0[*]  ; CLOCK_50   ; 7.891 ; 7.891 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[0] ; CLOCK_50   ; 7.891 ; 7.891 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[2] ; CLOCK_50   ; 8.730 ; 8.730 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[3] ; CLOCK_50   ; 8.392 ; 8.392 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[5] ; CLOCK_50   ; 8.270 ; 8.270 ; Rise       ; CLOCK_50        ;
+; HEX0[*]    ; CLOCK_50   ; 8.596 ; 8.596 ; Rise       ; CLOCK_50        ;
+;  HEX0[0]   ; CLOCK_50   ; 9.568 ; 9.568 ; Rise       ; CLOCK_50        ;
+;  HEX0[1]   ; CLOCK_50   ; 9.518 ; 9.518 ; Rise       ; CLOCK_50        ;
+;  HEX0[2]   ; CLOCK_50   ; 9.683 ; 9.683 ; Rise       ; CLOCK_50        ;
+;  HEX0[3]   ; CLOCK_50   ; 8.611 ; 8.611 ; Rise       ; CLOCK_50        ;
+;  HEX0[4]   ; CLOCK_50   ; 9.799 ; 9.799 ; Rise       ; CLOCK_50        ;
+;  HEX0[5]   ; CLOCK_50   ; 8.596 ; 8.596 ; Rise       ; CLOCK_50        ;
+;  HEX0[6]   ; CLOCK_50   ; 8.652 ; 8.652 ; Rise       ; CLOCK_50        ;
+; HEX1[*]    ; CLOCK_50   ; 7.855 ; 7.855 ; Rise       ; CLOCK_50        ;
+;  HEX1[0]   ; CLOCK_50   ; 8.145 ; 8.145 ; Rise       ; CLOCK_50        ;
+;  HEX1[1]   ; CLOCK_50   ; 7.855 ; 7.855 ; Rise       ; CLOCK_50        ;
+;  HEX1[2]   ; CLOCK_50   ; 7.949 ; 7.949 ; Rise       ; CLOCK_50        ;
+;  HEX1[3]   ; CLOCK_50   ; 7.988 ; 7.988 ; Rise       ; CLOCK_50        ;
+;  HEX1[4]   ; CLOCK_50   ; 8.015 ; 8.015 ; Rise       ; CLOCK_50        ;
+;  HEX1[5]   ; CLOCK_50   ; 7.980 ; 7.980 ; Rise       ; CLOCK_50        ;
+;  HEX1[6]   ; CLOCK_50   ; 8.019 ; 8.019 ; Rise       ; CLOCK_50        ;
+; LEDR[*]    ; CLOCK_50   ; 8.054 ; 8.054 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]   ; CLOCK_50   ; 8.054 ; 8.054 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]   ; CLOCK_50   ; 8.132 ; 8.132 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]   ; CLOCK_50   ; 8.751 ; 8.751 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]   ; CLOCK_50   ; 8.734 ; 8.734 ; Rise       ; CLOCK_50        ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -2.202 ; -139.630      ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -112.380           ;
++----------+--------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                              ;
++--------+-----------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+----------------+--------------+-------------+--------------+------------+------------+
+; -2.202 ; i[20]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.230      ;
+; -2.202 ; i[20]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.230      ;
+; -2.192 ; i[4]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.221      ;
+; -2.192 ; i[4]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.221      ;
+; -2.192 ; i[4]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.221      ;
+; -2.167 ; i[4]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.196      ;
+; -2.167 ; i[22]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.195      ;
+; -2.167 ; i[4]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.196      ;
+; -2.167 ; i[22]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.195      ;
+; -2.166 ; i[7]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.195      ;
+; -2.166 ; i[7]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.195      ;
+; -2.166 ; i[7]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.195      ;
+; -2.159 ; i[5]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.188      ;
+; -2.159 ; i[5]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.188      ;
+; -2.159 ; i[5]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.188      ;
+; -2.141 ; i[7]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.170      ;
+; -2.141 ; i[7]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.170      ;
+; -2.134 ; i[5]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.163      ;
+; -2.134 ; i[5]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.163      ;
+; -2.128 ; i[20]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.156      ;
+; -2.128 ; i[20]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.156      ;
+; -2.128 ; i[20]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.156      ;
+; -2.095 ; i[21]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.123      ;
+; -2.095 ; i[21]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.123      ;
+; -2.093 ; i[22]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.121      ;
+; -2.093 ; i[22]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.121      ;
+; -2.093 ; i[22]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.121      ;
+; -2.083 ; i[23]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.111      ;
+; -2.083 ; i[23]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.111      ;
+; -2.074 ; i[0]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.103      ;
+; -2.063 ; i[2]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.092      ;
+; -2.059 ; i[0]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.088      ;
+; -2.059 ; i[0]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.088      ;
+; -2.050 ; i[1]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.079      ;
+; -2.048 ; i[2]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.077      ;
+; -2.048 ; i[2]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.077      ;
+; -2.047 ; i[8]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.075      ;
+; -2.047 ; i[8]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.075      ;
+; -2.041 ; i[6]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.070      ;
+; -2.041 ; i[6]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.070      ;
+; -2.041 ; i[6]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.070      ;
+; -2.040 ; i[0]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.069      ;
+; -2.040 ; i[0]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.069      ;
+; -2.035 ; i[1]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.064      ;
+; -2.035 ; i[1]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.064      ;
+; -2.034 ; i[8]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.062      ;
+; -2.034 ; i[8]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.062      ;
+; -2.034 ; i[8]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.062      ;
+; -2.029 ; i[2]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.058      ;
+; -2.029 ; i[2]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.058      ;
+; -2.021 ; i[21]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.049      ;
+; -2.021 ; i[21]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.049      ;
+; -2.021 ; i[21]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.049      ;
+; -2.016 ; i[6]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.045      ;
+; -2.016 ; i[6]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.045      ;
+; -2.016 ; i[1]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.045      ;
+; -2.016 ; i[1]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 3.045      ;
+; -2.009 ; i[23]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.037      ;
+; -2.009 ; i[23]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.037      ;
+; -2.009 ; i[23]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.037      ;
+; -1.998 ; i[27]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 3.028      ;
+; -1.998 ; i[27]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 3.028      ;
+; -1.996 ; i[27]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 3.026      ;
+; -1.996 ; i[27]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 3.026      ;
+; -1.996 ; i[27]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 3.026      ;
+; -1.981 ; i[18]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.009      ;
+; -1.981 ; i[18]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.009      ;
+; -1.981 ; i[12]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.009      ;
+; -1.974 ; i[28]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 3.004      ;
+; -1.974 ; i[28]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 3.004      ;
+; -1.962 ; i[25]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 2.992      ;
+; -1.962 ; i[25]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 2.992      ;
+; -1.957 ; i[13]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.985      ;
+; -1.954 ; i[13]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.982      ;
+; -1.954 ; i[13]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.982      ;
+; -1.952 ; i[13]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.980      ;
+; -1.952 ; i[13]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.980      ;
+; -1.943 ; i[9]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.971      ;
+; -1.943 ; i[9]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.971      ;
+; -1.942 ; i[26]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 2.972      ;
+; -1.942 ; i[26]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 2.972      ;
+; -1.940 ; i[26]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 2.970      ;
+; -1.940 ; i[26]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 2.970      ;
+; -1.940 ; i[26]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 2.970      ;
+; -1.934 ; i[3]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.963      ;
+; -1.933 ; i[19]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.961      ;
+; -1.933 ; i[19]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.961      ;
+; -1.923 ; i[11]     ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.951      ;
+; -1.923 ; i[11]     ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.951      ;
+; -1.919 ; i[3]      ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.948      ;
+; -1.919 ; i[3]      ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.948      ;
+; -1.916 ; i[11]     ; LEDR[1]~reg0   ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.944      ;
+; -1.916 ; i[11]     ; GPIO_0[0]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.944      ;
+; -1.916 ; i[11]     ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.944      ;
+; -1.904 ; i[9]      ; GPIO_0[5]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.932      ;
+; -1.900 ; i[3]      ; GPIO_0[2]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.929      ;
+; -1.900 ; i[3]      ; GPIO_0[3]~reg0 ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 2.929      ;
+; -1.898 ; i[4]      ; i[7]           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.930      ;
+; -1.898 ; i[4]      ; i[5]           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.930      ;
+; -1.898 ; i[4]      ; i[4]           ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.930      ;
++--------+-----------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                                                                                                                                         ;
++-------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                 ; To Node                                                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; j[0]                                                                                      ; j[0]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; LEDR[2]~reg0                                                                              ; LEDR[2]~reg0                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; LEDR[4]~reg0                                                                              ; LEDR[4]~reg0                                                                              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.235 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.387      ;
+; 0.243 ; j[31]                                                                                     ; j[31]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.395      ;
+; 0.254 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.406      ;
+; 0.292 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|last_ps2_clk                                                           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.444      ;
+; 0.313 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ; last_data_received[7]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.465      ;
+; 0.313 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.465      ;
+; 0.315 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.467      ;
+; 0.355 ; j[16]                                                                                     ; j[16]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.507      ;
+; 0.357 ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358 ; i[24]                                                                                     ; i[24]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; i[8]                                                                                      ; i[8]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; i[1]                                                                                      ; i[1]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; i[3]                                                                                      ; i[3]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; j[17]                                                                                     ; j[17]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ; last_data_received[5]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; i[17]                                                                                     ; i[17]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; j[18]                                                                                     ; j[18]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; j[25]                                                                                     ; j[25]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; j[27]                                                                                     ; j[27]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ; last_data_received[3]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; i[7]                                                                                      ; i[7]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; i[5]                                                                                      ; i[5]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; i[6]                                                                                      ; i[6]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; j[13]                                                                                     ; j[13]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; j[14]                                                                                     ; j[14]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; j[15]                                                                                     ; j[15]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; j[20]                                                                                     ; j[20]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; j[23]                                                                                     ; j[23]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; j[29]                                                                                     ; j[29]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; j[30]                                                                                     ; j[30]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; i[25]                                                                                     ; i[25]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; i[9]                                                                                      ; i[9]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; j[9]                                                                                      ; j[9]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; j[11]                                                                                     ; j[11]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ; last_data_received[1]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.363 ; i[19]                                                                                     ; i[19]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; i[10]                                                                                     ; i[10]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; j[2]                                                                                      ; j[2]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; j[4]                                                                                      ; j[4]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; j[7]                                                                                      ; j[7]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ; last_data_received[2]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.364 ; i[23]                                                                                     ; i[23]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; i[15]                                                                                     ; i[15]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; i[22]                                                                                     ; i[22]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; i[21]                                                                                     ; i[21]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; i[12]                                                                                     ; i[12]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.364 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; j[1]                                                                                      ; j[1]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.369 ; i[32]                                                                                     ; i[32]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.371 ; i[2]                                                                                      ; i[2]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; i[0]                                                                                      ; i[0]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; j[3]                                                                                      ; j[3]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; j[19]                                                                                     ; j[19]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; j[24]                                                                                     ; j[24]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; j[26]                                                                                     ; j[26]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; i[4]                                                                                      ; i[4]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; j[5]                                                                                      ; j[5]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; j[6]                                                                                      ; j[6]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; j[21]                                                                                     ; j[21]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; j[22]                                                                                     ; j[22]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; j[28]                                                                                     ; j[28]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.373 ; i[31]                                                                                     ; i[31]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; i[11]                                                                                     ; i[11]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; i[18]                                                                                     ; i[18]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; i[16]                                                                                     ; i[16]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.375 ; i[13]                                                                                     ; i[13]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; i[14]                                                                                     ; i[14]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; i[20]                                                                                     ; i[20]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; j[8]                                                                                      ; j[8]                                                                                      ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; j[10]                                                                                     ; j[10]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ; last_data_received[4]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; j[12]                                                                                     ; j[12]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; i[28]                                                                                     ; i[28]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; i[26]                                                                                     ; i[26]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; last_data_received[0]                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.381 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.533      ;
+; 0.389 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.541      ;
+; 0.389 ; PS2_Controller:PS2|ps2_clk_reg                                                            ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.541      ;
+; 0.390 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.542      ;
+; 0.390 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.542      ;
+; 0.393 ; i[27]                                                                                     ; i[27]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.545      ;
+; 0.394 ; i[30]                                                                                     ; i[30]                                                                                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.546      ;
+; 0.394 ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 0.545      ;
++-------+-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; GPIO_0[0]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; GPIO_0[0]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; GPIO_0[2]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; GPIO_0[2]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; GPIO_0[3]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; GPIO_0[3]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; GPIO_0[5]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; GPIO_0[5]~reg0                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[1]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[1]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[2]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[2]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[3]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[3]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[4]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[4]~reg0                                                                              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[1]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[3]                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[1]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[3]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[4]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[5]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[6]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[0]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[1]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[2]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[3]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[4]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data_en                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_0_IDLE      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_2_DATA_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_3_PARITY_IN ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_4_STOP_IN   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|last_ps2_clk                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|last_ps2_clk                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_clk_reg                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_clk_reg                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_data_reg                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|ps2_data_reg                                                           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_0_IDLE                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_1_DATA_IN                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[0]                                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[0]                                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[10]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[10]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[11]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[11]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[12]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[12]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[13]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[13]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[14]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[14]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[15]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[15]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[16]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[16]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[17]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[17]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[18]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[18]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[19]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; i[19]                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; i[1]                                                                                      ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 2.910 ; 2.910 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 2.910 ; 2.910 ; Rise       ; CLOCK_50        ;
+; PS2_CLK   ; CLOCK_50   ; 2.426 ; 2.426 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; 2.441 ; 2.441 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; -2.099 ; -2.099 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -2.099 ; -2.099 ; Rise       ; CLOCK_50        ;
+; PS2_CLK   ; CLOCK_50   ; -2.306 ; -2.306 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; -2.321 ; -2.321 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; GPIO_0[*]  ; CLOCK_50   ; 4.790 ; 4.790 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[0] ; CLOCK_50   ; 4.356 ; 4.356 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[2] ; CLOCK_50   ; 4.790 ; 4.790 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[3] ; CLOCK_50   ; 4.561 ; 4.561 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[5] ; CLOCK_50   ; 4.480 ; 4.480 ; Rise       ; CLOCK_50        ;
+; HEX0[*]    ; CLOCK_50   ; 5.479 ; 5.479 ; Rise       ; CLOCK_50        ;
+;  HEX0[0]   ; CLOCK_50   ; 5.246 ; 5.246 ; Rise       ; CLOCK_50        ;
+;  HEX0[1]   ; CLOCK_50   ; 5.238 ; 5.238 ; Rise       ; CLOCK_50        ;
+;  HEX0[2]   ; CLOCK_50   ; 5.426 ; 5.426 ; Rise       ; CLOCK_50        ;
+;  HEX0[3]   ; CLOCK_50   ; 4.849 ; 4.849 ; Rise       ; CLOCK_50        ;
+;  HEX0[4]   ; CLOCK_50   ; 5.479 ; 5.479 ; Rise       ; CLOCK_50        ;
+;  HEX0[5]   ; CLOCK_50   ; 4.840 ; 4.840 ; Rise       ; CLOCK_50        ;
+;  HEX0[6]   ; CLOCK_50   ; 4.877 ; 4.877 ; Rise       ; CLOCK_50        ;
+; HEX1[*]    ; CLOCK_50   ; 4.573 ; 4.573 ; Rise       ; CLOCK_50        ;
+;  HEX1[0]   ; CLOCK_50   ; 4.573 ; 4.573 ; Rise       ; CLOCK_50        ;
+;  HEX1[1]   ; CLOCK_50   ; 4.466 ; 4.466 ; Rise       ; CLOCK_50        ;
+;  HEX1[2]   ; CLOCK_50   ; 4.425 ; 4.425 ; Rise       ; CLOCK_50        ;
+;  HEX1[3]   ; CLOCK_50   ; 4.445 ; 4.445 ; Rise       ; CLOCK_50        ;
+;  HEX1[4]   ; CLOCK_50   ; 4.471 ; 4.471 ; Rise       ; CLOCK_50        ;
+;  HEX1[5]   ; CLOCK_50   ; 4.442 ; 4.442 ; Rise       ; CLOCK_50        ;
+;  HEX1[6]   ; CLOCK_50   ; 4.471 ; 4.471 ; Rise       ; CLOCK_50        ;
+; LEDR[*]    ; CLOCK_50   ; 4.786 ; 4.786 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]   ; CLOCK_50   ; 4.516 ; 4.516 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]   ; CLOCK_50   ; 4.550 ; 4.550 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]   ; CLOCK_50   ; 4.764 ; 4.764 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]   ; CLOCK_50   ; 4.786 ; 4.786 ; Rise       ; CLOCK_50        ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; GPIO_0[*]  ; CLOCK_50   ; 4.356 ; 4.356 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[0] ; CLOCK_50   ; 4.356 ; 4.356 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[2] ; CLOCK_50   ; 4.790 ; 4.790 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[3] ; CLOCK_50   ; 4.561 ; 4.561 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[5] ; CLOCK_50   ; 4.480 ; 4.480 ; Rise       ; CLOCK_50        ;
+; HEX0[*]    ; CLOCK_50   ; 4.708 ; 4.708 ; Rise       ; CLOCK_50        ;
+;  HEX0[0]   ; CLOCK_50   ; 5.119 ; 5.119 ; Rise       ; CLOCK_50        ;
+;  HEX0[1]   ; CLOCK_50   ; 5.111 ; 5.111 ; Rise       ; CLOCK_50        ;
+;  HEX0[2]   ; CLOCK_50   ; 5.292 ; 5.292 ; Rise       ; CLOCK_50        ;
+;  HEX0[3]   ; CLOCK_50   ; 4.717 ; 4.717 ; Rise       ; CLOCK_50        ;
+;  HEX0[4]   ; CLOCK_50   ; 5.352 ; 5.352 ; Rise       ; CLOCK_50        ;
+;  HEX0[5]   ; CLOCK_50   ; 4.708 ; 4.708 ; Rise       ; CLOCK_50        ;
+;  HEX0[6]   ; CLOCK_50   ; 4.744 ; 4.744 ; Rise       ; CLOCK_50        ;
+; HEX1[*]    ; CLOCK_50   ; 4.302 ; 4.302 ; Rise       ; CLOCK_50        ;
+;  HEX1[0]   ; CLOCK_50   ; 4.456 ; 4.456 ; Rise       ; CLOCK_50        ;
+;  HEX1[1]   ; CLOCK_50   ; 4.341 ; 4.341 ; Rise       ; CLOCK_50        ;
+;  HEX1[2]   ; CLOCK_50   ; 4.302 ; 4.302 ; Rise       ; CLOCK_50        ;
+;  HEX1[3]   ; CLOCK_50   ; 4.326 ; 4.326 ; Rise       ; CLOCK_50        ;
+;  HEX1[4]   ; CLOCK_50   ; 4.352 ; 4.352 ; Rise       ; CLOCK_50        ;
+;  HEX1[5]   ; CLOCK_50   ; 4.325 ; 4.325 ; Rise       ; CLOCK_50        ;
+;  HEX1[6]   ; CLOCK_50   ; 4.354 ; 4.354 ; Rise       ; CLOCK_50        ;
+; LEDR[*]    ; CLOCK_50   ; 4.516 ; 4.516 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]   ; CLOCK_50   ; 4.516 ; 4.516 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]   ; CLOCK_50   ; 4.550 ; 4.550 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]   ; CLOCK_50   ; 4.764 ; 4.764 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]   ; CLOCK_50   ; 4.786 ; 4.786 ; Rise       ; CLOCK_50        ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -6.060   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  CLOCK_50        ; -6.060   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -432.094 ; 0.0   ; 0.0      ; 0.0     ; -112.38             ;
+;  CLOCK_50        ; -432.094 ; 0.000 ; N/A      ; N/A     ; -112.380            ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 5.347 ; 5.347 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 5.347 ; 5.347 ; Rise       ; CLOCK_50        ;
+; PS2_CLK   ; CLOCK_50   ; 4.400 ; 4.400 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; 4.449 ; 4.449 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; -2.099 ; -2.099 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -2.099 ; -2.099 ; Rise       ; CLOCK_50        ;
+; PS2_CLK   ; CLOCK_50   ; -2.306 ; -2.306 ; Rise       ; CLOCK_50        ;
+; PS2_DAT   ; CLOCK_50   ; -2.321 ; -2.321 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; GPIO_0[*]  ; CLOCK_50   ; 8.730  ; 8.730  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[0] ; CLOCK_50   ; 7.891  ; 7.891  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[2] ; CLOCK_50   ; 8.730  ; 8.730  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[3] ; CLOCK_50   ; 8.392  ; 8.392  ; Rise       ; CLOCK_50        ;
+;  GPIO_0[5] ; CLOCK_50   ; 8.270  ; 8.270  ; Rise       ; CLOCK_50        ;
+; HEX0[*]    ; CLOCK_50   ; 10.108 ; 10.108 ; Rise       ; CLOCK_50        ;
+;  HEX0[0]   ; CLOCK_50   ; 9.876  ; 9.876  ; Rise       ; CLOCK_50        ;
+;  HEX0[1]   ; CLOCK_50   ; 9.827  ; 9.827  ; Rise       ; CLOCK_50        ;
+;  HEX0[2]   ; CLOCK_50   ; 9.977  ; 9.977  ; Rise       ; CLOCK_50        ;
+;  HEX0[3]   ; CLOCK_50   ; 8.918  ; 8.918  ; Rise       ; CLOCK_50        ;
+;  HEX0[4]   ; CLOCK_50   ; 10.108 ; 10.108 ; Rise       ; CLOCK_50        ;
+;  HEX0[5]   ; CLOCK_50   ; 8.889  ; 8.889  ; Rise       ; CLOCK_50        ;
+;  HEX0[6]   ; CLOCK_50   ; 8.961  ; 8.961  ; Rise       ; CLOCK_50        ;
+; HEX1[*]    ; CLOCK_50   ; 8.417  ; 8.417  ; Rise       ; CLOCK_50        ;
+;  HEX1[0]   ; CLOCK_50   ; 8.417  ; 8.417  ; Rise       ; CLOCK_50        ;
+;  HEX1[1]   ; CLOCK_50   ; 8.142  ; 8.142  ; Rise       ; CLOCK_50        ;
+;  HEX1[2]   ; CLOCK_50   ; 8.207  ; 8.207  ; Rise       ; CLOCK_50        ;
+;  HEX1[3]   ; CLOCK_50   ; 8.270  ; 8.270  ; Rise       ; CLOCK_50        ;
+;  HEX1[4]   ; CLOCK_50   ; 8.289  ; 8.289  ; Rise       ; CLOCK_50        ;
+;  HEX1[5]   ; CLOCK_50   ; 8.253  ; 8.253  ; Rise       ; CLOCK_50        ;
+;  HEX1[6]   ; CLOCK_50   ; 8.297  ; 8.297  ; Rise       ; CLOCK_50        ;
+; LEDR[*]    ; CLOCK_50   ; 8.751  ; 8.751  ; Rise       ; CLOCK_50        ;
+;  LEDR[1]   ; CLOCK_50   ; 8.054  ; 8.054  ; Rise       ; CLOCK_50        ;
+;  LEDR[2]   ; CLOCK_50   ; 8.132  ; 8.132  ; Rise       ; CLOCK_50        ;
+;  LEDR[3]   ; CLOCK_50   ; 8.751  ; 8.751  ; Rise       ; CLOCK_50        ;
+;  LEDR[4]   ; CLOCK_50   ; 8.734  ; 8.734  ; Rise       ; CLOCK_50        ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; GPIO_0[*]  ; CLOCK_50   ; 4.356 ; 4.356 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[0] ; CLOCK_50   ; 4.356 ; 4.356 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[2] ; CLOCK_50   ; 4.790 ; 4.790 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[3] ; CLOCK_50   ; 4.561 ; 4.561 ; Rise       ; CLOCK_50        ;
+;  GPIO_0[5] ; CLOCK_50   ; 4.480 ; 4.480 ; Rise       ; CLOCK_50        ;
+; HEX0[*]    ; CLOCK_50   ; 4.708 ; 4.708 ; Rise       ; CLOCK_50        ;
+;  HEX0[0]   ; CLOCK_50   ; 5.119 ; 5.119 ; Rise       ; CLOCK_50        ;
+;  HEX0[1]   ; CLOCK_50   ; 5.111 ; 5.111 ; Rise       ; CLOCK_50        ;
+;  HEX0[2]   ; CLOCK_50   ; 5.292 ; 5.292 ; Rise       ; CLOCK_50        ;
+;  HEX0[3]   ; CLOCK_50   ; 4.717 ; 4.717 ; Rise       ; CLOCK_50        ;
+;  HEX0[4]   ; CLOCK_50   ; 5.352 ; 5.352 ; Rise       ; CLOCK_50        ;
+;  HEX0[5]   ; CLOCK_50   ; 4.708 ; 4.708 ; Rise       ; CLOCK_50        ;
+;  HEX0[6]   ; CLOCK_50   ; 4.744 ; 4.744 ; Rise       ; CLOCK_50        ;
+; HEX1[*]    ; CLOCK_50   ; 4.302 ; 4.302 ; Rise       ; CLOCK_50        ;
+;  HEX1[0]   ; CLOCK_50   ; 4.456 ; 4.456 ; Rise       ; CLOCK_50        ;
+;  HEX1[1]   ; CLOCK_50   ; 4.341 ; 4.341 ; Rise       ; CLOCK_50        ;
+;  HEX1[2]   ; CLOCK_50   ; 4.302 ; 4.302 ; Rise       ; CLOCK_50        ;
+;  HEX1[3]   ; CLOCK_50   ; 4.326 ; 4.326 ; Rise       ; CLOCK_50        ;
+;  HEX1[4]   ; CLOCK_50   ; 4.352 ; 4.352 ; Rise       ; CLOCK_50        ;
+;  HEX1[5]   ; CLOCK_50   ; 4.325 ; 4.325 ; Rise       ; CLOCK_50        ;
+;  HEX1[6]   ; CLOCK_50   ; 4.354 ; 4.354 ; Rise       ; CLOCK_50        ;
+; LEDR[*]    ; CLOCK_50   ; 4.516 ; 4.516 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]   ; CLOCK_50   ; 4.516 ; 4.516 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]   ; CLOCK_50   ; 4.550 ; 4.550 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]   ; CLOCK_50   ; 4.764 ; 4.764 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]   ; CLOCK_50   ; 4.786 ; 4.786 ; Rise       ; CLOCK_50        ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 9662     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 9662     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 40    ; 40   ;
+; Unconstrained Output Ports      ; 22    ; 22   ;
+; Unconstrained Output Port Paths ; 64    ; 64   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Full Version
+    Info: Processing started: Thu Nov 21 19:08:54 2013
+Info: Command: quartus_sta hexexample -c hexexample
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'hexexample.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.060
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -6.060      -432.094 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -112.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (306004): Started post-fitting delay annotation
+Warning (306006): Found 73 output pins without output pin load capacitance assignment
+    Info (306007): Pin "PS2_CLK" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "PS2_DAT" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDG[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX0[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX0[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX0[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX0[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX0[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX0[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX0[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX1[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX1[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX1[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX1[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX1[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX1[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX1[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX2[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX2[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX2[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX2[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX2[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX2[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX2[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX3[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX3[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX3[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX3[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX3[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX3[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX3[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX4[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX4[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX4[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX4[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX4[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX4[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX4[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX5[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX5[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX5[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX5[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX5[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX5[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX5[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX6[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX6[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX6[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX6[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX6[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX6[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX6[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX7[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX7[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX7[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX7[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX7[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX7[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "HEX7[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+Info (306005): Delay annotation completed successfully
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.202
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.202      -139.630 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -112.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 426 megabytes
+    Info: Processing ended: Thu Nov 21 19:08:57 2013
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

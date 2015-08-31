@@ -1,0 +1,18 @@
+module Part5(input [9:0]SW, [0:0]KEY, output [15:0]LEDR, output[6:0]HEX0, HEX1, HEX2, HEX3);
+wire clock = KEY;
+wire LoadEnable1 = SW[8];
+wire LoadEnable2 = SW[9];
+wire [7:0]A = SW[7:0];
+wire [7:0]B;
+reg [7:0] B_IN;
+always @(negedge reset or posedge clock)
+		if(!reset)
+			B_IN <= hex_cleared;
+		else
+			B_IN <= B;
+ALU call(A, B_IN, LEDR);
+hex_decoder hex0(B_IN[3:0], HEX0);
+hex_decoder hex1(B_IN[7:4], HEX1);
+hex_decoder hex2(DATA[3:0], HEX2);
+hex_decoder hex3(DATA[7:4], HEX3);
+endmodule 

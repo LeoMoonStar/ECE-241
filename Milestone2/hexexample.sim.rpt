@@ -1,0 +1,147 @@
+Simulator report for hexexample
+Tue Nov 19 10:42:53 2013
+Quartus II 64-Bit Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------+
+; Simulator Summary ;
++------+------------+
+; Type ; Value      ;
++------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                    ;
++--------------------------------------------------------------------------------------------+----------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                  ; Default Value ;
++--------------------------------------------------------------------------------------------+----------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                               ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                     ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                      ;               ;
+; Vector input source                                                                        ; //SRVD/Homes$/zehraroh/Desktop/HEX example/Waveform1.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                       ; On            ;
+; Check outputs                                                                              ; Off                                                      ; Off           ;
+; Report simulation coverage                                                                 ; On                                                       ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                       ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                       ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                       ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                      ; Off           ;
+; Detect glitches                                                                            ; Off                                                      ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                      ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                      ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                      ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                      ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                       ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                               ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                      ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                      ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                     ; Auto          ;
++--------------------------------------------------------------------------------------------+----------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++------------------+
+; Coverage Summary ;
++------+-----------+
+; Type ; Value     ;
++------+-----------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-------------------------------------------------+
+; Complete 1/0-Value Coverage                     ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------+
+; Missing 1-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------+
+; Missing 0-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Full Version
+    Info: Processing started: Tue Nov 19 10:42:51 2013
+Info: Command: quartus_sim --simulation_results_format=VWF hexexample -c hexexample
+Info (324025): Using vector source file "//SRVD/Homes$/zehraroh/Desktop/HEX example/Waveform1.vwf"
+Warning (328015): Compiler packed, optimized or synthesized away node "|hexexample|LEDG[1]". Ignored vector source file node.
+Warning (328015): Compiler packed, optimized or synthesized away node "|hexexample|LEDG[2]". Ignored vector source file node.
+Warning (328015): Compiler packed, optimized or synthesized away node "|hexexample|LEDG[3]". Ignored vector source file node.
+Warning (328015): Compiler packed, optimized or synthesized away node "|hexexample|LEDG[4]". Ignored vector source file node.
+Warning (328015): Compiler packed, optimized or synthesized away node "|hexexample|LEDG[5]". Ignored vector source file node.
+Warning (328015): Compiler packed, optimized or synthesized away node "|hexexample|LEDG[6]". Ignored vector source file node.
+Warning (328015): Compiler packed, optimized or synthesized away node "|hexexample|LEDG[7]". Ignored vector source file node.
+Warning (328015): Compiler packed, optimized or synthesized away node "|hexexample|LEDG[8]". Ignored vector source file node.
+Warning (328016): Wrong node type and/or width for node "|hexexample|LEDG" in vector source file. Node in design is of type Bus and of width 9, but node in vector source file is of type 9-Level and of width 1.
+Error (328001): Can't simulate mismatched node types
+Error: Quartus II 64-Bit Simulator was unsuccessful. 1 error, 9 warnings
+    Error: Peak virtual memory: 266 megabytes
+    Error: Processing ended: Tue Nov 19 10:42:53 2013
+    Error: Elapsed time: 00:00:02
+    Error: Total CPU time (on all processors): 00:00:01
+
+

@@ -1,0 +1,129 @@
+|Morse_Code
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+KEY[0] => KEY[0].IN1
+KEY[1] => KEY[1].IN1
+CLOCK_50 => CLOCK_50.IN4
+
+
+|Morse_Code|FSM:comb_3
+start => Selector0.IN2
+start => nextState.LOAD.DATAB
+shiftOut => nextState.DATAA
+shiftOut => nextState.DATAA
+CLOCK_50 => count[0].CLK
+CLOCK_50 => count[1].CLK
+CLOCK_50 => currentState~1.DATAIN
+elapsed => currentState.OUTPUTSELECT
+elapsed => currentState.OUTPUTSELECT
+elapsed => currentState.OUTPUTSELECT
+elapsed => currentState.OUTPUTSELECT
+elapsed => currentState.OUTPUTSELECT
+elapsed => currentState.OUTPUTSELECT
+elapsed => currentState.OUTPUTSELECT
+elapsed => count.OUTPUTSELECT
+elapsed => count.OUTPUTSELECT
+isCountZero => nextState.OUTPUTSELECT
+isCountZero => nextState.OUTPUTSELECT
+isCountZero => Selector0.IN3
+clear => currentState~3.DATAIN
+clear => count[1].ENA
+clear => count[0].ENA
+
+
+|Morse_Code|one_half_sec_timer:comb_4
+CLOCK_50 => delay~reg0.CLK
+CLOCK_50 => count[0].CLK
+CLOCK_50 => count[1].CLK
+CLOCK_50 => count[2].CLK
+CLOCK_50 => count[3].CLK
+CLOCK_50 => count[4].CLK
+CLOCK_50 => count[5].CLK
+CLOCK_50 => count[6].CLK
+CLOCK_50 => count[7].CLK
+CLOCK_50 => count[8].CLK
+CLOCK_50 => count[9].CLK
+CLOCK_50 => count[10].CLK
+CLOCK_50 => count[11].CLK
+CLOCK_50 => count[12].CLK
+CLOCK_50 => count[13].CLK
+CLOCK_50 => count[14].CLK
+CLOCK_50 => count[15].CLK
+CLOCK_50 => count[16].CLK
+CLOCK_50 => count[17].CLK
+CLOCK_50 => count[18].CLK
+CLOCK_50 => count[19].CLK
+CLOCK_50 => count[20].CLK
+CLOCK_50 => count[21].CLK
+CLOCK_50 => count[22].CLK
+CLOCK_50 => count[23].CLK
+CLOCK_50 => count[24].CLK
+CLOCK_50 => count[25].CLK
+reset => delay~reg0.ACLR
+reset => count[0].ACLR
+reset => count[1].ACLR
+reset => count[2].ACLR
+reset => count[3].ACLR
+reset => count[4].ACLR
+reset => count[5].ACLR
+reset => count[6].ACLR
+reset => count[7].ACLR
+reset => count[8].ACLR
+reset => count[9].ACLR
+reset => count[10].ACLR
+reset => count[11].ACLR
+reset => count[12].ACLR
+reset => count[13].ACLR
+reset => count[14].ACLR
+reset => count[15].ACLR
+reset => count[16].ACLR
+reset => count[17].ACLR
+reset => count[18].ACLR
+reset => count[19].ACLR
+reset => count[20].ACLR
+reset => count[21].ACLR
+reset => count[22].ACLR
+reset => count[23].ACLR
+reset => count[24].ACLR
+reset => count[25].ACLR
+
+
+|Morse_Code|symbol_decoder:comb_5
+symbolCode[0] => Decoder0.IN2
+symbolCode[1] => Decoder0.IN1
+symbolCode[2] => Decoder0.IN0
+
+
+|Morse_Code|symbol_shift_reg:comb_6
+enable => current.OUTPUTSELECT
+enable => current.OUTPUTSELECT
+enable => shiftOut.OUTPUTSELECT
+load => current.OUTPUTSELECT
+load => current.OUTPUTSELECT
+load => current.OUTPUTSELECT
+load => shiftOut.OUTPUTSELECT
+clock => shiftOut~reg0.CLK
+clock => current[0].CLK
+clock => current[1].CLK
+clock => current[2].CLK
+morseCode[0] => shiftOut.DATAB
+morseCode[1] => current.DATAB
+morseCode[2] => current.DATAB
+morseCode[3] => current.DATAB
+
+
+|Morse_Code|symbol_down_counter:comb_7
+enable => isCountZero.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+enable => count.OUTPUTSELECT
+load => count.OUTPUTSELECT
+load => count.OUTPUTSELECT
+load => isCountZero.OUTPUTSELECT
+clock => count[0].CLK
+clock => count[1].CLK
+clock => isCountZero~reg0.CLK
+numBits[0] => count.DATAB
+numBits[1] => count.DATAB
+
+

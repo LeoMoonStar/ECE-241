@@ -1,0 +1,131 @@
+|Part4
+CLOCK_50 => B[0].CLK
+CLOCK_50 => B[1].CLK
+CLOCK_50 => B[2].CLK
+CLOCK_50 => C[0].CLK
+CLOCK_50 => C[1].CLK
+CLOCK_50 => C[2].CLK
+CLOCK_50 => D[0].CLK
+CLOCK_50 => D[1].CLK
+CLOCK_50 => D[2].CLK
+CLOCK_50 => A[0].CLK
+CLOCK_50 => A[1].CLK
+CLOCK_50 => A[2].CLK
+CLOCK_50 => i[0].CLK
+CLOCK_50 => i[1].CLK
+CLOCK_50 => i[2].CLK
+CLOCK_50 => i[3].CLK
+CLOCK_50 => i[4].CLK
+CLOCK_50 => i[5].CLK
+CLOCK_50 => i[6].CLK
+CLOCK_50 => i[7].CLK
+CLOCK_50 => i[8].CLK
+CLOCK_50 => i[9].CLK
+CLOCK_50 => i[10].CLK
+CLOCK_50 => i[11].CLK
+CLOCK_50 => i[12].CLK
+CLOCK_50 => i[13].CLK
+CLOCK_50 => i[14].CLK
+CLOCK_50 => i[15].CLK
+CLOCK_50 => i[16].CLK
+CLOCK_50 => i[17].CLK
+CLOCK_50 => i[18].CLK
+CLOCK_50 => i[19].CLK
+CLOCK_50 => i[20].CLK
+CLOCK_50 => i[21].CLK
+CLOCK_50 => i[22].CLK
+CLOCK_50 => i[23].CLK
+CLOCK_50 => i[24].CLK
+CLOCK_50 => i[25].CLK
+CLOCK_50 => i[26].CLK
+CLOCK_50 => i[27].CLK
+CLOCK_50 => i[28].CLK
+CLOCK_50 => i[29].CLK
+CLOCK_50 => i[30].CLK
+CLOCK_50 => i[31].CLK
+
+
+|Part4|call:U0
+c[0] => temp.IN0
+c[0] => temp.IN0
+c[0] => temp.IN0
+c[0] => temp.IN0
+c[0] => temp.IN1
+c[1] => temp[3].IN0
+c[1] => temp.IN0
+c[1] => temp.IN1
+c[1] => temp.IN1
+c[1] => temp.IN1
+c[1] => temp[1].IN1
+c[2] => temp.IN1
+c[2] => temp.IN1
+c[2] => temp[6].IN1
+c[2] => temp[4].IN1
+c[2] => temp[3].IN1
+c[2] => temp.IN1
+c[2] => H[0].DATAIN
+
+
+|Part4|call:U1
+c[0] => temp.IN0
+c[0] => temp.IN0
+c[0] => temp.IN0
+c[0] => temp.IN0
+c[0] => temp.IN1
+c[1] => temp[3].IN0
+c[1] => temp.IN0
+c[1] => temp.IN1
+c[1] => temp.IN1
+c[1] => temp.IN1
+c[1] => temp[1].IN1
+c[2] => temp.IN1
+c[2] => temp.IN1
+c[2] => temp[6].IN1
+c[2] => temp[4].IN1
+c[2] => temp[3].IN1
+c[2] => temp.IN1
+c[2] => H[0].DATAIN
+
+
+|Part4|call:U2
+c[0] => temp.IN0
+c[0] => temp.IN0
+c[0] => temp.IN0
+c[0] => temp.IN0
+c[0] => temp.IN1
+c[1] => temp[3].IN0
+c[1] => temp.IN0
+c[1] => temp.IN1
+c[1] => temp.IN1
+c[1] => temp.IN1
+c[1] => temp[1].IN1
+c[2] => temp.IN1
+c[2] => temp.IN1
+c[2] => temp[6].IN1
+c[2] => temp[4].IN1
+c[2] => temp[3].IN1
+c[2] => temp.IN1
+c[2] => H[0].DATAIN
+
+
+|Part4|call:U3
+c[0] => temp.IN0
+c[0] => temp.IN0
+c[0] => temp.IN0
+c[0] => temp.IN0
+c[0] => temp.IN1
+c[1] => temp[3].IN0
+c[1] => temp.IN0
+c[1] => temp.IN1
+c[1] => temp.IN1
+c[1] => temp.IN1
+c[1] => temp[1].IN1
+c[2] => temp.IN1
+c[2] => temp.IN1
+c[2] => temp[6].IN1
+c[2] => temp[4].IN1
+c[2] => temp[3].IN1
+c[2] => temp.IN1
+c[2] => H[0].DATAIN
+
+
